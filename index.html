@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junk Removal Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1e3a5f',
+                        'brand-blue-dark': '#0f2744',
+                        'brand-orange': '#f97316',
+                        'brand-orange-dark': '#ea580c',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(30, 58, 95, 0.85), rgba(15, 39, 68, 0.9)),
+                              url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-brand-blue-dark text-white py-4 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <span id="business-name">Your Junk Removal Co</span>
+            </div>
+            <a href="tel:" id="nav-phone" class="hidden md:flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-dark px-4 py-2 rounded-lg font-semibold transition">
+                <i class="fas fa-phone"></i>
+                <span id="phone-number">(555) 123-4567</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-20 md:py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                Fast & Affordable Junk Removal in <span id="city-name">Your City</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                We haul it all – furniture, appliances, yard waste, and more. Same-day service available!
+            </p>
+            <a href="#quote" class="inline-block bg-brand-orange hover:bg-brand-orange-dark text-white text-xl font-bold px-8 py-4 rounded-lg shadow-lg transition transform hover:scale-105">
+                <i class="fas fa-calendar-check mr-2"></i>Get Your FREE Quote
+            </a>
+            <p class="mt-4 text-gray-300">
+                <i class="fas fa-clock mr-1"></i> Most quotes in under 2 minutes
+            </p>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="bg-gray-100 py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-blue mb-12">
+                Why Choose <span id="business-name-2">Your Junk Removal Co</span>?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Same Day Service -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Same Day Service</h3>
+                    <p class="text-gray-600">Need it gone today? We've got you covered with rapid response times.</p>
+                </div>
+                <!-- Upfront Pricing -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Upfront Pricing</h3>
+                    <p class="text-gray-600">No hidden fees, no surprises. You'll know exactly what you pay before we start.</p>
+                </div>
+                <!-- Eco-Friendly -->
+                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-blue mb-2">Eco-Friendly</h3>
+                    <p class="text-gray-600">We recycle and donate whenever possible. Good for you, good for the planet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Reviews Section -->
+    <section class="bg-brand-blue py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-4">
+                What Our Customers Say
+            </h2>
+            <div class="flex justify-center mb-8">
+                <div class="text-brand-orange text-2xl">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="text-white ml-3 text-xl">4.9/5 from 200+ reviews</span>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-brand-orange mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"They showed up on time, gave me a fair price, and had everything cleared out in under an hour. Highly recommend!"</p>
+                    <p class="font-bold text-brand-blue">— Sarah M.</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-brand-orange mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Best junk removal service in town. Professional crew, great communication, and they even swept up after!"</p>
+                    <p class="font-bold text-brand-blue">— Mike T.</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="text-brand-orange mb-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Called in the morning, they were here by lunch. Can't beat that kind of service. Will definitely use again!"</p>
+                    <p class="font-bold text-brand-blue">— Jennifer L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="quote" class="bg-brand-orange py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Get Rid of Your Junk?
+            </h2>
+            <p class="text-xl text-white mb-8">
+                Call now for a free, no-obligation quote!
+            </p>
+            <a href="tel:" id="cta-phone" class="inline-block bg-brand-blue-dark hover:bg-brand-blue text-white text-2xl font-bold px-10 py-5 rounded-lg shadow-lg transition transform hover:scale-105">
+                <i class="fas fa-phone mr-3"></i><span id="phone-number-2">(555) 123-4567</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-blue-dark text-white py-8 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-xl font-bold mb-2" id="business-name-3">Your Junk Removal Co</p>
+            <p class="text-gray-400 mb-4">Proudly serving <span id="city-name-2">Your City</span> and surrounding areas</p>
+            <p class="text-gray-500 text-sm">&copy; 2024 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Magic URL Parameter Script -->
+    <script>
+        (function() {
+            // Helper function to capitalize first letter of each word
+            function toTitleCase(str) {
+                return str.replace(/\w\S*/g, function(txt) {
+                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+                });
+            }
+
+            // Get URL parameters
+            const params = new URLSearchParams(window.location.search);
+
+            const name = params.get('name');
+            const city = params.get('city');
+            const phone = params.get('phone');
+
+            // Update business name elements
+            if (name) {
+                const formattedName = toTitleCase(decodeURIComponent(name));
+                document.getElementById('business-name').innerText = formattedName;
+                document.getElementById('business-name-2').innerText = formattedName;
+                document.getElementById('business-name-3').innerText = formattedName;
+                document.title = formattedName + ' - Junk Removal Services';
+            }
+
+            // Update city name elements
+            if (city) {
+                const formattedCity = toTitleCase(decodeURIComponent(city));
+                document.getElementById('city-name').innerText = formattedCity;
+                document.getElementById('city-name-2').innerText = formattedCity;
+            }
+
+            // Update phone number elements
+            if (phone) {
+                const formattedPhone = decodeURIComponent(phone);
+                document.getElementById('phone-number').innerText = formattedPhone;
+                document.getElementById('phone-number-2').innerText = formattedPhone;
+                // Update tel: links
+                document.getElementById('nav-phone').href = 'tel:' + formattedPhone.replace(/\D/g, '');
+                document.getElementById('cta-phone').href = 'tel:' + formattedPhone.replace(/\D/g, '');
+            }
+        })();
+    </script>
+
+</body>
+</html>
