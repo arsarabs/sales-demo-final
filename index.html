@@ -3,225 +3,700 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junk Removal Services</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-blue': '#1e3a5f',
-                        'brand-blue-dark': '#0f2744',
-                        'brand-orange': '#f97316',
-                        'brand-orange-dark': '#ea580c',
-                    }
-                }
+    <title>Your Junk Removal Co - Junk Removal in Your City | Fast & Affordable</title>
+    <meta name="description" content="Your Junk Removal Co offers fast, affordable junk removal in Your City. Furniture, appliances, yard waste & more. Same-day service. Call for a free quote!">
+    <link rel="canonical" href="https://yoursite.netlify.app/">
+    <meta property="og:title" content="Your Junk Removal Co - Junk Removal in Your City">
+    <meta property="og:description" content="Fast, affordable junk hauling. Same-day service available.">
+    <meta property="og:image" content="https://yoursite.netlify.app/og-image.jpg">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚛</text></svg>">
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #252542;
+            --cta-green: #4ade80;
+            --cta-orange: #f97316;
+            --text-white: #ffffff;
+            --text-gray: #94a3b8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Sticky Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .header-cta {
+            background: var(--cta-orange);
+            color: var(--text-white);
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 1.5rem 3rem;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(37, 37, 66, 0.9) 100%),
+                        linear-gradient(45deg, var(--bg-primary), var(--bg-secondary));
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtext {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--cta-green);
+            color: var(--bg-primary);
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(74, 222, 128, 0.4);
+        }
+
+        .trust-line {
+            margin-top: 1.5rem;
+            color: var(--cta-green);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Section Base Styles */
+        section {
+            padding: 5rem 1.5rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* What We Take Grid */
+        .services {
+            background: var(--bg-secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-primary);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--cta-green);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Trust Section */
+        .trust {
+            text-align: center;
+        }
+
+        .rating-display {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+            font-size: 2rem;
+            letter-spacing: 4px;
+        }
+
+        .review-snippet {
+            max-width: 600px;
+            margin: 2rem auto;
+            font-style: italic;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        .review-author {
+            color: var(--text-white);
+            font-style: normal;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .badge {
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid var(--cta-green);
+            color: var(--cta-green);
+        }
+
+        /* Service Area */
+        .service-area {
+            background: var(--bg-secondary);
+        }
+
+        .map-placeholder {
+            background: var(--bg-primary);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-area-text {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Form */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: var(--bg-secondary);
+            color: var(--text-white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--cta-green);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-gray);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--cta-green);
+            color: var(--bg-primary);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(74, 222, 128, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-business-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer-phone {
+            font-size: 1.25rem;
+            color: var(--cta-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-phone:hover {
+            text-decoration: underline;
+        }
+
+        .footer-location {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-copyright {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        /* Sticky Mobile CTA */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--cta-orange);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .mobile-cta a {
+            color: var(--text-white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: block;
+            }
+
+            body {
+                padding-bottom: 60px;
+            }
+
+            .header {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .header-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .service-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .service-icon {
+                font-size: 2.5rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .badge {
+                width: 100%;
+                max-width: 250px;
             }
         }
-    </script>
-    <style>
-        .hero-bg {
-            background-image: linear-gradient(rgba(30, 58, 95, 0.85), rgba(15, 39, 68, 0.9)),
-                              url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+
+        @media (max-width: 480px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body class="font-sans antialiased">
-
-    <!-- Navigation -->
-    <nav class="bg-brand-blue-dark text-white py-4 px-6">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold">
-                <span id="business-name">Your Junk Removal Co</span>
-            </div>
-            <a href="tel:" id="nav-phone" class="hidden md:flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-dark px-4 py-2 rounded-lg font-semibold transition">
-                <i class="fas fa-phone"></i>
-                <span id="phone-number">(555) 123-4567</span>
-            </a>
-        </div>
-    </nav>
+<body>
+    <!-- Sticky Header -->
+    <header class="header">
+        <div class="logo" id="header-logo">Your Junk Removal Co</div>
+        <a href="tel:5551234567" class="header-cta" id="header-phone">Call Now: (555) 123-4567</a>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero-bg text-white py-20 md:py-32 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                Fast & Affordable Junk Removal in <span id="city-name">Your City</span>
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-200">
-                We haul it all – furniture, appliances, yard waste, and more. Same-day service available!
-            </p>
-            <a href="#quote" class="inline-block bg-brand-orange hover:bg-brand-orange-dark text-white text-xl font-bold px-8 py-4 rounded-lg shadow-lg transition transform hover:scale-105">
-                <i class="fas fa-calendar-check mr-2"></i>Get Your FREE Quote
-            </a>
-            <p class="mt-4 text-gray-300">
-                <i class="fas fa-clock mr-1"></i> Most quotes in under 2 minutes
-            </p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fast & Affordable Junk Removal in <span class="city-name">Your City</span></h1>
+            <p class="hero-subtext">We haul it all — furniture, appliances, yard waste, and more. Same-day service available.</p>
+            <a href="#contact" class="btn-primary">Get Your FREE Quote</a>
+            <p class="trust-line">⭐ Most quotes in under 2 minutes</p>
+        </div>
+    </section>
+
+    <!-- What We Take Grid -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">What We Haul Away</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon" role="img" aria-label="Furniture removal service">🛋️</div>
+                    <h3>Furniture</h3>
+                    <p>Sofas, beds, tables, chairs, and all unwanted furniture items.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" role="img" aria-label="Appliance removal service">🔌</div>
+                    <h3>Appliances</h3>
+                    <p>Refrigerators, washers, dryers, microwaves, and more.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" role="img" aria-label="Yard waste removal service">🌿</div>
+                    <h3>Yard Waste</h3>
+                    <p>Branches, leaves, grass clippings, and landscaping debris.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" role="img" aria-label="Construction debris removal service">🔨</div>
+                    <h3>Construction Debris</h3>
+                    <p>Drywall, lumber, tiles, and renovation materials.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" role="img" aria-label="Electronics removal service">📺</div>
+                    <h3>Electronics</h3>
+                    <p>TVs, computers, monitors, and electronic equipment.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon" role="img" aria-label="General junk removal service">📦</div>
+                    <h3>General Junk</h3>
+                    <p>Boxes, clutter, garage cleanouts, and everything else.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Trust Section -->
-    <section class="bg-gray-100 py-16 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-blue mb-12">
-                Why Choose <span id="business-name-2">Your Junk Removal Co</span>?
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Same Day Service -->
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-bolt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Same Day Service</h3>
-                    <p class="text-gray-600">Need it gone today? We've got you covered with rapid response times.</p>
-                </div>
-                <!-- Upfront Pricing -->
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-dollar-sign text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Upfront Pricing</h3>
-                    <p class="text-gray-600">No hidden fees, no surprises. You'll know exactly what you pay before we start.</p>
-                </div>
-                <!-- Eco-Friendly -->
-                <div class="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition">
-                    <div class="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-leaf text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-brand-blue mb-2">Eco-Friendly</h3>
-                    <p class="text-gray-600">We recycle and donate whenever possible. Good for you, good for the planet.</p>
-                </div>
+    <section class="trust">
+        <div class="container">
+            <h2 class="section-title">Trusted in <span class="city-name">Your City</span></h2>
+            <div class="rating-display">
+                <strong>5.0</strong>
+                <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+            <div class="review-snippet">
+                <p>"Fast, professional, and affordable. They were at my house within 2 hours!"</p>
+                <p class="review-author">— Local Customer</p>
+            </div>
+            <div class="trust-badges">
+                <div class="badge">✓ Licensed & Insured</div>
+                <div class="badge">✓ Same-Day Service</div>
+                <div class="badge">✓ Upfront Pricing</div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof / Reviews Section -->
-    <section class="bg-brand-blue py-16 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-                What Our Customers Say
-            </h2>
-            <div class="flex justify-center mb-8">
-                <div class="text-brand-orange text-2xl">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <span class="text-white ml-3 text-xl">4.9/5 from 200+ reviews</span>
+    <!-- Service Area Section -->
+    <section class="service-area">
+        <div class="container">
+            <h2 class="section-title">Serving <span class="city-name">Your City</span> & Surrounding Areas</h2>
+            <div class="map-placeholder" role="img" aria-label="Service area map placeholder">
+                Service Area Map
             </div>
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Review 1 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <div class="text-brand-orange mb-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-4">"They showed up on time, gave me a fair price, and had everything cleared out in under an hour. Highly recommend!"</p>
-                    <p class="font-bold text-brand-blue">— Sarah M.</p>
-                </div>
-                <!-- Review 2 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <div class="text-brand-orange mb-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-4">"Best junk removal service in town. Professional crew, great communication, and they even swept up after!"</p>
-                    <p class="font-bold text-brand-blue">— Mike T.</p>
-                </div>
-                <!-- Review 3 -->
-                <div class="bg-white rounded-xl p-6 shadow-lg">
-                    <div class="text-brand-orange mb-2">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-700 mb-4">"Called in the morning, they were here by lunch. Can't beat that kind of service. Will definitely use again!"</p>
-                    <p class="font-bold text-brand-blue">— Jennifer L.</p>
-                </div>
-            </div>
+            <p class="service-area-text">We proudly serve <span class="city-name">Your City</span> and all nearby communities. Call to confirm service in your area.</p>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section id="quote" class="bg-brand-orange py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Get Rid of Your Junk?
-            </h2>
-            <p class="text-xl text-white mb-8">
-                Call now for a free, no-obligation quote!
-            </p>
-            <a href="tel:" id="cta-phone" class="inline-block bg-brand-blue-dark hover:bg-brand-blue text-white text-2xl font-bold px-10 py-5 rounded-lg shadow-lg transition transform hover:scale-105">
-                <i class="fas fa-phone mr-3"></i><span id="phone-number-2">(555) 123-4567</span>
-            </a>
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get Your Free Quote</h2>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Tell us about your junk removal needs..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Request Quote</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-blue-dark text-white py-8 px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <p class="text-xl font-bold mb-2" id="business-name-3">Your Junk Removal Co</p>
-            <p class="text-gray-400 mb-4">Proudly serving <span id="city-name-2">Your City</span> and surrounding areas</p>
-            <p class="text-gray-500 text-sm">&copy; 2024 All Rights Reserved</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-business-name" id="footer-business-name">Your Junk Removal Co</div>
+            <a href="tel:5551234567" class="footer-phone" id="footer-phone">(555) 123-4567</a>
+            <p class="footer-location"><span class="city-name">Your City</span>, ST</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="footer-copyright">© <span id="current-year"></span> <span id="footer-copyright-name">Your Junk Removal Co</span>. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Magic URL Parameter Script -->
-    <script>
-        (function() {
-            // Helper function to capitalize first letter of each word
-            function toTitleCase(str) {
-                return str.replace(/\w\S*/g, function(txt) {
-                    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-                });
-            }
+    <!-- Sticky Mobile CTA -->
+    <div class="mobile-cta">
+        <a href="tel:5551234567" id="mobile-cta-link">📞 Call Now - Free Quote</a>
+    </div>
 
-            // Get URL parameters
-            const params = new URLSearchParams(window.location.search);
-
-            const name = params.get('name');
-            const city = params.get('city');
-            const phone = params.get('phone');
-
-            // Update business name elements
-            if (name) {
-                const formattedName = toTitleCase(decodeURIComponent(name));
-                document.getElementById('business-name').innerText = formattedName;
-                document.getElementById('business-name-2').innerText = formattedName;
-                document.getElementById('business-name-3').innerText = formattedName;
-                document.title = formattedName + ' - Junk Removal Services';
-            }
-
-            // Update city name elements
-            if (city) {
-                const formattedCity = toTitleCase(decodeURIComponent(city));
-                document.getElementById('city-name').innerText = formattedCity;
-                document.getElementById('city-name-2').innerText = formattedCity;
-            }
-
-            // Update phone number elements
-            if (phone) {
-                const formattedPhone = decodeURIComponent(phone);
-                document.getElementById('phone-number').innerText = formattedPhone;
-                document.getElementById('phone-number-2').innerText = formattedPhone;
-                // Update tel: links
-                document.getElementById('nav-phone').href = 'tel:' + formattedPhone.replace(/\D/g, '');
-                document.getElementById('cta-phone').href = 'tel:' + formattedPhone.replace(/\D/g, '');
-            }
-        })();
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json" id="schema-json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Your Junk Removal Co",
+        "telephone": "(555) 123-4567",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Your City",
+            "addressRegion": "ST"
+        },
+        "priceRange": "$$"
+    }
     </script>
 
+    <script>
+        (function() {
+            // Parse URL parameters
+            const params = new URLSearchParams(window.location.search);
+            const businessName = params.get('name') || 'Your Junk Removal Co';
+            const city = params.get('city') || 'Your City';
+            const phoneRaw = params.get('phone') || '5551234567';
+
+            // Format phone number for display
+            function formatPhone(phone) {
+                const cleaned = phone.replace(/\D/g, '');
+                if (cleaned.length === 10) {
+                    return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
+                }
+                return phone;
+            }
+
+            const phoneFormatted = formatPhone(phoneRaw);
+            const phoneClean = phoneRaw.replace(/\D/g, '');
+
+            // Update document title
+            document.title = `${businessName} - Junk Removal in ${city} | Fast & Affordable`;
+
+            // Update meta description
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                metaDesc.content = `${businessName} offers fast, affordable junk removal in ${city}. Furniture, appliances, yard waste & more. Same-day service. Call for a free quote!`;
+            }
+
+            // Update OG tags
+            const ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) {
+                ogTitle.content = `${businessName} - Junk Removal in ${city}`;
+            }
+
+            // Update header logo
+            document.getElementById('header-logo').textContent = businessName;
+
+            // Update header phone
+            const headerPhone = document.getElementById('header-phone');
+            headerPhone.href = `tel:${phoneClean}`;
+            headerPhone.textContent = `Call Now: ${phoneFormatted}`;
+
+            // Update all city name instances
+            document.querySelectorAll('.city-name').forEach(el => {
+                el.textContent = city;
+            });
+
+            // Update footer
+            document.getElementById('footer-business-name').textContent = businessName;
+            const footerPhone = document.getElementById('footer-phone');
+            footerPhone.href = `tel:${phoneClean}`;
+            footerPhone.textContent = phoneFormatted;
+            document.getElementById('footer-copyright-name').textContent = businessName;
+
+            // Update mobile CTA
+            const mobileCta = document.getElementById('mobile-cta-link');
+            mobileCta.href = `tel:${phoneClean}`;
+
+            // Update current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Update schema
+            const schemaEl = document.getElementById('schema-json');
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": businessName,
+                "telephone": phoneFormatted,
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": city,
+                    "addressRegion": "ST"
+                },
+                "priceRange": "$$"
+            };
+            schemaEl.textContent = JSON.stringify(schema, null, 2);
+        })();
+    </script>
 </body>
 </html>
