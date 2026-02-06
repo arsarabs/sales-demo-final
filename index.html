@@ -65,6 +65,35 @@
             height: 100%;
             border: 0;
         }
+
+        /* How It Works step connector line */
+        .step-connector {
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            width: calc(100% - 4rem);
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+        }
+
+        /* FAQ accordion styles */
+        .faq-item {
+            overflow: hidden;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-white font-sans antialiased">
@@ -81,227 +110,427 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 pb-12">
-        <div class="max-w-4xl mx-auto">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-6 leading-tight">
-                Fast & Affordable Junk Removal in <span class="city-name text-brand-green">Your City</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                We haul it all — furniture, appliances, yard waste, and more. Same-day service available.
-            </p>
-            <a href="#contact" class="inline-block bg-brand-green hover:bg-green-500 text-brand-dark px-8 py-4 rounded-lg font-bold text-lg uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-green-500/30">
-                <i class="fa-solid fa-calendar-check mr-2"></i>Get Your FREE Quote
-            </a>
-            <p class="mt-6 text-brand-green font-medium">
-                <i class="fa-solid fa-star mr-1"></i> Most quotes in under 2 minutes
-            </p>
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 pb-12">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-6 leading-tight">
+                    Fast & Affordable Junk Removal in <span class="city-name text-brand-green">Your City</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    We haul it all — furniture, appliances, yard waste, and more. Same-day service available.
+                </p>
+                <a href="#contact" class="inline-block bg-brand-green hover:bg-green-500 text-brand-dark px-8 py-4 rounded-lg font-bold text-lg uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-green-500/30">
+                    <i class="fa-solid fa-calendar-check mr-2"></i>Get Your FREE Quote
+                </a>
+                <p class="mt-6 text-brand-green font-medium">
+                    <i class="fa-solid fa-star mr-1"></i> Most quotes in under 2 minutes
+                </p>
+            </div>
+        </section>
 
-    <!-- What We Haul Away Grid -->
-    <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                What We Haul Away
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Furniture -->
-                <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format"
-                             alt="Furniture removal service"
-                             class="service-card-img w-full h-full object-cover"
-                             loading="lazy">
+        <!-- What We Haul Away Grid -->
+        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
+                    What We Haul Away
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Furniture -->
+                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format"
+                                 alt="Furniture removal service"
+                                 class="service-card-img w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
+                                <i class="fa-solid fa-couch text-brand-orange mr-2"></i>Furniture
+                            </h3>
+                            <p class="text-gray-400">Sofas, beds, tables, chairs, and all unwanted furniture items.</p>
+                        </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                            <i class="fa-solid fa-couch text-brand-orange mr-2"></i>Furniture
-                        </h3>
-                        <p class="text-gray-400">Sofas, beds, tables, chairs, and all unwanted furniture items.</p>
-                    </div>
-                </div>
 
-                <!-- Appliances -->
-                <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581578731117-104f2a863180?w=400&auto=format"
-                             alt="Appliance removal service"
-                             class="service-card-img w-full h-full object-cover"
-                             loading="lazy">
+                    <!-- Appliances -->
+                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1581578731117-104f2a863180?w=400&auto=format"
+                                 alt="Appliance removal service"
+                                 class="service-card-img w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
+                                <i class="fa-solid fa-blender text-brand-orange mr-2"></i>Appliances
+                            </h3>
+                            <p class="text-gray-400">Refrigerators, washers, dryers, microwaves, and more.</p>
+                        </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                            <i class="fa-solid fa-blender text-brand-orange mr-2"></i>Appliances
-                        </h3>
-                        <p class="text-gray-400">Refrigerators, washers, dryers, microwaves, and more.</p>
-                    </div>
-                </div>
 
-                <!-- Yard Waste -->
-                <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&auto=format"
-                             alt="Yard waste removal service"
-                             class="service-card-img w-full h-full object-cover"
-                             loading="lazy">
+                    <!-- Yard Waste -->
+                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&auto=format"
+                                 alt="Yard waste removal service"
+                                 class="service-card-img w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
+                                <i class="fa-solid fa-leaf text-brand-orange mr-2"></i>Yard Waste
+                            </h3>
+                            <p class="text-gray-400">Branches, leaves, grass clippings, and landscaping debris.</p>
+                        </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                            <i class="fa-solid fa-leaf text-brand-orange mr-2"></i>Yard Waste
-                        </h3>
-                        <p class="text-gray-400">Branches, leaves, grass clippings, and landscaping debris.</p>
-                    </div>
-                </div>
 
-                <!-- Construction Debris -->
-                <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&auto=format"
-                             alt="Construction debris removal service"
-                             class="service-card-img w-full h-full object-cover"
-                             loading="lazy">
+                    <!-- Construction Debris -->
+                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&auto=format"
+                                 alt="Construction debris removal service"
+                                 class="service-card-img w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
+                                <i class="fa-solid fa-hammer text-brand-orange mr-2"></i>Construction Debris
+                            </h3>
+                            <p class="text-gray-400">Drywall, lumber, tiles, and renovation materials.</p>
+                        </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                            <i class="fa-solid fa-hammer text-brand-orange mr-2"></i>Construction Debris
-                        </h3>
-                        <p class="text-gray-400">Drywall, lumber, tiles, and renovation materials.</p>
-                    </div>
-                </div>
 
-                <!-- Electronics -->
-                <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=400&auto=format"
-                             alt="Electronics removal service"
-                             class="service-card-img w-full h-full object-cover"
-                             loading="lazy">
+                    <!-- Electronics -->
+                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=400&auto=format"
+                                 alt="Electronics removal service"
+                                 class="service-card-img w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
+                                <i class="fa-solid fa-tv text-brand-orange mr-2"></i>Electronics
+                            </h3>
+                            <p class="text-gray-400">TVs, computers, monitors, and electronic equipment.</p>
+                        </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                            <i class="fa-solid fa-tv text-brand-orange mr-2"></i>Electronics
-                        </h3>
-                        <p class="text-gray-400">TVs, computers, monitors, and electronic equipment.</p>
-                    </div>
-                </div>
 
-                <!-- General Junk -->
-                <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&auto=format"
-                             alt="General junk removal service"
-                             class="service-card-img w-full h-full object-cover"
-                             loading="lazy">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                            <i class="fa-solid fa-box text-brand-orange mr-2"></i>General Junk
-                        </h3>
-                        <p class="text-gray-400">Boxes, clutter, garage cleanouts, and everything else.</p>
+                    <!-- General Junk -->
+                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&auto=format"
+                                 alt="General junk removal service"
+                                 class="service-card-img w-full h-full object-cover"
+                                 loading="lazy">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
+                                <i class="fa-solid fa-box text-brand-orange mr-2"></i>General Junk
+                            </h3>
+                            <p class="text-gray-400">Boxes, clutter, garage cleanouts, and everything else.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Trust Section -->
-    <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8">
-                Trusted in <span class="city-name text-brand-green">Your City</span>
-            </h2>
-            <div class="mb-6">
-                <span class="text-5xl font-bold">5.0</span>
-                <div class="text-3xl text-yellow-400 mt-2">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-            </div>
-            <div class="max-w-xl mx-auto mb-10">
-                <p class="text-xl italic text-gray-400">"Fast, professional, and affordable. They were at my house within 2 hours!"</p>
-                <p class="mt-3 font-medium text-white">— Local Customer</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-4">
-                <div class="bg-brand-dark-secondary border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-xl"></i>
-                    <span>Licensed & Insured</span>
-                </div>
-                <div class="bg-brand-dark-secondary border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
-                    <i class="fa-solid fa-star text-xl"></i>
-                    <span>5-Star Rated</span>
-                </div>
-                <div class="bg-brand-dark-secondary border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
-                    <i class="fa-solid fa-clock text-xl"></i>
-                    <span>Same-Day Service</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- How It Works Section -->
+        <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-16">
+                    How It Works
+                </h2>
+                <div class="relative">
+                    <!-- Connector line (desktop only) -->
+                    <div class="hidden md:block step-connector"></div>
 
-    <!-- Service Area Section -->
-    <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                Serving <span class="city-name text-brand-green">Your City</span> & Surrounding Areas
-            </h2>
-            <div class="map-container h-80 sm:h-96 mb-8 bg-brand-dark rounded-xl" id="map-container">
-                <iframe
-                    id="service-map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d-111.9460!3d33.4484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI2JzU0LjIiTiAxMTHCsDU2JzQ1LjYiVw!5e0!3m2!1sen!2sus!4v1234567890"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Service area map">
-                </iframe>
-            </div>
-            <p class="text-center text-gray-400 text-lg max-w-2xl mx-auto">
-                We proudly serve <span class="city-name">Your City</span> and all nearby communities. Call to confirm service in your area.
-            </p>
-        </div>
-    </section>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+                        <!-- Step 1 -->
+                        <div class="text-center relative">
+                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                                1
+                            </div>
+                            <div class="text-brand-green text-4xl mb-4">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-3">Call or Text Us</h3>
+                            <p class="text-gray-400">Tell us what you need hauled. We'll give you an upfront price — no hidden fees.</p>
+                        </div>
 
-    <!-- Contact Form -->
-    <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6" id="contact">
-        <div class="max-w-xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                Get Your Free Quote
-            </h2>
-            <form class="space-y-6" action="#" method="POST">
-                <div>
-                    <input type="text" name="name" placeholder="Your Name" required
-                           class="w-full px-4 py-4 bg-brand-dark-secondary border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors">
+                        <!-- Step 2 -->
+                        <div class="text-center relative">
+                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                                2
+                            </div>
+                            <div class="text-brand-green text-4xl mb-4">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-3">Pick a Time</h3>
+                            <p class="text-gray-400">We'll come to you. Same-day and next-day appointments available.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="text-center relative">
+                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                                3
+                            </div>
+                            <div class="text-brand-green text-4xl mb-4">
+                                <i class="fa-solid fa-truck-pickup"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-3">We Haul It Away</h3>
+                            <p class="text-gray-400">Our crew loads everything up. You don't lift a finger.</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input type="tel" name="phone" placeholder="Phone Number" required
-                           class="w-full px-4 py-4 bg-brand-dark-secondary border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors">
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8">
+                    Trusted in <span class="city-name text-brand-green">Your City</span>
+                </h2>
+                <div class="mb-6">
+                    <span class="text-5xl font-bold">5.0</span>
+                    <div class="text-3xl text-yellow-400 mt-2">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
                 </div>
-                <div>
-                    <textarea name="message" placeholder="Tell us about your junk removal needs..." rows="5"
-                              class="w-full px-4 py-4 bg-brand-dark-secondary border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors resize-vertical"></textarea>
+                <div class="max-w-xl mx-auto mb-10">
+                    <p class="text-xl italic text-gray-400">"Fast, professional, and affordable. They were at my house within 2 hours!"</p>
+                    <p class="mt-3 font-medium text-white">— Local Customer</p>
                 </div>
-                <button type="submit"
-                        class="w-full bg-brand-green hover:bg-green-500 text-brand-dark py-4 rounded-lg font-bold text-lg uppercase tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-500/30">
-                    <i class="fa-solid fa-paper-plane mr-2"></i>Request Quote
-                </button>
-            </form>
-        </div>
-    </section>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="bg-brand-dark border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                        <span>Licensed & Insured</span>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-star text-xl"></i>
+                        <span>5-Star Rated</span>
+                    </div>
+                    <div class="bg-brand-dark border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-clock text-xl"></i>
+                        <span>Same-Day Service</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
+                    Why Choose <span class="business-name text-brand-green">Your Junk Removal Co</span>?
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Licensed & Insured -->
+                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="text-brand-green text-3xl">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Licensed & Insured</h3>
+                                <p class="text-gray-400">Fully licensed and insured so you're protected on every job.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upfront Pricing -->
+                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="text-brand-green text-3xl">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Upfront Pricing</h3>
+                                <p class="text-gray-400">No surprises. We quote before we start.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Same-Day Service -->
+                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="text-brand-green text-3xl">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Same-Day Service</h3>
+                                <p class="text-gray-400">Need it gone today? We've got you covered.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eco-Friendly Disposal -->
+                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
+                        <div class="flex items-start gap-4">
+                            <div class="text-brand-green text-3xl">
+                                <i class="fa-solid fa-recycle"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Eco-Friendly Disposal</h3>
+                                <p class="text-gray-400">We donate and recycle whenever possible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mid-Page CTA Banner -->
+        <section class="bg-brand-orange py-12 sm:py-16 px-4 sm:px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-4">
+                    Ready to Get Rid of Your Junk?
+                </h2>
+                <p class="text-xl text-white/90 mb-8">
+                    Call now for a free, no-obligation quote.
+                </p>
+                <a href="tel:5551234567" id="mid-cta-phone" class="inline-block bg-brand-dark hover:bg-brand-dark-secondary text-white px-10 py-4 rounded-lg font-bold text-xl uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-xl">
+                    <i class="fa-solid fa-phone mr-3"></i><span class="mid-cta-phone-text">(555) 123-4567</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Service Area Section -->
+        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
+                    Serving <span class="city-name text-brand-green">Your City</span> & Surrounding Areas
+                </h2>
+                <div class="map-container h-80 sm:h-96 mb-8 bg-brand-dark rounded-xl" id="map-container">
+                    <iframe
+                        id="service-map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d-111.9460!3d33.4484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI2JzU0LjIiTiAxMTHCsDU2JzQ1LjYiVw!5e0!3m2!1sen!2sus!4v1234567890"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Service area map">
+                    </iframe>
+                </div>
+                <p class="text-center text-gray-400 text-lg max-w-2xl mx-auto">
+                    We proudly serve <span class="city-name">Your City</span> and all nearby communities. Call to confirm service in your area.
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
+                    Frequently Asked Questions
+                </h2>
+                <div class="space-y-4" id="faq-container">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
+                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
+                            <span class="font-semibold text-lg pr-4">What items do you haul away?</span>
+                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-5">
+                            <p class="text-gray-400">We remove furniture, appliances, yard waste, construction debris, electronics, and general junk. If you're not sure, just call us — we can handle almost anything.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
+                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
+                            <span class="font-semibold text-lg pr-4">How does pricing work?</span>
+                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-5">
+                            <p class="text-gray-400">We offer upfront, transparent pricing based on how much space your items take up in our truck. No hidden fees, no surprises.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
+                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
+                            <span class="font-semibold text-lg pr-4">Do you offer same-day service?</span>
+                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-5">
+                            <p class="text-gray-400">Yes! If we have availability, we can be there the same day you call. Next-day appointments are almost always available.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
+                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
+                            <span class="font-semibold text-lg pr-4">Do I need to be home?</span>
+                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-5">
+                            <p class="text-gray-400">It helps, but it's not always required. As long as we can access the items, we can get the job done. Just let us know the details when you book.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
+                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
+                            <span class="font-semibold text-lg pr-4">Do you recycle or donate items?</span>
+                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer px-6 pb-5">
+                            <p class="text-gray-400">Absolutely. We donate usable items to local charities and recycle materials whenever possible. We're committed to keeping waste out of landfills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6" id="contact">
+            <div class="max-w-xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
+                    Get Your Free Quote
+                </h2>
+                <form class="space-y-6" action="#" method="POST">
+                    <!-- Honeypot spam protection -->
+                    <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div>
+                        <input type="text" name="name" placeholder="Your Name" required
+                               class="w-full px-4 py-4 bg-brand-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors">
+                    </div>
+                    <div>
+                        <input type="tel" name="phone" placeholder="Phone Number" required
+                               class="w-full px-4 py-4 bg-brand-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors">
+                    </div>
+                    <div>
+                        <textarea name="message" placeholder="Tell us about your junk removal needs..." rows="5"
+                                  class="w-full px-4 py-4 bg-brand-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors resize-vertical"></textarea>
+                    </div>
+                    <button type="submit"
+                            class="w-full bg-brand-green hover:bg-green-500 text-brand-dark py-4 rounded-lg font-bold text-lg uppercase tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-500/30">
+                        <i class="fa-solid fa-paper-plane mr-2"></i>Request Quote
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark-secondary border-t border-white/5 py-12 px-4 sm:px-6">
+    <footer class="bg-brand-dark border-t border-white/5 py-12 px-4 sm:px-6">
         <div class="max-w-4xl mx-auto text-center">
             <div class="flex items-center justify-center gap-3 mb-4" id="footer-logo">
                 <i class="fa-solid fa-truck-pickup text-brand-orange text-2xl"></i>
                 <span class="text-xl font-bold uppercase" id="footer-business-name">Your Junk Removal Co</span>
             </div>
-            <a href="tel:5551234567" class="inline-block text-xl text-brand-orange hover:underline mb-2" id="footer-phone">
+            <p class="text-gray-400 mb-2" id="footer-address">Your City, ST</p>
+            <a href="tel:5551234567" class="inline-block text-xl text-brand-orange hover:underline mb-4" id="footer-phone">
                 <i class="fa-solid fa-phone mr-2"></i><span class="footer-phone-text">(555) 123-4567</span>
             </a>
-            <p class="text-gray-400 mb-6"><span class="city-name">Your City</span>, ST</p>
 
             <!-- Footer Trust Badges -->
             <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm text-gray-400">
@@ -343,6 +572,7 @@
         "telephone": "(555) 123-4567",
         "address": {
             "@type": "PostalAddress",
+            "streetAddress": "",
             "addressLocality": "Your City",
             "addressRegion": "ST"
         },
@@ -388,7 +618,6 @@
             // Update header logo (preserve icon, update text)
             const headerLogo = document.getElementById('header-logo');
             if (headerLogo) {
-                const icon = headerLogo.querySelector('i');
                 const span = headerLogo.querySelector('span');
                 if (span) span.textContent = businessName;
             }
@@ -406,9 +635,26 @@
                 el.textContent = city;
             });
 
+            // Update all business name instances
+            document.querySelectorAll('.business-name').forEach(el => {
+                el.textContent = businessName;
+            });
+
+            // Update service card image alt texts to include city
+            document.querySelectorAll('.service-card img').forEach(img => {
+                const currentAlt = img.getAttribute('alt') || '';
+                if (!currentAlt.includes(city)) {
+                    img.setAttribute('alt', `${currentAlt} in ${city}`);
+                }
+            });
+
             // Update footer business name
             const footerBusinessName = document.getElementById('footer-business-name');
             if (footerBusinessName) footerBusinessName.textContent = businessName;
+
+            // Update footer address
+            const footerAddress = document.getElementById('footer-address');
+            if (footerAddress) footerAddress.textContent = `${city}, ST`;
 
             // Update footer phone
             const footerPhone = document.getElementById('footer-phone');
@@ -421,6 +667,14 @@
             // Update footer copyright name
             const footerCopyrightName = document.getElementById('footer-copyright-name');
             if (footerCopyrightName) footerCopyrightName.textContent = businessName;
+
+            // Update mid-page CTA phone
+            const midCtaPhone = document.getElementById('mid-cta-phone');
+            if (midCtaPhone) {
+                midCtaPhone.href = `tel:${phoneClean}`;
+                const phoneText = midCtaPhone.querySelector('.mid-cta-phone-text');
+                if (phoneText) phoneText.textContent = phoneFormatted;
+            }
 
             // Update mobile CTA
             const mobileCta = document.getElementById('mobile-cta-link');
@@ -447,6 +701,7 @@
                     "telephone": phoneFormatted,
                     "address": {
                         "@type": "PostalAddress",
+                        "streetAddress": "",
                         "addressLocality": city,
                         "addressRegion": "ST"
                     },
@@ -454,6 +709,24 @@
                 };
                 schemaEl.textContent = JSON.stringify(schema, null, 2);
             }
+
+            // FAQ Accordion functionality
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const faqItem = button.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+
+                    // Close all other FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+
+                    // Toggle current item
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
         })();
     </script>
 </body>
