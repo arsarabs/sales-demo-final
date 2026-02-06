@@ -22,10 +22,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#1a1a2e',
-                        'brand-dark-secondary': '#252542',
+                        'brand-dark': '#0a0a0a',
+                        'brand-dark-secondary': '#141414',
                         'brand-green': '#4ade80',
-                        'brand-orange': '#f97316',
+                        'brand-green-dark': '#16a34a',
+                        'brand-accent': '#bbf7d0',
                     }
                 }
             }
@@ -77,23 +78,12 @@
         }
 
         /* FAQ accordion styles */
-        .faq-item {
-            overflow: hidden;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-bottom: 0;
-            transition: max-height 0.3s ease-out, padding-bottom 0.3s ease-out;
-        }
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-            padding-bottom: 1.25rem;
-        }
-        .faq-toggle {
-            transition: transform 0.3s ease;
+        .faq-question {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: inherit;
+            font: inherit;
         }
     </style>
 </head>
