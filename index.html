@@ -83,13 +83,14 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-bottom: 0;
+            transition: max-height 0.3s ease-out, padding-bottom 0.3s ease-out;
         }
         .faq-item.active .faq-answer {
             max-height: 500px;
-        }
-        .faq-item.active .faq-toggle {
-            transform: rotate(45deg);
+            padding-bottom: 1.25rem;
         }
         .faq-toggle {
             transition: transform 0.3s ease;
@@ -435,7 +436,7 @@
                             <span class="font-semibold text-lg pr-4">What items do you haul away?</span>
                             <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
                         </button>
-                        <div class="faq-answer px-6 pb-5">
+                        <div class="faq-answer">
                             <p class="text-gray-400">We remove furniture, appliances, yard waste, construction debris, electronics, and general junk. If you're not sure, just call us — we can handle almost anything.</p>
                         </div>
                     </div>
