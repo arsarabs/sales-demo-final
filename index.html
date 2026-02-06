@@ -156,8 +156,9 @@
                 <i class="fa-solid fa-truck-pickup text-brand-orange text-2xl"></i>
                 <span class="text-lg sm:text-xl font-bold uppercase tracking-tight">Your Junk Removal Co</span>
             </div>
-            <a href="tel:5551234567" class="bg-brand-orange hover:bg-orange-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/30" id="header-phone">
-                <i class="fa-solid fa-phone mr-2"></i><span class="header-phone-text">Call Now: (555) 123-4567</span>
+            <a href="tel:5551234567" class="bg-brand-orange hover:bg-orange-600 text-white p-3 md:px-6 md:py-3 rounded-full md:rounded-lg font-semibold text-sm sm:text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/30" id="header-phone">
+                <i class="fa-solid fa-phone"></i>
+                <span class="hidden md:inline header-phone-text">Call Now: (555) 123-4567</span>
             </a>
         </div>
     </header>
@@ -573,7 +574,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark border-t border-white/5 py-12 px-4 sm:px-6">
+    <footer class="bg-brand-dark border-t border-white/5 py-12 px-4 sm:px-6 pb-20 md:pb-0">
         <div class="max-w-4xl mx-auto text-center">
             <div class="flex items-center justify-center gap-3 mb-4" id="footer-logo">
                 <i class="fa-solid fa-truck-pickup text-brand-orange text-2xl"></i>
@@ -605,15 +606,15 @@
         </div>
     </footer>
 
+    <!-- Bottom padding for mobile CTA -->
+    <div class="h-24 md:hidden"></div>
+
     <!-- Sticky Mobile CTA -->
     <div class="fixed bottom-0 left-0 right-0 z-50 bg-brand-orange p-4 text-center md:hidden">
         <a href="tel:5551234567" class="text-white font-bold text-lg flex items-center justify-center gap-2" id="mobile-cta-link">
             <i class="fa-solid fa-phone"></i> Call Now - Free Quote
         </a>
     </div>
-
-    <!-- Bottom padding for mobile CTA -->
-    <div class="h-16 md:hidden"></div>
 
     <!-- LocalBusiness Schema -->
     <script type="application/ld+json" id="schema-json">
