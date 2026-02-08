@@ -21,6 +21,9 @@
     <meta name="twitter:description" content="Fast, affordable junk hauling in Your City. Same-day service available.">
     <meta name="twitter:image" content="https://demo.launchedops.com/og-image.jpg">
 
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="Your City">
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚛</text></svg>">
 
     <!-- Google Fonts -->
@@ -28,8 +31,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         /* ===== CSS RESET & BASE ===== */
@@ -128,9 +129,9 @@
             align-items: center;
             gap: 10px;
         }
-        .header-logo i {
+        svg.icon { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+        .header-logo .icon {
             color: var(--gold);
-            font-size: 24px;
         }
         .header-logo span {
             font-family: var(--font-display);
@@ -175,7 +176,10 @@
             align-items: center;
             padding: 100px 0 60px;
             overflow: hidden;
-            background: var(--dark);
+            background:
+                radial-gradient(ellipse at 80% 20%, rgba(232, 170, 42, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 20% 80%, rgba(52, 199, 89, 0.05) 0%, transparent 50%),
+                var(--dark);
         }
         .hero-grid {
             display: grid;
@@ -347,9 +351,8 @@
             font-weight: 600;
             color: var(--gray-300);
         }
-        .trust-item i {
-            font-size: 20px;
-            color: var(--gold);
+        .trust-item .icon {
+            color: var(--green);
         }
 
         /* ===== SECTION SHARED ===== */
@@ -425,7 +428,7 @@
             letter-spacing: 0.02em;
             margin-bottom: 8px;
         }
-        .service-card-body h3 i {
+        .service-card-body h3 .icon {
             color: var(--gold);
             margin-right: 8px;
         }
@@ -466,9 +469,11 @@
             margin: 0 auto 16px;
         }
         .step-icon {
-            font-size: 36px;
-            color: var(--gold);
+            color: var(--green);
             margin-bottom: 16px;
+        }
+        .stat-card.stat-green .stat-number {
+            color: var(--green);
         }
         .step-card h3 {
             font-size: 20px;
@@ -919,9 +924,8 @@
             gap: 10px;
             margin-bottom: 12px;
         }
-        .footer-brand .footer-logo i {
+        .footer-brand .footer-logo .icon {
             color: var(--gold);
-            font-size: 24px;
         }
         .footer-brand .footer-logo span {
             font-family: var(--font-display);
@@ -977,7 +981,7 @@
             align-items: center;
             gap: 8px;
         }
-        .footer-col li i { color: var(--gold); font-size: 12px; width: 16px; text-align: center; }
+        .footer-col li .icon { color: var(--gold); width: 16px; }
         .footer-col a {
             color: var(--gray-400);
             font-size: 14px;
@@ -1007,11 +1011,144 @@
             transition: color 0.2s;
         }
         .footer-bottom-links a:hover { color: var(--white); }
-        @media (min-width: 768px) {
+        @media (min-width: 1025px) {
             .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
             .site-footer { padding-bottom: 60px; }
             .footer-bottom { flex-direction: row; justify-content: space-between; }
         }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-subtitle {
+            text-align: center;
+            color: var(--gray-300);
+            max-width: 600px;
+            margin: -24px auto 48px;
+            font-size: 16px;
+        }
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        @media (min-width: 768px) {
+            .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .pricing-card {
+            background: var(--dark-tertiary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-lg);
+        }
+        .pricing-card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 16px 0 8px;
+        }
+        .pricing-range {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+        .pricing-card > p {
+            color: var(--gray-400);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .pricing-examples {
+            text-align: left;
+            font-size: 14px;
+            color: var(--gray-300);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .pricing-examples li::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .pricing-popular {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--dark);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 16px;
+            border-radius: 100px;
+        }
+        .pricing-disclaimer {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 13px;
+            margin-top: 32px;
+            font-style: italic;
+        }
+        .pricing-truck-visual {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        /* ===== FORM SELECT ===== */
+        .form-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 320 512' fill='%236B7280'%3E%3Cpath d='M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 44px;
+            cursor: pointer;
+        }
+        .form-select option[disabled] { color: var(--gray-500); }
+
+        /* ===== FORM SUCCESS STATE ===== */
+        .form-success {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .form-success-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background: var(--green-dim);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .form-success-title {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .form-success-text {
+            color: var(--gray-300);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .form-success-cta { }
 
         /* ===== MOBILE STICKY CTA ===== */
         .mobile-cta {
@@ -1053,7 +1190,7 @@
             outline: 2px solid var(--gold);
             outline-offset: 2px;
         }
-        @media (min-width: 768px) {
+        @media (min-width: 1025px) {
             .mobile-cta { display: none; }
         }
     </style>
@@ -1063,11 +1200,11 @@
     <header class="site-header" role="banner">
         <div class="container header-inner">
             <div class="header-logo" id="header-logo">
-                <i class="fa-solid fa-truck-pickup" aria-hidden="true"></i>
+                <svg class="icon" width="24" height="24" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M363.8 96l57.6 96-133.4 0 0-96 75.8 0zM496 192L418.6 63.1C407.1 43.8 386.2 32 363.8 32L256 32c-17.7 0-32 14.3-32 32l0 128-144 0c-26.5 0-48 21.5-48 48l0 80c-17.7 0-32 14.3-32 32s14.3 32 32 32l32.4 0c-.2 2.6-.4 5.3-.4 8 0 48.6 39.4 88 88 88s88-39.4 88-88c0-2.7-.1-5.4-.4-8l160.7 0c-.2 2.6-.4 5.3-.4 8 0 48.6 39.4 88 88 88s88-39.4 88-88c0-2.7-.1-5.4-.4-8l32.4 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-80c0-26.5-21.5-48-48-48l-64 0zM112 392a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zm376-40a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg>
                 <span class="business-name">Your Junk Removal Co</span>
             </div>
             <a href="tel:5551234567" class="header-cta" id="header-phone" aria-label="Call us now">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg>
                 <span class="header-phone-text">Call: (555) 123-4567</span>
             </a>
         </div>
@@ -1087,10 +1224,10 @@
                         <p class="hero-description">We haul it all — furniture, appliances, yard waste, and more. Licensed, insured, and trusted by hundreds of homeowners.</p>
                         <div class="hero-buttons">
                             <a href="#contact" class="btn-primary">
-                                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Get Your FREE Quote
+                                <svg class="icon" width="16" height="16" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M320 0c17.7 0 32 14.3 32 32l0 32 32 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 128C0 92.7 28.7 64 64 64l32 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32zm22 161.7c-10.7-7.8-25.7-5.4-33.5 5.3L189.1 331.2 137 279.1c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l72 72c5 5 11.9 7.5 18.8 7s13.4-4.1 17.5-9.8L347.3 195.2c7.8-10.7 5.4-25.7-5.3-33.5z"/></svg>Get Your FREE Quote
                             </a>
                             <a href="tel:5551234567" class="btn-secondary hero-call-btn" id="hero-phone">
-                                <i class="fa-solid fa-phone" aria-hidden="true"></i><span class="hero-phone-text">(555) 123-4567</span>
+                                <svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg><span class="hero-phone-text">(555) 123-4567</span>
                             </a>
                         </div>
                     </div>
@@ -1099,11 +1236,11 @@
                              alt="Professional junk removal truck"
                              width="800" height="600"
                              loading="eager">
-                        <div class="stat-card stat-card-1">
+                        <div class="stat-card stat-card-1 stat-green">
                             <div class="stat-number">500+</div>
                             <div class="stat-label">Jobs Completed</div>
                         </div>
-                        <div class="stat-card stat-card-2">
+                        <div class="stat-card stat-card-2 stat-green">
                             <div class="stat-number">5.0</div>
                             <div class="stat-label">Google Rating</div>
                         </div>
@@ -1120,23 +1257,23 @@
         <div class="trust-bar" role="complementary" aria-label="Trust indicators">
             <div class="container trust-bar-inner">
                 <div class="trust-item">
-                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.8 82.8c22 9.3 38.4 31 38.3 57.2-.5 99.2-41.3 280.7-213.6 363.2-16.7 8-36.1 8-52.8 0-172.4-82.5-213.1-264-213.6-363.2-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.9 1 251.4 0 256 0zm0 66.8l0 378.1c138-66.8 175.1-214.8 176-303.4l-176-74.6 0 0z"/></svg>
                     <span>Licensed & Insured</span>
                 </div>
                 <div class="trust-item">
-                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
                     <span>5-Star Rated</span>
                 </div>
                 <div class="trust-item">
-                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>
                     <span>Same-Day Service</span>
                 </div>
                 <div class="trust-item">
-                    <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M288-16c-13.3 0-24 10.7-24 24l0 12-1.8 0c-36.6 0-66.2 29.7-66.2 66.2 0 33.4 24.9 61.6 58 65.7l61 7.6c5.1.6 9 5 9 10.2 0 5.7-4.6 10.2-10.2 10.2L240 180c-15.5 0-28 12.5-28 28s12.5 28 28 28l24 0 0 12c0 13.3 10.7 24 24 24s24-10.7 24-24l0-12 1.8 0c36.6 0 66.2-29.7 66.2-66.2 0-33.4-24.9-61.6-58-65.7l-61-7.6c-5.1-.6-9-5-9-10.2 0-5.7 4.6-10.2 10.2-10.2L328 76c15.5 0 28-12.5 28-28s-12.5-28-28-28l-16 0 0-12c0-13.3-10.7-24-24-24zM109.3 341.5L66.7 384 32 384c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l320.5 0c29 0 57.3-9.3 80.7-26.5l126.6-93.3c17.8-13.1 21.6-38.1 8.5-55.9s-38.1-21.6-55.9-8.5L392.6 416 280 416c-13.3 0-24-10.7-24-24s10.7-24 24-24l72 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-152.2 0c-33.9 0-66.5 13.5-90.5 37.5z"/></svg>
                     <span>Upfront Pricing</span>
                 </div>
                 <div class="trust-item">
-                    <i class="fa-solid fa-recycle" aria-hidden="true"></i>
+                    <svg class="icon" width="20" height="20" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M174.7 45.1C192.2 17 223 0 256 0s63.8 17 81.3 45.1l38.6 61.7 27.4-27.4c15.2-15.2 39.7-4.4 39.7 17v96c0 8.8-7.2 16-16 16H331.3c-21.4 0-32.1-25.9-17-41l24.5-24.5L323.4 120.2C312.6 103.7 285.3 96 256 96s-56.6 7.7-67.4 24.2L135.2 210.8 186 261.5c15.2 15.2 4.4 41-17 41H73.6c-8.8 0-16-7.2-16-16v-96c0-21.4 25.9-32.1 41-17l27.4 27.4 38.6-61.7zM449.7 279.1c15.3-8.8 34.9-3.6 43.7 11.7l5.3 9.1c46.2 80-11.5 180-103.9 180l-74.6 0 0 32c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-64-64c-9.4-9.4-9.4-24.6 0-33.9l64-64c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2l0 32 74.6 0c43.1 0 70.1-46.7 48.5-84l-5.3-9.1c-8.8-15.3-3.6-34.9 11.7-43.7zM51 235.4l-27.7-16c-8.4-4.9-13.1-14.3-11.8-23.9s8.2-17.5 17.6-20L116.5 152c12.8-3.4 26 4.2 29.4 17l23.4 87.4c2.5 9.4-.9 19.3-8.6 25.3s-18.2 6.6-26.6 1.7l-27.7-16-37.3 64.6c-21.6 37.3 5.4 84 48.5 84l10.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-10.6 0C25.3 480-32.4 380 13.8 300L51 235.4z"/></svg>
                     <span>Eco-Friendly</span>
                 </div>
             </div>
@@ -1154,7 +1291,7 @@
                                  width="400" height="267" loading="lazy">
                         </div>
                         <div class="service-card-body">
-                            <h3><i class="fa-solid fa-couch" aria-hidden="true"></i>Furniture</h3>
+                            <h3><svg class="icon" width="16" height="16" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M144 272C144 224.7 109.8 185.4 64.8 177.5 72 113.6 126.2 64 192 64l256 0c65.8 0 120 49.6 127.2 113.5-45 8-79.2 47.2-79.2 94.5l0 32-352 0 0-32zM0 384L0 272c0-26.5 21.5-48 48-48s48 21.5 48 48l0 80 448 0 0-80c0-26.5 21.5-48 48-48s48 21.5 48 48l0 112c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64z"/></svg>Furniture</h3>
                             <p>Sofas, beds, tables, chairs, and all unwanted furniture items.</p>
                         </div>
                     </article>
@@ -1165,7 +1302,7 @@
                                  width="400" height="267" loading="lazy">
                         </div>
                         <div class="service-card-body">
-                            <h3><i class="fa-solid fa-blender" aria-hidden="true"></i>Appliances</h3>
+                            <h3><svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M0 56C0 25.1 25.1 0 56 0L437.6 0c21.3 0 36.6 20.3 30.8 40.8L457.1 80 344 80c-13.3 0-24 10.7-24 24s10.7 24 24 24l99.4 0-18.3 64-81.1 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l67.4 0-27.4 96-256 0-9.1-96-62.9 0c-30.9 0-56-25.1-56-56L0 56zM114.3 192L100.6 48 56 48c-4.4 0-8 3.6-8 8l0 128c0 4.4 3.6 8 8 8l58.3 0zM136 384l240 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-240 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40zm120 88a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"/></svg>Appliances</h3>
                             <p>Refrigerators, washers, dryers, microwaves, and more.</p>
                         </div>
                     </article>
@@ -1176,7 +1313,7 @@
                                  width="400" height="267" loading="lazy">
                         </div>
                         <div class="service-card-body">
-                            <h3><i class="fa-solid fa-leaf" aria-hidden="true"></i>Yard Waste</h3>
+                            <h3><svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M471.3 6.7C477.7.6 487-1.6 495.6 1.2 505.4 4.5 512 13.7 512 24l0 186.9c0 131.2-108.1 237.1-238.8 237.1-77 0-143.4-49.5-167.5-118.7-35.4 30.8-57.7 76.1-57.7 126.7 0 13.3-10.7 24-24 24S0 469.3 0 456C0 381.1 38.2 315.1 96.1 276.3 131.4 252.7 173.5 240 216 240l80 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-80 0c-39.7 0-77.3 8.8-111 24.5 23.3-70 89.2-120.5 167-120.5 66.4 0 115.8-22.1 148.7-44 19.2-12.8 35.5-28.1 50.7-45.3z"/></svg>Yard Waste</h3>
                             <p>Branches, leaves, grass clippings, and landscaping debris.</p>
                         </div>
                     </article>
@@ -1187,7 +1324,7 @@
                                  width="400" height="267" loading="lazy">
                         </div>
                         <div class="service-card-body">
-                            <h3><i class="fa-solid fa-hammer" aria-hidden="true"></i>Construction Debris</h3>
+                            <h3><svg class="icon" width="16" height="16" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M246.9 18.3L271 3.8c21.6-13 46.3-19.8 71.5-19.8 36.8 0 72.2 14.6 98.2 40.7l63.9 63.9c15 15 23.4 35.4 23.4 56.6l0 30.9 19.7 19.7c15.6-15.6 40.9-15.6 56.6 0s15.6 40.9 0 56.6l-64 64c-15.6 15.6-40.9 15.6-56.6 0s-15.6-40.9 0-56.6L464 240l-30.9 0c-21.2 0-41.6-8.4-56.6-23.4l-49.1-49.1c-15-15-23.4-35.4-23.4-56.6l0-12.7c0-11.2-5.9-21.7-15.5-27.4l-41.6-25c-10.4-6.2-10.4-21.2 0-27.4zM50.7 402.7l222.1-222.1 90.5 90.5-222.1 222.1c-25 25-65.5 25-90.5 0s-25-65.5 0-90.5z"/></svg>Construction Debris</h3>
                             <p>Drywall, lumber, tiles, and renovation materials.</p>
                         </div>
                     </article>
@@ -1198,7 +1335,7 @@
                                  width="400" height="267" loading="lazy">
                         </div>
                         <div class="service-card-body">
-                            <h3><i class="fa-solid fa-tv" aria-hidden="true"></i>Electronics</h3>
+                            <h3><svg class="icon" width="16" height="16" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M64 96l0 240 448 0 0-240-448 0zM0 96C0 60.7 28.7 32 64 32l448 0c35.3 0 64 28.7 64 64l0 240c0 35.3-28.7 64-64 64L64 400c-35.3 0-64-28.7-64-64L0 96zM160 448l256 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-256 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"/></svg>Electronics</h3>
                             <p>TVs, computers, monitors, and electronic equipment.</p>
                         </div>
                     </article>
@@ -1209,7 +1346,7 @@
                                  width="400" height="267" loading="lazy">
                         </div>
                         <div class="service-card-body">
-                            <h3><i class="fa-solid fa-box" aria-hidden="true"></i>General Junk</h3>
+                            <h3><svg class="icon" width="16" height="16" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M369.4 128l-34.3-48-222.1 0-34.3 48 290.7 0zM0 148.5c0-13.3 4.2-26.3 11.9-37.2L60.9 42.8C72.9 26 92.3 16 112.9 16l222.1 0c20.7 0 40.1 10 52.1 26.8l48.9 68.5c7.8 10.9 11.9 23.9 11.9 37.2L448 416c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 148.5z"/></svg>General Junk</h3>
                             <p>Boxes, clutter, garage cleanouts, and everything else.</p>
                         </div>
                     </article>
@@ -1225,23 +1362,95 @@
                     <div class="steps-connector" aria-hidden="true"></div>
                     <div class="step-card reveal">
                         <div class="step-number">1</div>
-                        <div class="step-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                        <div class="step-icon"><svg class="icon" width="36" height="36" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg></div>
                         <h3>Call or Text Us</h3>
                         <p>Tell us what you need hauled. We'll give you an upfront price — no hidden fees.</p>
                     </div>
                     <div class="step-card reveal">
                         <div class="step-number">2</div>
-                        <div class="step-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+                        <div class="step-icon"><svg class="icon" width="36" height="36" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M320 0c17.7 0 32 14.3 32 32l0 32 32 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 128C0 92.7 28.7 64 64 64l32 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32zm22 161.7c-10.7-7.8-25.7-5.4-33.5 5.3L189.1 331.2 137 279.1c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l72 72c5 5 11.9 7.5 18.8 7s13.4-4.1 17.5-9.8L347.3 195.2c7.8-10.7 5.4-25.7-5.3-33.5z"/></svg></div>
                         <h3>Pick a Time</h3>
                         <p>We'll come to you. Same-day and next-day appointments available.</p>
                     </div>
                     <div class="step-card reveal">
                         <div class="step-number">3</div>
-                        <div class="step-icon"><i class="fa-solid fa-truck-pickup" aria-hidden="true"></i></div>
+                        <div class="step-icon"><svg class="icon" width="36" height="36" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M363.8 96l57.6 96-133.4 0 0-96 75.8 0zM496 192L418.6 63.1C407.1 43.8 386.2 32 363.8 32L256 32c-17.7 0-32 14.3-32 32l0 128-144 0c-26.5 0-48 21.5-48 48l0 80c-17.7 0-32 14.3-32 32s14.3 32 32 32l32.4 0c-.2 2.6-.4 5.3-.4 8 0 48.6 39.4 88 88 88s88-39.4 88-88c0-2.7-.1-5.4-.4-8l160.7 0c-.2 2.6-.4 5.3-.4 8 0 48.6 39.4 88 88 88s88-39.4 88-88c0-2.7-.1-5.4-.4-8l32.4 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-80c0-26.5-21.5-48-48-48l-64 0zM112 392a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zm376-40a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg></div>
                         <h3>We Haul It Away</h3>
                         <p>Our crew loads everything up. You don't lift a finger.</p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="section section-alt" aria-labelledby="pricing-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="pricing-title">Simple, <span class="highlight">Upfront Pricing</span></h2>
+                <p class="pricing-subtitle reveal">No hidden fees. No surprises. You only pay for the space your junk takes up in our truck.</p>
+                <div class="pricing-grid">
+                    <div class="pricing-card reveal">
+                        <div class="pricing-truck-visual">
+                            <svg width="120" height="64" viewBox="0 0 120 64" fill="none" aria-hidden="true">
+                                <path d="M4 12 L4 44 L76 44" stroke="var(--gray-400)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                                <path d="M76 28 L76 44 L104 44 L104 36 L96 28 Z" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <circle cx="22" cy="52" r="7" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <circle cx="94" cy="52" r="7" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <line x1="29" y1="44" x2="87" y2="44" stroke="var(--gray-400)" stroke-width="2"/>
+                                <path d="M8 44 L8 36 C10 32 16 30 22 34 L22 44 Z" fill="var(--gold-dim)" stroke="var(--gold)" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>1/4 Truck</h3>
+                        <div class="pricing-range">$150 - $300</div>
+                        <p>A few items — small furniture, boxes, or a single appliance.</p>
+                        <ul class="pricing-examples">
+                            <li>Single mattress or couch</li>
+                            <li>Several boxes of clutter</li>
+                            <li>Small yard waste pile</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card reveal">
+                        <div class="pricing-popular">Most Popular</div>
+                        <div class="pricing-truck-visual">
+                            <svg width="120" height="64" viewBox="0 0 120 64" fill="none" aria-hidden="true">
+                                <path d="M4 12 L4 44 L76 44" stroke="var(--gray-400)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                                <path d="M76 28 L76 44 L104 44 L104 36 L96 28 Z" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <circle cx="22" cy="52" r="7" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <circle cx="94" cy="52" r="7" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <line x1="29" y1="44" x2="87" y2="44" stroke="var(--gray-400)" stroke-width="2"/>
+                                <path d="M8 44 L8 28 C12 20 24 18 36 22 C40 24 42 28 42 32 L42 44 Z" fill="var(--gold-dim)" stroke="var(--gold)" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>1/2 Truck</h3>
+                        <div class="pricing-range">$300 - $450</div>
+                        <p>A garage corner or room cleanout. Most common for homeowners.</p>
+                        <ul class="pricing-examples">
+                            <li>Garage half-cleanout</li>
+                            <li>Multiple furniture pieces</li>
+                            <li>Renovation debris pile</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card reveal">
+                        <div class="pricing-truck-visual">
+                            <svg width="120" height="64" viewBox="0 0 120 64" fill="none" aria-hidden="true">
+                                <path d="M4 12 L4 44 L76 44" stroke="var(--gray-400)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                                <path d="M76 28 L76 44 L104 44 L104 36 L96 28 Z" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <circle cx="22" cy="52" r="7" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <circle cx="94" cy="52" r="7" stroke="var(--gray-400)" stroke-width="2" fill="none"/>
+                                <line x1="29" y1="44" x2="87" y2="44" stroke="var(--gray-400)" stroke-width="2"/>
+                                <path d="M8 44 L8 18 C14 10 30 8 48 12 C60 14 68 16 74 20 L74 44 Z" fill="var(--gold-dim)" stroke="var(--gold)" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>Full Truck</h3>
+                        <div class="pricing-range">$450 - $700</div>
+                        <p>Full cleanouts — entire garages, basements, or estate jobs.</p>
+                        <ul class="pricing-examples">
+                            <li>Full garage cleanout</li>
+                            <li>Estate or move-out</li>
+                            <li>Major renovation debris</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="pricing-disclaimer reveal">* Exact pricing depends on item type, weight, and location. Call for your free personalized quote.</p>
             </div>
         </section>
 
@@ -1253,11 +1462,11 @@
                     <div class="reviews-aggregate">
                         <div class="reviews-score">5.0</div>
                         <div class="reviews-stars" aria-label="5 out of 5 stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                            <svg class="icon" width="24" height="24" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
+                            <svg class="icon" width="24" height="24" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
+                            <svg class="icon" width="24" height="24" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
+                            <svg class="icon" width="24" height="24" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
+                            <svg class="icon" width="24" height="24" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
                         </div>
                         <div class="reviews-count">Based on 200+ reviews</div>
                     </div>
@@ -1273,7 +1482,7 @@
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Mike R.</div>
                                 <div class="reviewer-stars" aria-label="5 stars">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    <svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
                                 </div>
                             </div>
                         </div>
@@ -1289,7 +1498,7 @@
                             <div class="reviewer-info">
                                 <div class="reviewer-name">Sarah L.</div>
                                 <div class="reviewer-stars" aria-label="5 stars">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    <svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
                                 </div>
                             </div>
                         </div>
@@ -1305,7 +1514,7 @@
                             <div class="reviewer-info">
                                 <div class="reviewer-name">David J.</div>
                                 <div class="reviewer-stars" aria-label="5 stars">
-                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                    <svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg><svg class="icon" width="13" height="13" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M309.5-18.9c-4.1-8-12.4-13.1-21.4-13.1s-17.3 5.1-21.4 13.1L193.1 125.3 33.2 150.7c-8.9 1.4-16.3 7.7-19.1 16.3s-.5 18 5.8 24.4l114.4 114.5-25.2 159.9c-1.4 8.9 2.3 17.9 9.6 23.2s16.9 6.1 25 2L288.1 417.6 432.4 491c8 4.1 17.7 3.3 25-2s11-14.2 9.6-23.2L441.7 305.9 556.1 191.4c6.4-6.4 8.6-15.8 5.8-24.4s-10.1-14.9-19.1-16.3L383 125.3 309.5-18.9z"/></svg>
                                 </div>
                             </div>
                         </div>
@@ -1329,28 +1538,28 @@
                     </div>
                     <div class="why-features">
                         <div class="why-feature reveal">
-                            <div class="why-feature-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                            <div class="why-feature-icon"><svg class="icon" width="24" height="24" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.8 82.8c22 9.3 38.4 31 38.3 57.2-.5 99.2-41.3 280.7-213.6 363.2-16.7 8-36.1 8-52.8 0-172.4-82.5-213.1-264-213.6-363.2-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.9 1 251.4 0 256 0zm0 66.8l0 378.1c138-66.8 175.1-214.8 176-303.4l-176-74.6 0 0z"/></svg></div>
                             <div>
                                 <h3>Licensed & Insured</h3>
                                 <p>Fully licensed and insured so you're protected on every job.</p>
                             </div>
                         </div>
                         <div class="why-feature reveal">
-                            <div class="why-feature-icon"><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i></div>
+                            <div class="why-feature-icon"><svg class="icon" width="24" height="24" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M136 24c0-13.3 10.7-24 24-24s24 10.7 24 24l0 40 56 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-114.9 0c-24.9 0-45.1 20.2-45.1 45.1 0 22.5 16.5 41.5 38.7 44.7l91.6 13.1c53.8 7.7 93.7 53.7 93.7 108 0 60.3-48.9 109.1-109.1 109.1l-10.9 0 0 40c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-40-72 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l130.9 0c24.9 0 45.1-20.2 45.1-45.1 0-22.5-16.5-41.5-38.7-44.7l-91.6-13.1C55.9 273.5 16 227.4 16 173.1 16 112.9 64.9 64 125.1 64l10.9 0 0-40z"/></svg></div>
                             <div>
                                 <h3>Upfront Pricing</h3>
                                 <p>No surprises. We quote before we start.</p>
                             </div>
                         </div>
                         <div class="why-feature reveal">
-                            <div class="why-feature-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+                            <div class="why-feature-icon"><svg class="icon" width="24" height="24" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg></div>
                             <div>
                                 <h3>Same-Day Service</h3>
                                 <p>Need it gone today? We've got you covered.</p>
                             </div>
                         </div>
                         <div class="why-feature reveal">
-                            <div class="why-feature-icon"><i class="fa-solid fa-recycle" aria-hidden="true"></i></div>
+                            <div class="why-feature-icon"><svg class="icon" width="24" height="24" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M174.7 45.1C192.2 17 223 0 256 0s63.8 17 81.3 45.1l38.6 61.7 27.4-27.4c15.2-15.2 39.7-4.4 39.7 17v96c0 8.8-7.2 16-16 16H331.3c-21.4 0-32.1-25.9-17-41l24.5-24.5L323.4 120.2C312.6 103.7 285.3 96 256 96s-56.6 7.7-67.4 24.2L135.2 210.8 186 261.5c15.2 15.2 4.4 41-17 41H73.6c-8.8 0-16-7.2-16-16v-96c0-21.4 25.9-32.1 41-17l27.4 27.4 38.6-61.7zM449.7 279.1c15.3-8.8 34.9-3.6 43.7 11.7l5.3 9.1c46.2 80-11.5 180-103.9 180l-74.6 0 0 32c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-64-64c-9.4-9.4-9.4-24.6 0-33.9l64-64c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2l0 32 74.6 0c43.1 0 70.1-46.7 48.5-84l-5.3-9.1c-8.8-15.3-3.6-34.9 11.7-43.7zM51 235.4l-27.7-16c-8.4-4.9-13.1-14.3-11.8-23.9s8.2-17.5 17.6-20L116.5 152c12.8-3.4 26 4.2 29.4 17l23.4 87.4c2.5 9.4-.9 19.3-8.6 25.3s-18.2 6.6-26.6 1.7l-27.7-16-37.3 64.6c-21.6 37.3 5.4 84 48.5 84l10.6 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-10.6 0C25.3 480-32.4 380 13.8 300L51 235.4z"/></svg></div>
                             <div>
                                 <h3>Eco-Friendly Disposal</h3>
                                 <p>We donate and recycle whenever possible.</p>
@@ -1397,7 +1606,7 @@
                     <div class="faq-item reveal">
                         <button class="faq-question" aria-expanded="false">
                             <span>What items do you haul away?</span>
-                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                            <span class="faq-toggle" aria-hidden="true"><svg class="icon" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"/></svg></span>
                         </button>
                         <div class="faq-answer" role="region">
                             <div class="faq-answer-inner">We remove furniture, appliances, yard waste, construction debris, electronics, and general junk. If you're not sure, just call us — we can handle almost anything.</div>
@@ -1406,7 +1615,7 @@
                     <div class="faq-item reveal">
                         <button class="faq-question" aria-expanded="false">
                             <span>How does pricing work?</span>
-                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                            <span class="faq-toggle" aria-hidden="true"><svg class="icon" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"/></svg></span>
                         </button>
                         <div class="faq-answer" role="region">
                             <div class="faq-answer-inner">We offer upfront, transparent pricing based on how much space your items take up in our truck. No hidden fees, no surprises.</div>
@@ -1415,7 +1624,7 @@
                     <div class="faq-item reveal">
                         <button class="faq-question" aria-expanded="false">
                             <span>Do you offer same-day service?</span>
-                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                            <span class="faq-toggle" aria-hidden="true"><svg class="icon" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"/></svg></span>
                         </button>
                         <div class="faq-answer" role="region">
                             <div class="faq-answer-inner">Yes! If we have availability, we can be there the same day you call. Next-day appointments are almost always available.</div>
@@ -1424,7 +1633,7 @@
                     <div class="faq-item reveal">
                         <button class="faq-question" aria-expanded="false">
                             <span>Do I need to be home?</span>
-                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                            <span class="faq-toggle" aria-hidden="true"><svg class="icon" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"/></svg></span>
                         </button>
                         <div class="faq-answer" role="region">
                             <div class="faq-answer-inner">It helps, but it's not always required. As long as we can access the items, we can get the job done. Just let us know the details when you book.</div>
@@ -1433,7 +1642,7 @@
                     <div class="faq-item reveal">
                         <button class="faq-question" aria-expanded="false">
                             <span>Do you recycle or donate items?</span>
-                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                            <span class="faq-toggle" aria-hidden="true"><svg class="icon" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"/></svg></span>
                         </button>
                         <div class="faq-answer" role="region">
                             <div class="faq-answer-inner">Absolutely. We donate usable items to local charities and recycle materials whenever possible. We're committed to keeping waste out of landfills.</div>
@@ -1442,7 +1651,7 @@
                     <div class="faq-item reveal">
                         <button class="faq-question" aria-expanded="false">
                             <span>How far in advance should I book?</span>
-                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                            <span class="faq-toggle" aria-hidden="true"><svg class="icon" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"/></svg></span>
                         </button>
                         <div class="faq-answer" role="region">
                             <div class="faq-answer-inner">We often have same-day availability, but booking 24-48 hours in advance guarantees your preferred time slot. For large cleanouts, a few days' notice helps us bring the right crew and equipment.</div>
@@ -1460,7 +1669,7 @@
                         <h2 id="contact-title">Ready to Get Rid of Your <span class="highlight">Junk</span>?</h2>
                         <p>Call now for a free, no-obligation quote. We respond fast — most quotes in under 2 minutes.</p>
                         <a href="tel:5551234567" class="cta-phone-link" id="cta-phone" aria-label="Call us for a free quote">
-                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <svg class="icon" width="28" height="28" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg>
                             <span class="cta-phone-text">(555) 123-4567</span>
                         </a>
                     </div>
@@ -1481,13 +1690,35 @@
                                 <input type="tel" name="phone" id="contact-phone" placeholder="Phone Number" required class="form-input" autocomplete="tel">
                             </div>
                             <div class="form-group">
+                                <label for="contact-job-type" class="sr-only">Job Type</label>
+                                <select name="job_type" id="contact-job-type" class="form-input form-select">
+                                    <option value="" disabled selected>What do you need removed? (Optional)</option>
+                                    <option value="furniture">Furniture Removal</option>
+                                    <option value="appliances">Appliance Removal</option>
+                                    <option value="yard-waste">Yard Waste</option>
+                                    <option value="construction">Construction Debris</option>
+                                    <option value="cleanout">Full Property Cleanout</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="contact-message" class="sr-only">Message</label>
                                 <textarea name="message" id="contact-message" placeholder="Tell us about your junk removal needs..." rows="4" class="form-input"></textarea>
                             </div>
                             <button type="submit" class="form-submit">
-                                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Request Quote
+                                <svg class="icon" width="16" height="16" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true"><path d="M536.4-26.3c9.8-3.5 20.6-1 28 6.3s9.8 18.2 6.3 28l-178 496.9c-5 13.9-18.1 23.1-32.8 23.1-14.2 0-27-8.6-32.3-21.7l-64.2-158c-4.5-11-2.5-23.6 5.2-32.6l94.5-112.4c5.1-6.1 4.7-15-.9-20.6s-14.6-6-20.6-.9L229.2 276.1c-9.1 7.6-21.6 9.6-32.6 5.2L38.1 216.8c-13.1-5.3-21.7-18.1-21.7-32.3 0-14.7 9.2-27.8 23.1-32.8l496.9-178z"/></svg>Request Quote
                             </button>
                         </form>
+                        <div class="form-success" id="form-success" style="display:none;">
+                            <div class="form-success-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="var(--green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="var(--green)" stroke-width="2"/></svg>
+                            </div>
+                            <h3 class="form-success-title">Thank You!</h3>
+                            <p class="form-success-text">We'll call you within <strong>15 minutes</strong> to discuss your junk removal needs.</p>
+                            <a href="tel:5551234567" class="btn-primary form-success-cta" id="success-phone">
+                                <svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg> Can't Wait? Call Us Now
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1500,33 +1731,33 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-logo" id="footer-logo">
-                        <i class="fa-solid fa-truck-pickup" aria-hidden="true"></i>
+                        <svg class="icon" width="24" height="24" viewBox="0 0 640 512" fill="currentColor" aria-hidden="true"><path d="M363.8 96l57.6 96-133.4 0 0-96 75.8 0zM496 192L418.6 63.1C407.1 43.8 386.2 32 363.8 32L256 32c-17.7 0-32 14.3-32 32l0 128-144 0c-26.5 0-48 21.5-48 48l0 80c-17.7 0-32 14.3-32 32s14.3 32 32 32l32.4 0c-.2 2.6-.4 5.3-.4 8 0 48.6 39.4 88 88 88s88-39.4 88-88c0-2.7-.1-5.4-.4-8l160.7 0c-.2 2.6-.4 5.3-.4 8 0 48.6 39.4 88 88 88s88-39.4 88-88c0-2.7-.1-5.4-.4-8l32.4 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-80c0-26.5-21.5-48-48-48l-64 0zM112 392a40 40 0 1 1 80 0 40 40 0 1 1 -80 0zm376-40a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"/></svg>
                         <span class="business-name" id="footer-business-name">Your Junk Removal Co</span>
                     </div>
                     <p>Fast, affordable, and eco-friendly junk removal for homes and businesses.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Google Business"><i class="fa-brands fa-google" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook"><svg class="icon" width="16" height="16" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M80 299.3l0 212.7 116 0 0-212.7 86.5 0 18-97.8-104.5 0 0-34.6c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4.4 37 1.2l0-88.7C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4l0 42.1-66 0 0 97.8 66 0z"/></svg></a>
+                        <a href="#" aria-label="Instagram"><svg class="icon" width="16" height="16" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224.3 141a115 115 0 1 0-.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1-.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1-53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+                        <a href="#" aria-label="Google Business"><svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M500 261.8C500 403.3 403.1 504 260 504 122.8 504 12 393.2 12 256S122.8 8 260 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9c-88.3-85.2-252.5-21.2-252.5 118.2 0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9l-140.8 0 0-85.3 236.1 0c2.3 12.7 3.9 24.9 3.9 41.4z"/></svg></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
                     <ul>
-                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Furniture Removal</li>
-                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Appliance Hauling</li>
-                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Yard Waste Cleanup</li>
-                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Construction Debris</li>
-                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Full Property Cleanouts</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>Furniture Removal</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>Appliance Hauling</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>Yard Waste Cleanup</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>Construction Debris</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true"><path d="M311.1 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L243.2 256 73.9 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>Full Property Cleanouts</li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:5551234567" class="footer-phone-link" id="footer-phone"><span class="footer-phone-text">(555) 123-4567</span></a></li>
-                        <li id="footer-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="city-name">Your City</span>, ST</li>
-                        <li><i class="fa-solid fa-clock" aria-hidden="true"></i>Mon-Sat: 7AM - 7PM</li>
-                        <li><i class="fa-solid fa-bolt" aria-hidden="true"></i>Same-Day Available</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg><a href="tel:5551234567" class="footer-phone-link" id="footer-phone"><span class="footer-phone-text">(555) 123-4567</span></a></li>
+                        <li id="footer-address"><svg class="icon" width="12" height="12" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M0 188.6C0 84.4 86 0 192 0S384 84.4 384 188.6c0 119.3-120.2 262.3-170.4 316.8-11.8 12.8-31.5 12.8-43.3 0-50.2-54.5-170.4-197.5-170.4-316.8zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"/></svg><span class="city-name">Your City</span>, ST</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zM232 120l0 136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2 280 120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg>Mon-Sat: 7AM - 7PM</li>
+                        <li><svg class="icon" width="12" height="12" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M338.8-9.9c11.9 8.6 16.3 24.2 10.9 37.8L271.3 224 416 224c13.5 0 25.5 8.4 30.1 21.1s.7 26.9-9.6 35.5l-288 240c-11.3 9.4-27.4 9.9-39.3 1.3s-16.3-24.2-10.9-37.8L176.7 288 32 288c-13.5 0-25.5-8.4-30.1-21.1s-.7-26.9 9.6-35.5l288-240c11.3-9.4 27.4-9.9 39.3-1.3z"/></svg>Same-Day Available</li>
                     </ul>
                 </div>
             </div>
@@ -1543,10 +1774,10 @@
     <!-- Mobile Sticky CTA -->
     <nav class="mobile-cta" aria-label="Quick actions">
         <a href="tel:5551234567" class="mobile-cta-btn mobile-cta-call" id="mobile-cta-call" aria-label="Call now">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i>Call Now
+            <svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg>Call Now
         </a>
         <a href="#contact" class="mobile-cta-btn mobile-cta-quote" aria-label="Get a quote">
-            <i class="fa-solid fa-message" aria-hidden="true"></i>Get Quote
+            <svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M0 352L0 128C0 75 43 32 96 32l320 0c53 0 96 43 96 96l0 224c0 53-43 96-96 96l-120 0c-5.2 0-10.2 1.7-14.4 4.8L166.4 539.2c-4.2 3.1-9.2 4.8-14.4 4.8-13.3 0-24-10.7-24-24l0-72-32 0c-53 0-96-43-96-96z"/></svg>Get Quote
         </a>
     </nav>
 
@@ -1565,6 +1796,9 @@
             "addressLocality": "Your City",
             "addressRegion": "ST"
         },
+        "openingHours": "Mo-Sa 07:00-19:00",
+        "url": "https://demo.launchedops.com/",
+        "image": "https://demo.launchedops.com/og-image.jpg",
         "priceRange": "$$",
         "aggregateRating": {
             "@type": "AggregateRating",
@@ -1591,18 +1825,21 @@
             {
                 "@type": "Review",
                 "author": { "@type": "Person", "name": "Mike R." },
+                "datePublished": "2024-11-15",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
                 "reviewBody": "Called at 9 AM and they were at my house by noon. Cleared out my entire garage in under an hour. Pricing was exactly what they quoted — no surprises. Will definitely use again."
             },
             {
                 "@type": "Review",
                 "author": { "@type": "Person", "name": "Sarah L." },
+                "datePublished": "2024-12-03",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
                 "reviewBody": "These guys are the real deal. Professional, fast, and they even swept up after themselves. My wife couldn't believe how fast they cleared out the basement. Best money I've spent all year."
             },
             {
                 "@type": "Review",
                 "author": { "@type": "Person", "name": "David J." },
+                "datePublished": "2025-01-10",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
                 "reviewBody": "I've tried three junk removal companies in Your City and these guys are hands down the best. On time, fair pricing, and they actually care about recycling. Already recommended them to my neighbors."
             }
@@ -1663,6 +1900,28 @@
                     "@type": "Answer",
                     "text": "We often have same-day availability, but booking 24-48 hours in advance guarantees your preferred time slot. For large cleanouts, a few days' notice helps us bring the right crew and equipment."
                 }
+            }
+        ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json" id="breadcrumb-schema-json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://demo.launchedops.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Junk Removal in Your City",
+                "item": "https://demo.launchedops.com/"
             }
         ]
     }
@@ -1786,6 +2045,17 @@
             var firstPill = document.querySelector('.area-pill.active');
             if (firstPill) firstPill.textContent = city;
 
+            // Geo placename meta
+            var geoPlace = document.querySelector('meta[name="geo.placename"]');
+            if (geoPlace) geoPlace.content = city;
+
+            // Success phone
+            var successPhone = document.getElementById('success-phone');
+            if (successPhone) {
+                successPhone.href = 'tel:' + phoneClean;
+                successPhone.innerHTML = '<svg class="icon" width="16" height="16" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"/></svg> Can\'t Wait? Call ' + phoneFormatted;
+            }
+
             // Update LocalBusiness schema
             var schemaEl = document.getElementById('schema-json');
             if (schemaEl) {
@@ -1799,6 +2069,14 @@
                     schema.review[2].reviewBody = schema.review[2].reviewBody.replace('Your City', city);
                 }
                 schemaEl.textContent = JSON.stringify(schema, null, 2);
+            }
+
+            // Update BreadcrumbList schema
+            var breadcrumbEl = document.getElementById('breadcrumb-schema-json');
+            if (breadcrumbEl) {
+                var bcSchema = JSON.parse(breadcrumbEl.textContent);
+                bcSchema.itemListElement[1].name = 'Junk Removal in ' + city;
+                breadcrumbEl.textContent = JSON.stringify(bcSchema, null, 2);
             }
 
             // ===== HEADER SCROLL EFFECT =====
@@ -1869,6 +2147,19 @@
                     }
                 });
             });
+
+            // ===== FORM SUBMIT HANDLER =====
+            var contactForm = document.getElementById('contact-form');
+            var formSuccess = document.getElementById('form-success');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var honeypot = document.getElementById('website');
+                    if (honeypot && honeypot.value) return;
+                    contactForm.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                });
+            }
 
         })();
     </script>
