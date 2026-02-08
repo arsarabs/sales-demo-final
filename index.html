@@ -5,432 +5,1355 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Junk Removal Co - Junk Removal in Your City | Fast & Affordable</title>
     <meta name="description" content="Your Junk Removal Co offers fast, affordable junk removal in Your City. Furniture, appliances, yard waste & more. Same-day service. Call for a free quote!">
-    <link rel="canonical" href="https://yoursite.netlify.app/">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://demo.launchedops.com/">
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Your Junk Removal Co - Junk Removal in Your City">
-    <meta property="og:description" content="Fast, affordable junk hauling. Same-day service available.">
-    <meta property="og:image" content="https://yoursite.netlify.app/og-image.jpg">
+    <meta property="og:description" content="Fast, affordable junk hauling in Your City. Same-day service available. Call for a free quote!">
+    <meta property="og:image" content="https://demo.launchedops.com/og-image.jpg">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://demo.launchedops.com/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your Junk Removal Co - Junk Removal in Your City">
+    <meta name="twitter:description" content="Fast, affordable junk hauling in Your City. Same-day service available.">
+    <meta name="twitter:image" content="https://demo.launchedops.com/og-image.jpg">
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚛</text></svg>">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-dark': '#0a0a0a',
-                        'brand-dark-secondary': '#141414',
-                        'brand-green': '#4ade80',
-                        'brand-green-dark': '#16a34a',
-                        'brand-accent': '#bbf7d0',
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
-        html {
-            scroll-behavior: smooth;
+        /* ===== CSS RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        :root {
+            --dark: #0F1419;
+            --dark-secondary: #1A1F26;
+            --dark-tertiary: #242B33;
+            --gold: #E8AA2A;
+            --gold-hover: #F0BC4A;
+            --gold-dim: rgba(232, 170, 42, 0.15);
+            --green: #34C759;
+            --green-dim: rgba(52, 199, 89, 0.15);
+            --white: #FFFFFF;
+            --gray-100: #F0F0F0;
+            --gray-300: #B0B8C1;
+            --gray-400: #8A929A;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
+            --shadow-xl: 0 16px 48px rgba(0,0,0,0.6);
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'DM Sans', sans-serif;
         }
 
-        /* Hero Background Image */
-        .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0.75) 100%),
-                              url('https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?q=80&w=1974&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        body {
+            font-family: var(--font-body);
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* Hero entrance animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out both;
-        }
-        .fade-in-up-delay {
-            animation: fadeInUp 0.6s ease-out 0.15s both;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            line-height: 1.2;
         }
 
-        /* Service card image hover effect */
-        .service-card-img {
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover .service-card-img {
-            transform: scale(1.05);
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
+        ul { list-style: none; }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Service card image gradient overlay */
-        .service-card .img-wrapper {
+        /* ===== SCROLL REVEAL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 0;
+            transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+        }
+        .site-header.scrolled {
+            background: rgba(15, 20, 25, 0.97);
+            box-shadow: var(--shadow-lg);
+            padding: 10px 0;
+            backdrop-filter: blur(10px);
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-logo i {
+            color: var(--gold);
+            font-size: 24px;
+        }
+        .header-logo span {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        .header-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 10px 16px;
+            border-radius: var(--radius);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 13px;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .header-cta:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(232, 170, 42, 0.3);
+        }
+        .header-cta:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        @media (min-width: 768px) {
+            .header-logo span { font-size: 20px; }
+            .header-cta { padding: 12px 24px; font-size: 15px; }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
             position: relative;
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 60px;
+            overflow: hidden;
+            background: var(--dark);
         }
-        .service-card .img-wrapper::after {
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--green-dim);
+            color: var(--green);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(52, 199, 89, 0.2);
+        }
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(52, 199, 89, 0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 8px rgba(52, 199, 89, 0); }
+        }
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .hero h1 .highlight { color: var(--gold); }
+        .hero-description {
+            font-size: 16px;
+            color: var(--gray-300);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-primary:hover {
+            background: var(--gold-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(232, 170, 42, 0.3);
+        }
+        .btn-primary:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 16px;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+        .btn-secondary:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .hero-image-wrapper {
+            position: relative;
+            display: none;
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+        /* Floating stat cards */
+        .stat-card {
+            position: absolute;
+            background: rgba(15, 20, 25, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        .stat-card-1 { top: 10%; right: -10px; animation-delay: 0s; }
+        .stat-card-2 { bottom: 20%; left: -10px; animation-delay: 1s; }
+        .stat-card-3 { bottom: 5%; right: 10%; animation-delay: 2s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .stat-card .stat-number {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .stat-card .stat-label {
+            font-size: 12px;
+            color: var(--gray-400);
+            margin-top: 2px;
+        }
+
+        @media (min-width: 768px) {
+            .hero { padding: 120px 0 80px; }
+            .hero-grid { grid-template-columns: 1fr 1fr; gap: 60px; }
+            .hero h1 { font-size: 44px; }
+            .hero-description { font-size: 18px; }
+            .hero-buttons { flex-direction: row; }
+            .hero-image-wrapper { display: block; }
+        }
+        @media (min-width: 1024px) {
+            .hero h1 { font-size: 52px; }
+        }
+
+        /* ===== TRUST BAR ===== */
+        .trust-bar {
+            background: var(--dark-secondary);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 24px 0;
+        }
+        .trust-bar-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px 40px;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-300);
+        }
+        .trust-item i {
+            font-size: 20px;
+            color: var(--gold);
+        }
+
+        /* ===== SECTION SHARED ===== */
+        .section {
+            padding: 80px 0;
+        }
+        .section-dark { background: var(--dark); }
+        .section-alt { background: var(--dark-secondary); }
+        .section-title {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-title .highlight { color: var(--gold); }
+        @media (min-width: 768px) {
+            .section { padding: 100px 0; }
+            .section-title { font-size: 36px; margin-bottom: 56px; }
+        }
+
+        /* ===== SERVICE CARDS ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--dark-tertiary);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-lg);
+        }
+        .service-card-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover .service-card-image img {
+            transform: scale(1.08);
+        }
+        .service-card-image::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, #0a0a0a);
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, var(--dark-tertiary));
             pointer-events: none;
         }
+        .service-card-body {
+            padding: 20px;
+            text-align: center;
+        }
+        .service-card-body h3 {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            margin-bottom: 8px;
+        }
+        .service-card-body h3 i {
+            color: var(--gold);
+            margin-right: 8px;
+        }
+        .service-card-body p {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+        @media (min-width: 640px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(3, 1fr); }
+        }
 
-        /* Map container */
+        /* ===== HOW IT WORKS ===== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            position: relative;
+        }
+        .step-card {
+            text-align: center;
+            position: relative;
+        }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 20px;
+            margin: 0 auto 16px;
+        }
+        .step-icon {
+            font-size: 36px;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .step-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .step-card p {
+            color: var(--gray-400);
+            font-size: 15px;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .steps-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            .steps-connector {
+                position: absolute;
+                top: 24px;
+                left: 20%;
+                right: 20%;
+                height: 2px;
+                background: linear-gradient(to right, var(--gold), var(--gold-dim), var(--gold));
+                z-index: 0;
+            }
+            .step-number { position: relative; z-index: 1; }
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .reviews-aggregate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .reviews-score {
+            font-family: var(--font-display);
+            font-size: 48px;
+            font-weight: 800;
+        }
+        .reviews-stars {
+            color: #FBBF24;
+            font-size: 24px;
+            display: flex;
+            gap: 4px;
+        }
+        .reviews-count {
+            color: var(--gray-400);
+            font-size: 14px;
+        }
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--dark-tertiary);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-300);
+            margin-top: 12px;
+        }
+        .google-badge svg {
+            width: 18px;
+            height: 18px;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .review-card {
+            background: var(--dark-tertiary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .review-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+        .review-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+        .reviewer-avatar {
+            width: 44px;
+            height: 44px;
+            background: var(--gold-dim);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .reviewer-info { flex: 1; }
+        .reviewer-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .reviewer-stars {
+            color: #FBBF24;
+            font-size: 13px;
+            display: flex;
+            gap: 2px;
+            margin-top: 2px;
+        }
+        .review-text {
+            color: var(--gray-300);
+            font-size: 15px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+        .review-google {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+        .review-google svg { width: 14px; height: 14px; }
+        @media (min-width: 768px) {
+            .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* ===== WHY CHOOSE US ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .why-text h2 {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .why-text h2 .highlight { color: var(--gold); }
+        .why-text > p {
+            color: var(--gray-300);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .why-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        .why-feature {
+            background: var(--dark-tertiary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .why-feature:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+        .why-feature-icon {
+            font-size: 24px;
+            color: var(--gold);
+            flex-shrink: 0;
+            width: 32px;
+            text-align: center;
+        }
+        .why-feature h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .why-feature p {
+            font-size: 14px;
+            color: var(--gray-400);
+        }
+        @media (min-width: 768px) {
+            .why-grid { grid-template-columns: 1fr 1fr; }
+            .why-text h2 { font-size: 36px; text-align: left; }
+            .why-features { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* ===== SERVICE AREA ===== */
+        .area-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .area-pill {
+            background: var(--dark-tertiary);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-300);
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+        .area-pill.active {
+            background: var(--gold-dim);
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .area-pill:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
         .map-container {
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
+            border-radius: var(--radius);
+            height: 320px;
+            background: var(--dark-tertiary);
         }
         .map-container iframe {
             width: 100%;
             height: 100%;
             border: 0;
         }
+        .area-description {
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 16px;
+            margin-top: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 768px) {
+            .map-container { height: 400px; }
+        }
 
-        /* FAQ accordion styles */
+        /* ===== FAQ ===== */
+        .faq-list {
+            max-width: 740px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .faq-item {
+            background: var(--dark-secondary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .faq-item:hover {
+            border-color: rgba(255,255,255,0.1);
+        }
+        .faq-item.active {
+            border-color: var(--gold);
+        }
         .faq-question {
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: inherit;
-            font: inherit;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            text-align: left;
+        }
+        .faq-question span:first-child {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 16px;
+            padding-right: 16px;
+        }
+        .faq-toggle {
+            width: 28px;
+            height: 28px;
+            background: var(--gold-dim);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.3s, background 0.3s;
+            color: var(--gold);
+            font-size: 14px;
+        }
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+            background: var(--gold);
+            color: var(--dark);
         }
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.35s ease;
+        }
+        .faq-answer-inner {
+            padding: 0 24px 20px;
+            color: var(--gray-300);
+            font-size: 15px;
+            line-height: 1.7;
         }
 
-        /* Mid-page CTA stripe pattern */
-        .cta-stripe-pattern {
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: var(--dark-secondary);
+            padding: 80px 0;
             position: relative;
+            overflow: hidden;
         }
-        .cta-stripe-pattern::before {
+        .cta-section::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 10px,
-                rgba(255,255,255,0.03) 10px,
-                rgba(255,255,255,0.03) 20px
-            );
+            background: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(232, 170, 42, 0.02) 10px, rgba(232, 170, 42, 0.02) 20px);
             pointer-events: none;
         }
-
-        /* Footer top gradient */
-        .footer-gradient::before {
-            content: '';
-            display: block;
-            height: 60px;
-            margin-top: -60px;
-            background: linear-gradient(to bottom, transparent, #0a0a0a);
-            pointer-events: none;
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-info h2 {
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .cta-info h2 .highlight { color: var(--gold); }
+        .cta-info > p {
+            color: var(--gray-300);
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        .cta-phone-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gold);
+            transition: color 0.2s;
+        }
+        .cta-phone-link:hover { color: var(--gold-hover); }
+        .cta-phone-link:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+        .cta-form {
+            background: var(--dark-tertiary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+        }
+        .cta-form h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--dark);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius);
+            color: var(--white);
+            font-family: var(--font-body);
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        .form-input::placeholder { color: var(--gray-500); }
+        textarea.form-input { resize: vertical; min-height: 120px; }
+        .form-submit {
+            width: 100%;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 16px;
+            border-radius: var(--radius);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .form-submit:hover {
+            background: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+        .form-submit:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .honeypot { position: absolute; left: -9999px; }
+        @media (min-width: 768px) {
+            .cta-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+            .cta-info h2 { font-size: 36px; }
+            .cta-phone-link { font-size: 32px; }
         }
 
-        /* Contact section scroll offset */
-        #contact {
-            scroll-margin-top: 80px;
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--dark);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 60px 0 100px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .footer-brand .footer-logo i {
+            color: var(--gold);
+            font-size: 24px;
+        }
+        .footer-brand .footer-logo span {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        .footer-brand > p {
+            color: var(--gray-400);
+            font-size: 14px;
+            margin-bottom: 16px;
+            max-width: 300px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--dark-secondary);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-400);
+            font-size: 16px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .footer-social a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        .footer-social a:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        .footer-col h4 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+        .footer-col li {
+            color: var(--gray-400);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-col li i { color: var(--gold); font-size: 12px; width: 16px; text-align: center; }
+        .footer-col a {
+            color: var(--gray-400);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--white); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 13px;
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 20px;
+        }
+        .footer-bottom-links a {
+            color: var(--gray-500);
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .footer-bottom-links a:hover { color: var(--white); }
+        @media (min-width: 768px) {
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+            .site-footer { padding-bottom: 60px; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; }
+        }
+
+        /* ===== MOBILE STICKY CTA ===== */
+        .mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 90;
+            background: var(--dark-secondary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 16px;
+            padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+            display: flex;
+            gap: 10px;
+        }
+        .mobile-cta-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px;
+            border-radius: var(--radius);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .mobile-cta-call {
+            background: var(--gold);
+            color: var(--dark);
+        }
+        .mobile-cta-quote {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+        .mobile-cta-btn:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+        @media (min-width: 768px) {
+            .mobile-cta { display: none; }
         }
     </style>
 </head>
-<body class="bg-brand-dark text-white font-sans antialiased">
-    <!-- Sticky Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark-secondary shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-3" id="header-logo">
-                <i class="fa-solid fa-truck-pickup text-brand-orange text-2xl"></i>
-                <span class="text-lg sm:text-xl font-bold uppercase tracking-tight">Your Junk Removal Co</span>
+<body>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <div class="header-logo" id="header-logo">
+                <i class="fa-solid fa-truck-pickup" aria-hidden="true"></i>
+                <span class="business-name">Your Junk Removal Co</span>
             </div>
-            <a href="tel:5551234567" class="bg-brand-orange hover:bg-orange-600 text-white px-3 py-2 md:px-6 md:py-3 rounded-lg font-semibold text-xs md:text-base transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-orange-500/30" id="header-phone">
-                <i class="fa-solid fa-phone mr-1 md:mr-2"></i>
-                <span class="header-phone-text">Call Now: (555) 123-4567</span>
+            <a href="tel:5551234567" class="header-cta" id="header-phone" aria-label="Call us now">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span class="header-phone-text">Call: (555) 123-4567</span>
             </a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-bg min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 pt-24 pb-12">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-6 leading-tight">
-                    Fast & Affordable Junk Removal in <span class="city-name text-brand-green">Your City</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                    We haul it all — furniture, appliances, yard waste, and more. Same-day service available.
-                </p>
-                <a href="#contact" class="inline-block bg-brand-green hover:bg-green-500 text-brand-dark px-8 py-4 rounded-lg font-bold text-lg uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-green-500/30">
-                    <i class="fa-solid fa-calendar-check mr-2"></i>Get Your FREE Quote
-                </a>
-                <p class="mt-6 text-brand-green font-medium">
-                    <i class="fa-solid fa-star mr-1"></i> Most quotes in under 2 minutes
-                </p>
+        <section class="hero" aria-label="Hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="pulse-dot" aria-hidden="true"></span>
+                            Same-Day Service Available
+                        </div>
+                        <h1>Fast & Affordable <br>Junk Removal in <span class="highlight city-name">Your City</span></h1>
+                        <p class="hero-description">We haul it all — furniture, appliances, yard waste, and more. Licensed, insured, and trusted by hundreds of homeowners.</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn-primary">
+                                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>Get Your FREE Quote
+                            </a>
+                            <a href="tel:5551234567" class="btn-secondary hero-call-btn" id="hero-phone">
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i><span class="hero-phone-text">(555) 123-4567</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image-wrapper" aria-hidden="true">
+                        <img src="https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?q=80&w=800&auto=format&fit=crop"
+                             alt="Professional junk removal truck"
+                             width="800" height="600"
+                             loading="eager">
+                        <div class="stat-card stat-card-1">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Jobs Completed</div>
+                        </div>
+                        <div class="stat-card stat-card-2">
+                            <div class="stat-number">5.0</div>
+                            <div class="stat-label">Google Rating</div>
+                        </div>
+                        <div class="stat-card stat-card-3">
+                            <div class="stat-number">Same Day</div>
+                            <div class="stat-label">Service Available</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- What We Haul Away Grid -->
-        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
-            <div class="max-w-7xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                    What We Haul Away
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Furniture -->
-                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
+        <!-- Trust Bar -->
+        <div class="trust-bar" role="complementary" aria-label="Trust indicators">
+            <div class="container trust-bar-inner">
+                <div class="trust-item">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <span>Licensed & Insured</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <span>5-Star Rated</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                    <span>Same-Day Service</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i>
+                    <span>Upfront Pricing</span>
+                </div>
+                <div class="trust-item">
+                    <i class="fa-solid fa-recycle" aria-hidden="true"></i>
+                    <span>Eco-Friendly</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- What We Haul Away -->
+        <section class="section section-alt" aria-labelledby="services-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="services-title">What We <span class="highlight">Haul Away</span></h2>
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <div class="service-card-image">
                             <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&auto=format"
-                                 alt="Furniture removal service"
-                                 class="service-card-img w-full h-full object-cover"
-                                 loading="lazy">
+                                 alt="Furniture removal service in Your City"
+                                 width="400" height="267" loading="lazy">
                         </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                                <i class="fa-solid fa-couch text-brand-orange mr-2"></i>Furniture
-                            </h3>
-                            <p class="text-gray-400">Sofas, beds, tables, chairs, and all unwanted furniture items.</p>
+                        <div class="service-card-body">
+                            <h3><i class="fa-solid fa-couch" aria-hidden="true"></i>Furniture</h3>
+                            <p>Sofas, beds, tables, chairs, and all unwanted furniture items.</p>
                         </div>
-                    </div>
-
-                    <!-- Appliances -->
-                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card-image">
                             <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=400&auto=format"
-                                 alt="Appliance removal service"
-                                 class="service-card-img w-full h-full object-cover"
-                                 loading="lazy">
+                                 alt="Appliance removal service in Your City"
+                                 width="400" height="267" loading="lazy">
                         </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                                <i class="fa-solid fa-blender text-brand-orange mr-2"></i>Appliances
-                            </h3>
-                            <p class="text-gray-400">Refrigerators, washers, dryers, microwaves, and more.</p>
+                        <div class="service-card-body">
+                            <h3><i class="fa-solid fa-blender" aria-hidden="true"></i>Appliances</h3>
+                            <p>Refrigerators, washers, dryers, microwaves, and more.</p>
                         </div>
-                    </div>
-
-                    <!-- Yard Waste -->
-                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card-image">
                             <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&auto=format"
-                                 alt="Yard waste removal service"
-                                 class="service-card-img w-full h-full object-cover"
-                                 loading="lazy">
+                                 alt="Yard waste removal service in Your City"
+                                 width="400" height="267" loading="lazy">
                         </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                                <i class="fa-solid fa-leaf text-brand-orange mr-2"></i>Yard Waste
-                            </h3>
-                            <p class="text-gray-400">Branches, leaves, grass clippings, and landscaping debris.</p>
+                        <div class="service-card-body">
+                            <h3><i class="fa-solid fa-leaf" aria-hidden="true"></i>Yard Waste</h3>
+                            <p>Branches, leaves, grass clippings, and landscaping debris.</p>
                         </div>
-                    </div>
-
-                    <!-- Construction Debris -->
-                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card-image">
                             <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&auto=format"
-                                 alt="Construction debris removal service"
-                                 class="service-card-img w-full h-full object-cover"
-                                 loading="lazy">
+                                 alt="Construction debris removal service in Your City"
+                                 width="400" height="267" loading="lazy">
                         </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                                <i class="fa-solid fa-hammer text-brand-orange mr-2"></i>Construction Debris
-                            </h3>
-                            <p class="text-gray-400">Drywall, lumber, tiles, and renovation materials.</p>
+                        <div class="service-card-body">
+                            <h3><i class="fa-solid fa-hammer" aria-hidden="true"></i>Construction Debris</h3>
+                            <p>Drywall, lumber, tiles, and renovation materials.</p>
                         </div>
-                    </div>
-
-                    <!-- Electronics -->
-                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card-image">
                             <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=400&auto=format"
-                                 alt="Electronics removal service"
-                                 class="service-card-img w-full h-full object-cover"
-                                 loading="lazy">
+                                 alt="Electronics removal service in Your City"
+                                 width="400" height="267" loading="lazy">
                         </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                                <i class="fa-solid fa-tv text-brand-orange mr-2"></i>Electronics
-                            </h3>
-                            <p class="text-gray-400">TVs, computers, monitors, and electronic equipment.</p>
+                        <div class="service-card-body">
+                            <h3><i class="fa-solid fa-tv" aria-hidden="true"></i>Electronics</h3>
+                            <p>TVs, computers, monitors, and electronic equipment.</p>
                         </div>
-                    </div>
-
-                    <!-- General Junk -->
-                    <div class="service-card bg-brand-dark rounded-xl overflow-hidden border border-white/5 hover:border-brand-green transition-all hover:-translate-y-1">
-                        <div class="h-48 overflow-hidden">
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card-image">
                             <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&auto=format"
-                                 alt="General junk removal service"
-                                 class="service-card-img w-full h-full object-cover"
-                                 loading="lazy">
+                                 alt="General junk removal service in Your City"
+                                 width="400" height="267" loading="lazy">
                         </div>
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-2">
-                                <i class="fa-solid fa-box text-brand-orange mr-2"></i>General Junk
-                            </h3>
-                            <p class="text-gray-400">Boxes, clutter, garage cleanouts, and everything else.</p>
+                        <div class="service-card-body">
+                            <h3><i class="fa-solid fa-box" aria-hidden="true"></i>General Junk</h3>
+                            <p>Boxes, clutter, garage cleanouts, and everything else.</p>
                         </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section section-dark" aria-labelledby="steps-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="steps-title">How It <span class="highlight">Works</span></h2>
+                <div class="steps-grid">
+                    <div class="steps-connector" aria-hidden="true"></div>
+                    <div class="step-card reveal">
+                        <div class="step-number">1</div>
+                        <div class="step-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                        <h3>Call or Text Us</h3>
+                        <p>Tell us what you need hauled. We'll give you an upfront price — no hidden fees.</p>
+                    </div>
+                    <div class="step-card reveal">
+                        <div class="step-number">2</div>
+                        <div class="step-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+                        <h3>Pick a Time</h3>
+                        <p>We'll come to you. Same-day and next-day appointments available.</p>
+                    </div>
+                    <div class="step-card reveal">
+                        <div class="step-number">3</div>
+                        <div class="step-icon"><i class="fa-solid fa-truck-pickup" aria-hidden="true"></i></div>
+                        <h3>We Haul It Away</h3>
+                        <p>Our crew loads everything up. You don't lift a finger.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How It Works Section -->
-        <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-16">
-                    How It Works
-                </h2>
-                <div class="relative">
-                    <!-- Connector line (desktop only) -->
-                    <div class="hidden md:block step-connector"></div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-                        <!-- Step 1 -->
-                        <div class="text-center relative">
-                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                                1
-                            </div>
-                            <div class="text-brand-green text-4xl mb-4">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-3">Call or Text Us</h3>
-                            <p class="text-gray-400">Tell us what you need hauled. We'll give you an upfront price — no hidden fees.</p>
+        <!-- Reviews Section -->
+        <section class="section section-alt" aria-labelledby="reviews-title">
+            <div class="container">
+                <div class="reviews-header reveal">
+                    <h2 class="section-title" id="reviews-title">What Our <span class="highlight">Customers Say</span></h2>
+                    <div class="reviews-aggregate">
+                        <div class="reviews-score">5.0</div>
+                        <div class="reviews-stars" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
                         </div>
-
-                        <!-- Step 2 -->
-                        <div class="text-center relative">
-                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                                2
-                            </div>
-                            <div class="text-brand-green text-4xl mb-4">
-                                <i class="fa-solid fa-calendar-check"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-3">Pick a Time</h3>
-                            <p class="text-gray-400">We'll come to you. Same-day and next-day appointments available.</p>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="text-center relative">
-                            <div class="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                                3
-                            </div>
-                            <div class="text-brand-green text-4xl mb-4">
-                                <i class="fa-solid fa-truck-pickup"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold uppercase tracking-wide mb-3">We Haul It Away</h3>
-                            <p class="text-gray-400">Our crew loads everything up. You don't lift a finger.</p>
-                        </div>
+                        <div class="reviews-count">Based on 200+ reviews</div>
                     </div>
+                    <div class="google-badge">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Google Reviews
+                    </div>
+                </div>
+                <div class="reviews-grid">
+                    <article class="review-card reveal">
+                        <div class="review-top">
+                            <div class="reviewer-avatar" aria-hidden="true">MR</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Mike R.</div>
+                                <div class="reviewer-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">"Called at 9 AM and they were at my house by noon. Cleared out my entire garage in under an hour. Pricing was exactly what they quoted — no surprises. Will definitely use again."</p>
+                        <div class="review-google">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Posted on Google
+                        </div>
+                    </article>
+                    <article class="review-card reveal">
+                        <div class="review-top">
+                            <div class="reviewer-avatar" aria-hidden="true">SL</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">Sarah L.</div>
+                                <div class="reviewer-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">"These guys are the real deal. Professional, fast, and they even swept up after themselves. My wife couldn't believe how fast they cleared out the basement. Best money I've spent all year."</p>
+                        <div class="review-google">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Posted on Google
+                        </div>
+                    </article>
+                    <article class="review-card reveal">
+                        <div class="review-top">
+                            <div class="reviewer-avatar" aria-hidden="true">DJ</div>
+                            <div class="reviewer-info">
+                                <div class="reviewer-name">David J.</div>
+                                <div class="reviewer-stars" aria-label="5 stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">"I've tried three junk removal companies in <span class="city-name">Your City</span> and these guys are hands down the best. On time, fair pricing, and they actually care about recycling. Already recommended them to my neighbors."</p>
+                        <div class="review-google">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Posted on Google
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Trust Section -->
-        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8">
-                    Trusted in <span class="city-name text-brand-green">Your City</span>
-                </h2>
-                <div class="mb-6">
-                    <span class="text-5xl font-bold">5.0</span>
-                    <div class="text-3xl text-yellow-400 mt-2">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+        <!-- Why Choose Us -->
+        <section class="section section-dark" aria-labelledby="why-title">
+            <div class="container">
+                <div class="why-grid">
+                    <div class="why-text reveal">
+                        <h2 id="why-title">Why Choose <span class="highlight business-name">Your Junk Removal Co</span>?</h2>
+                        <p>We're not just another junk removal company. We're your neighbors — committed to keeping our community clean, one load at a time.</p>
                     </div>
-                </div>
-                <div class="max-w-xl mx-auto mb-10">
-                    <p class="text-xl italic text-gray-400">"Fast, professional, and affordable. They were at my house within 2 hours!"</p>
-                    <p class="mt-3 font-medium text-white">— Local Customer</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <div class="bg-brand-dark border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
-                        <i class="fa-solid fa-shield-halved text-xl"></i>
-                        <span>Licensed & Insured</span>
-                    </div>
-                    <div class="bg-brand-dark border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
-                        <i class="fa-solid fa-star text-xl"></i>
-                        <span>5-Star Rated</span>
-                    </div>
-                    <div class="bg-brand-dark border border-brand-green text-brand-green px-6 py-4 rounded-lg font-semibold flex items-center gap-2">
-                        <i class="fa-solid fa-clock text-xl"></i>
-                        <span>Same-Day Service</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                    Why Choose <span class="business-name text-brand-green">Your Junk Removal Co</span>?
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <!-- Licensed & Insured -->
-                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="text-brand-green text-3xl">
-                                <i class="fa-solid fa-shield-halved"></i>
-                            </div>
+                    <div class="why-features">
+                        <div class="why-feature reveal">
+                            <div class="why-feature-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
                             <div>
-                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Licensed & Insured</h3>
-                                <p class="text-gray-400">Fully licensed and insured so you're protected on every job.</p>
+                                <h3>Licensed & Insured</h3>
+                                <p>Fully licensed and insured so you're protected on every job.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Upfront Pricing -->
-                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="text-brand-green text-3xl">
-                                <i class="fa-solid fa-dollar-sign"></i>
-                            </div>
+                        <div class="why-feature reveal">
+                            <div class="why-feature-icon"><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i></div>
                             <div>
-                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Upfront Pricing</h3>
-                                <p class="text-gray-400">No surprises. We quote before we start.</p>
+                                <h3>Upfront Pricing</h3>
+                                <p>No surprises. We quote before we start.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Same-Day Service -->
-                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="text-brand-green text-3xl">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
+                        <div class="why-feature reveal">
+                            <div class="why-feature-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
                             <div>
-                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Same-Day Service</h3>
-                                <p class="text-gray-400">Need it gone today? We've got you covered.</p>
+                                <h3>Same-Day Service</h3>
+                                <p>Need it gone today? We've got you covered.</p>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Eco-Friendly Disposal -->
-                    <div class="bg-brand-dark-secondary rounded-xl p-6 border border-white/5 hover:border-brand-green transition-all">
-                        <div class="flex items-start gap-4">
-                            <div class="text-brand-green text-3xl">
-                                <i class="fa-solid fa-recycle"></i>
-                            </div>
+                        <div class="why-feature reveal">
+                            <div class="why-feature-icon"><i class="fa-solid fa-recycle" aria-hidden="true"></i></div>
                             <div>
-                                <h3 class="text-lg font-semibold uppercase tracking-wide mb-2">Eco-Friendly Disposal</h3>
-                                <p class="text-gray-400">We donate and recycle whenever possible.</p>
+                                <h3>Eco-Friendly Disposal</h3>
+                                <p>We donate and recycle whenever possible.</p>
                             </div>
                         </div>
                     </div>
@@ -438,175 +1361,199 @@
             </div>
         </section>
 
-        <!-- Mid-Page CTA Banner -->
-        <section class="bg-brand-orange py-12 sm:py-16 px-4 sm:px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-white mb-4">
-                    Ready to Get Rid of Your Junk?
-                </h2>
-                <p class="text-xl text-white/90 mb-8">
-                    Call now for a free, no-obligation quote.
-                </p>
-                <a href="tel:5551234567" id="mid-cta-phone" class="inline-block bg-brand-dark hover:bg-brand-dark-secondary text-white px-10 py-4 rounded-lg font-bold text-xl uppercase tracking-wide transition-all hover:-translate-y-1 hover:shadow-xl">
-                    <i class="fa-solid fa-phone mr-3"></i><span class="mid-cta-phone-text">(555) 123-4567</span>
-                </a>
-            </div>
-        </section>
-
-        <!-- Service Area Section -->
-        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                    Serving <span class="city-name text-brand-green">Your City</span> & Surrounding Areas
-                </h2>
-                <div class="map-container h-80 sm:h-96 mb-8 bg-brand-dark rounded-xl" id="map-container">
+        <!-- Service Area -->
+        <section class="section section-alt" aria-labelledby="area-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="area-title">Serving <span class="highlight city-name">Your City</span> & Surrounding Areas</h2>
+                <div class="area-pills reveal" role="list" aria-label="Service areas">
+                    <span class="area-pill active city-name" role="listitem">Your City</span>
+                    <span class="area-pill" role="listitem">Nearby Town 1</span>
+                    <span class="area-pill" role="listitem">Nearby Town 2</span>
+                    <span class="area-pill" role="listitem">Nearby Town 3</span>
+                    <span class="area-pill" role="listitem">Nearby Town 4</span>
+                    <span class="area-pill" role="listitem">Nearby Town 5</span>
+                    <span class="area-pill" role="listitem">Nearby Town 6</span>
+                    <span class="area-pill" role="listitem">Nearby Town 7</span>
+                </div>
+                <div class="map-container reveal" id="map-container">
                     <iframe
                         id="service-map"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100000!2d-111.9460!3d33.4484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI2JzU0LjIiTiAxMTHCsDU2JzQ1LjYiVw!5e0!3m2!1sen!2sus!4v1234567890"
                         allowfullscreen=""
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        title="Service area map">
+                        title="Service area map showing coverage in Your City and surrounding areas">
                     </iframe>
                 </div>
-                <p class="text-center text-gray-400 text-lg max-w-2xl mx-auto">
-                    We proudly serve <span class="city-name">Your City</span> and all nearby communities. Call to confirm service in your area.
-                </p>
+                <p class="area-description reveal">We proudly serve <span class="city-name">Your City</span> and all nearby communities. Call to confirm service in your area.</p>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section class="bg-brand-dark py-16 sm:py-20 px-4 sm:px-6">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                    Frequently Asked Questions
-                </h2>
-                <div class="space-y-4" id="faq-container">
-                    <!-- FAQ 1 -->
-                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
-                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
-                            <span class="font-semibold text-lg pr-4">What items do you haul away?</span>
-                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+        <section class="section section-dark" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 class="section-title reveal" id="faq-title">Frequently Asked <span class="highlight">Questions</span></h2>
+                <div class="faq-list" id="faq-container">
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What items do you haul away?</span>
+                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                         </button>
-                        <div class="faq-answer">
-                            <p class="text-gray-400">We remove furniture, appliances, yard waste, construction debris, electronics, and general junk. If you're not sure, just call us — we can handle almost anything.</p>
+                        <div class="faq-answer" role="region">
+                            <div class="faq-answer-inner">We remove furniture, appliances, yard waste, construction debris, electronics, and general junk. If you're not sure, just call us — we can handle almost anything.</div>
                         </div>
                     </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
-                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
-                            <span class="font-semibold text-lg pr-4">How does pricing work?</span>
-                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How does pricing work?</span>
+                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                         </button>
-                        <div class="faq-answer">
-                            <p class="text-gray-400">We offer upfront, transparent pricing based on how much space your items take up in our truck. No hidden fees, no surprises.</p>
+                        <div class="faq-answer" role="region">
+                            <div class="faq-answer-inner">We offer upfront, transparent pricing based on how much space your items take up in our truck. No hidden fees, no surprises.</div>
                         </div>
                     </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
-                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
-                            <span class="font-semibold text-lg pr-4">Do you offer same-day service?</span>
-                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you offer same-day service?</span>
+                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                         </button>
-                        <div class="faq-answer px-6 pb-5">
-                            <p class="text-gray-400">Yes! If we have availability, we can be there the same day you call. Next-day appointments are almost always available.</p>
+                        <div class="faq-answer" role="region">
+                            <div class="faq-answer-inner">Yes! If we have availability, we can be there the same day you call. Next-day appointments are almost always available.</div>
                         </div>
                     </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
-                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
-                            <span class="font-semibold text-lg pr-4">Do I need to be home?</span>
-                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do I need to be home?</span>
+                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                         </button>
-                        <div class="faq-answer px-6 pb-5">
-                            <p class="text-gray-400">It helps, but it's not always required. As long as we can access the items, we can get the job done. Just let us know the details when you book.</p>
+                        <div class="faq-answer" role="region">
+                            <div class="faq-answer-inner">It helps, but it's not always required. As long as we can access the items, we can get the job done. Just let us know the details when you book.</div>
                         </div>
                     </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="faq-item bg-brand-dark-secondary rounded-xl border border-white/5">
-                        <button class="faq-question w-full px-6 py-5 flex justify-between items-center text-left">
-                            <span class="font-semibold text-lg pr-4">Do you recycle or donate items?</span>
-                            <span class="faq-toggle text-brand-orange text-2xl flex-shrink-0">+</span>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you recycle or donate items?</span>
+                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                         </button>
-                        <div class="faq-answer px-6 pb-5">
-                            <p class="text-gray-400">Absolutely. We donate usable items to local charities and recycle materials whenever possible. We're committed to keeping waste out of landfills.</p>
+                        <div class="faq-answer" role="region">
+                            <div class="faq-answer-inner">Absolutely. We donate usable items to local charities and recycle materials whenever possible. We're committed to keeping waste out of landfills.</div>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How far in advance should I book?</span>
+                            <span class="faq-toggle" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                        </button>
+                        <div class="faq-answer" role="region">
+                            <div class="faq-answer-inner">We often have same-day availability, but booking 24-48 hours in advance guarantees your preferred time slot. For large cleanouts, a few days' notice helps us bring the right crew and equipment.</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Form -->
-        <section class="bg-brand-dark-secondary py-16 sm:py-20 px-4 sm:px-6" id="contact">
-            <div class="max-w-xl mx-auto">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-center mb-12">
-                    Get Your Free Quote
-                </h2>
-                <form class="space-y-6" action="#" method="POST">
-                    <!-- Honeypot spam protection -->
-                    <div style="position:absolute;left:-9999px;" aria-hidden="true">
-                        <input type="text" name="website" tabindex="-1" autocomplete="off">
+        <!-- CTA / Contact Section -->
+        <section class="cta-section" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="cta-grid">
+                    <div class="cta-info reveal">
+                        <h2 id="contact-title">Ready to Get Rid of Your <span class="highlight">Junk</span>?</h2>
+                        <p>Call now for a free, no-obligation quote. We respond fast — most quotes in under 2 minutes.</p>
+                        <a href="tel:5551234567" class="cta-phone-link" id="cta-phone" aria-label="Call us for a free quote">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <span class="cta-phone-text">(555) 123-4567</span>
+                        </a>
                     </div>
-
-                    <div>
-                        <input type="text" name="name" placeholder="Your Name" required
-                               class="w-full px-4 py-4 bg-brand-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors">
+                    <div class="cta-form reveal">
+                        <h3>Get Your Free Quote</h3>
+                        <form action="#" method="POST" id="contact-form">
+                            <!-- Honeypot -->
+                            <div class="honeypot" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-name" class="sr-only">Your Name</label>
+                                <input type="text" name="name" id="contact-name" placeholder="Your Name" required class="form-input" autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone" class="sr-only">Phone Number</label>
+                                <input type="tel" name="phone" id="contact-phone" placeholder="Phone Number" required class="form-input" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message" class="sr-only">Message</label>
+                                <textarea name="message" id="contact-message" placeholder="Tell us about your junk removal needs..." rows="4" class="form-input"></textarea>
+                            </div>
+                            <button type="submit" class="form-submit">
+                                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>Request Quote
+                            </button>
+                        </form>
                     </div>
-                    <div>
-                        <input type="tel" name="phone" placeholder="Phone Number" required
-                               class="w-full px-4 py-4 bg-brand-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors">
-                    </div>
-                    <div>
-                        <textarea name="message" placeholder="Tell us about your junk removal needs..." rows="5"
-                                  class="w-full px-4 py-4 bg-brand-dark border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition-colors resize-vertical"></textarea>
-                    </div>
-                    <button type="submit"
-                            class="w-full bg-brand-green hover:bg-green-500 text-brand-dark py-4 rounded-lg font-bold text-lg uppercase tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-green-500/30">
-                        <i class="fa-solid fa-paper-plane mr-2"></i>Request Quote
-                    </button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark border-t border-white/5 py-12 px-4 sm:px-6 pb-20 md:pb-0">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="flex items-center justify-center gap-3 mb-4" id="footer-logo">
-                <i class="fa-solid fa-truck-pickup text-brand-orange text-2xl"></i>
-                <span class="text-xl font-bold uppercase" id="footer-business-name">Your Junk Removal Co</span>
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo" id="footer-logo">
+                        <i class="fa-solid fa-truck-pickup" aria-hidden="true"></i>
+                        <span class="business-name" id="footer-business-name">Your Junk Removal Co</span>
+                    </div>
+                    <p>Fast, affordable, and eco-friendly junk removal for homes and businesses.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Google Business"><i class="fa-brands fa-google" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Furniture Removal</li>
+                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Appliance Hauling</li>
+                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Yard Waste Cleanup</li>
+                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Construction Debris</li>
+                        <li><i class="fa-solid fa-chevron-right" aria-hidden="true"></i>Full Property Cleanouts</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fa-solid fa-phone" aria-hidden="true"></i><a href="tel:5551234567" class="footer-phone-link" id="footer-phone"><span class="footer-phone-text">(555) 123-4567</span></a></li>
+                        <li id="footer-address"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="city-name">Your City</span>, ST</li>
+                        <li><i class="fa-solid fa-clock" aria-hidden="true"></i>Mon-Sat: 7AM - 7PM</li>
+                        <li><i class="fa-solid fa-bolt" aria-hidden="true"></i>Same-Day Available</li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-gray-400 mb-2" id="footer-address">Your City, ST</p>
-            <a href="tel:5551234567" class="inline-block text-xl text-brand-orange hover:underline mb-4" id="footer-phone">
-                <i class="fa-solid fa-phone mr-2"></i><span class="footer-phone-text">(555) 123-4567</span>
-            </a>
-
-            <!-- Footer Trust Badges -->
-            <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm text-gray-400">
-                <span class="flex items-center gap-2">
-                    <i class="fa-solid fa-shield-halved text-brand-green"></i> Licensed & Insured
-                </span>
-                <span class="flex items-center gap-2">
-                    <i class="fa-solid fa-star text-brand-green"></i> 5-Star Rated
-                </span>
-                <span class="flex items-center gap-2">
-                    <i class="fa-solid fa-clock text-brand-green"></i> Same Day Service
-                </span>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> <span id="footer-copyright-name" class="business-name">Your Junk Removal Co</span>. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
-
-            <div class="mb-6 space-x-6">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
-            </div>
-            <p class="text-gray-500 text-sm">© <span id="current-year"></span> <span id="footer-copyright-name">Your Junk Removal Co</span>. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- LocalBusiness Schema -->
+    <!-- Mobile Sticky CTA -->
+    <nav class="mobile-cta" aria-label="Quick actions">
+        <a href="tel:5551234567" class="mobile-cta-btn mobile-cta-call" id="mobile-cta-call" aria-label="Call now">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>Call Now
+        </a>
+        <a href="#contact" class="mobile-cta-btn mobile-cta-quote" aria-label="Get a quote">
+            <i class="fa-solid fa-message" aria-hidden="true"></i>Get Quote
+        </a>
+    </nav>
+
+    <!-- Screen reader only utility -->
+    <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
+
+    <!-- LocalBusiness + AggregateRating + Review Schema -->
     <script type="application/ld+json" id="schema-json">
     {
         "@context": "https://schema.org",
@@ -615,161 +1562,314 @@
         "telephone": "(555) 123-4567",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "",
             "addressLocality": "Your City",
             "addressRegion": "ST"
         },
-        "priceRange": "$$"
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "200",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "areaServed": [
+            { "@type": "City", "name": "Your City" },
+            { "@type": "City", "name": "Nearby Town 1" },
+            { "@type": "City", "name": "Nearby Town 2" },
+            { "@type": "City", "name": "Nearby Town 3" }
+        ],
+        "serviceType": [
+            "Junk Removal",
+            "Furniture Removal",
+            "Appliance Hauling",
+            "Yard Waste Removal",
+            "Construction Debris Removal",
+            "Property Cleanouts"
+        ],
+        "review": [
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Mike R." },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Called at 9 AM and they were at my house by noon. Cleared out my entire garage in under an hour. Pricing was exactly what they quoted — no surprises. Will definitely use again."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sarah L." },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "These guys are the real deal. Professional, fast, and they even swept up after themselves. My wife couldn't believe how fast they cleared out the basement. Best money I've spent all year."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "David J." },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "I've tried three junk removal companies in Your City and these guys are hands down the best. On time, fair pricing, and they actually care about recycling. Already recommended them to my neighbors."
+            }
+        ]
+    }
+    </script>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json" id="faq-schema-json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What items do you haul away?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We remove furniture, appliances, yard waste, construction debris, electronics, and general junk. If you're not sure, just call us — we can handle almost anything."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does pricing work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer upfront, transparent pricing based on how much space your items take up in our truck. No hidden fees, no surprises."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you offer same-day service?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! If we have availability, we can be there the same day you call. Next-day appointments are almost always available."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to be home?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It helps, but it's not always required. As long as we can access the items, we can get the job done. Just let us know the details when you book."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you recycle or donate items?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. We donate usable items to local charities and recycle materials whenever possible. We're committed to keeping waste out of landfills."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How far in advance should I book?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We often have same-day availability, but booking 24-48 hours in advance guarantees your preferred time slot. For large cleanouts, a few days' notice helps us bring the right crew and equipment."
+                }
+            }
+        ]
     }
     </script>
 
     <script>
         (function() {
-            // Parse URL parameters
-            const params = new URLSearchParams(window.location.search);
-            const businessName = params.get('name') || 'Your Junk Removal Co';
-            const city = params.get('city') || 'Your City';
-            const phoneRaw = params.get('phone') || '5551234567';
+            // ===== URL PARAMETER PERSONALIZATION =====
+            var params = new URLSearchParams(window.location.search);
+            var businessName = params.get('name') || 'Your Junk Removal Co';
+            var city = params.get('city') || 'Your City';
+            var phoneRaw = params.get('phone') || '5551234567';
 
-            // Format phone number for display
             function formatPhone(phone) {
-                const cleaned = phone.replace(/\D/g, '');
+                var cleaned = phone.replace(/\D/g, '');
                 if (cleaned.length === 10) {
-                    return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6)}`;
+                    return '(' + cleaned.slice(0, 3) + ') ' + cleaned.slice(3, 6) + '-' + cleaned.slice(6);
                 }
                 return phone;
             }
 
-            const phoneFormatted = formatPhone(phoneRaw);
-            const phoneClean = phoneRaw.replace(/\D/g, '');
+            var phoneFormatted = formatPhone(phoneRaw);
+            var phoneClean = phoneRaw.replace(/\D/g, '');
 
-            // Update document title
-            document.title = `${businessName} - Junk Removal in ${city} | Fast & Affordable`;
+            // Document title
+            document.title = businessName + ' - Junk Removal in ' + city + ' | Fast & Affordable';
 
-            // Update meta description
-            const metaDesc = document.querySelector('meta[name="description"]');
-            if (metaDesc) {
-                metaDesc.content = `${businessName} offers fast, affordable junk removal in ${city}. Furniture, appliances, yard waste & more. Same-day service. Call for a free quote!`;
-            }
+            // Meta description
+            var metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.content = businessName + ' offers fast, affordable junk removal in ' + city + '. Furniture, appliances, yard waste & more. Same-day service. Call for a free quote!';
 
-            // Update OG tags
-            const ogTitle = document.querySelector('meta[property="og:title"]');
-            if (ogTitle) {
-                ogTitle.content = `${businessName} - Junk Removal in ${city}`;
-            }
+            // OG tags
+            var ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.content = businessName + ' - Junk Removal in ' + city;
+            var ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) ogDesc.content = 'Fast, affordable junk hauling in ' + city + '. Same-day service available. Call for a free quote!';
 
-            // Update header logo (preserve icon, update text)
-            const headerLogo = document.getElementById('header-logo');
-            if (headerLogo) {
-                const span = headerLogo.querySelector('span');
-                if (span) span.textContent = businessName;
-            }
+            // Twitter tags
+            var twTitle = document.querySelector('meta[name="twitter:title"]');
+            if (twTitle) twTitle.content = businessName + ' - Junk Removal in ' + city;
+            var twDesc = document.querySelector('meta[name="twitter:description"]');
+            if (twDesc) twDesc.content = 'Fast, affordable junk hauling in ' + city + '. Same-day service available.';
 
-            // Update header phone
-            const headerPhone = document.getElementById('header-phone');
-            if (headerPhone) {
-                headerPhone.href = `tel:${phoneClean}`;
-                const phoneText = headerPhone.querySelector('.header-phone-text');
-                if (phoneText) phoneText.textContent = `Call Now: ${phoneFormatted}`;
-            }
-
-            // Update all city name instances
-            document.querySelectorAll('.city-name').forEach(el => {
+            // All city name instances
+            document.querySelectorAll('.city-name').forEach(function(el) {
                 el.textContent = city;
             });
 
-            // Update all business name instances
-            document.querySelectorAll('.business-name').forEach(el => {
+            // All business name instances
+            document.querySelectorAll('.business-name').forEach(function(el) {
                 el.textContent = businessName;
             });
 
-            // Update service card image alt texts to include city
-            document.querySelectorAll('.service-card img').forEach(img => {
-                const currentAlt = img.getAttribute('alt') || '';
-                if (!currentAlt.includes(city)) {
-                    img.setAttribute('alt', `${currentAlt} in ${city}`);
+            // Header phone
+            var headerPhone = document.getElementById('header-phone');
+            if (headerPhone) {
+                headerPhone.href = 'tel:' + phoneClean;
+                var hpt = headerPhone.querySelector('.header-phone-text');
+                if (hpt) hpt.textContent = 'Call: ' + phoneFormatted;
+            }
+
+            // Hero phone
+            var heroPhone = document.getElementById('hero-phone');
+            if (heroPhone) {
+                heroPhone.href = 'tel:' + phoneClean;
+                var hpht = heroPhone.querySelector('.hero-phone-text');
+                if (hpht) hpht.textContent = phoneFormatted;
+            }
+
+            // CTA phone
+            var ctaPhone = document.getElementById('cta-phone');
+            if (ctaPhone) {
+                ctaPhone.href = 'tel:' + phoneClean;
+                var cpt = ctaPhone.querySelector('.cta-phone-text');
+                if (cpt) cpt.textContent = phoneFormatted;
+            }
+
+            // Footer phone
+            var footerPhone = document.getElementById('footer-phone');
+            if (footerPhone) {
+                footerPhone.href = 'tel:' + phoneClean;
+                var fpt = footerPhone.querySelector('.footer-phone-text');
+                if (fpt) fpt.textContent = phoneFormatted;
+            }
+
+            // Mobile CTA call
+            var mobileCta = document.getElementById('mobile-cta-call');
+            if (mobileCta) mobileCta.href = 'tel:' + phoneClean;
+
+            // Service card alt text
+            document.querySelectorAll('.service-card-image img').forEach(function(img) {
+                var alt = img.getAttribute('alt') || '';
+                if (city !== 'Your City') {
+                    img.setAttribute('alt', alt.replace('Your City', city));
                 }
             });
 
-            // Update footer business name
-            const footerBusinessName = document.getElementById('footer-business-name');
-            if (footerBusinessName) footerBusinessName.textContent = businessName;
-
-            // Update footer address
-            const footerAddress = document.getElementById('footer-address');
-            if (footerAddress) footerAddress.textContent = `${city}, ST`;
-
-            // Update footer phone
-            const footerPhone = document.getElementById('footer-phone');
-            if (footerPhone) {
-                footerPhone.href = `tel:${phoneClean}`;
-                const phoneText = footerPhone.querySelector('.footer-phone-text');
-                if (phoneText) phoneText.textContent = phoneFormatted;
+            // Footer address city
+            var footerAddr = document.getElementById('footer-address');
+            if (footerAddr) {
+                var addrSpan = footerAddr.querySelector('.city-name');
+                if (addrSpan) addrSpan.textContent = city;
             }
 
-            // Update footer copyright name
-            const footerCopyrightName = document.getElementById('footer-copyright-name');
-            if (footerCopyrightName) footerCopyrightName.textContent = businessName;
+            // Footer copyright
+            var footerCopyright = document.getElementById('footer-copyright-name');
+            if (footerCopyright) footerCopyright.textContent = businessName;
 
-            // Update mid-page CTA phone
-            const midCtaPhone = document.getElementById('mid-cta-phone');
-            if (midCtaPhone) {
-                midCtaPhone.href = `tel:${phoneClean}`;
-                const phoneText = midCtaPhone.querySelector('.mid-cta-phone-text');
-                if (phoneText) phoneText.textContent = phoneFormatted;
-            }
+            // Current year
+            var yearEl = document.getElementById('current-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-            // Update mobile CTA
-            const mobileCta = document.getElementById('mobile-cta-link');
-            if (mobileCta) mobileCta.href = `tel:${phoneClean}`;
-
-            // Update current year
-            const currentYear = document.getElementById('current-year');
-            if (currentYear) currentYear.textContent = new Date().getFullYear();
-
-            // Update Google Maps to center on city
-            const serviceMap = document.getElementById('service-map');
+            // Google Maps
+            var serviceMap = document.getElementById('service-map');
             if (serviceMap && city !== 'Your City') {
-                const encodedCity = encodeURIComponent(city);
-                serviceMap.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodedCity}&zoom=11`;
+                var encodedCity = encodeURIComponent(city);
+                serviceMap.src = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=' + encodedCity + '&zoom=11';
             }
 
-            // Update schema
-            const schemaEl = document.getElementById('schema-json');
+            // Update first area pill with city name
+            var firstPill = document.querySelector('.area-pill.active');
+            if (firstPill) firstPill.textContent = city;
+
+            // Update LocalBusiness schema
+            var schemaEl = document.getElementById('schema-json');
             if (schemaEl) {
-                const schema = {
-                    "@context": "https://schema.org",
-                    "@type": "LocalBusiness",
-                    "name": businessName,
-                    "telephone": phoneFormatted,
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "",
-                        "addressLocality": city,
-                        "addressRegion": "ST"
-                    },
-                    "priceRange": "$$"
-                };
+                var schema = JSON.parse(schemaEl.textContent);
+                schema.name = businessName;
+                schema.telephone = phoneFormatted;
+                schema.address.addressLocality = city;
+                schema.areaServed[0].name = city;
+                // Update Review #3 city reference
+                if (schema.review && schema.review[2]) {
+                    schema.review[2].reviewBody = schema.review[2].reviewBody.replace('Your City', city);
+                }
                 schemaEl.textContent = JSON.stringify(schema, null, 2);
             }
 
-            // FAQ Accordion functionality
-            document.querySelectorAll('.faq-question').forEach(button => {
-                button.addEventListener('click', () => {
-                    const faqItem = button.parentElement;
-                    const isActive = faqItem.classList.contains('active');
+            // ===== HEADER SCROLL EFFECT =====
+            var header = document.querySelector('.site-header');
+            function onScroll() {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
 
-                    // Close all other FAQ items
-                    document.querySelectorAll('.faq-item').forEach(item => {
-                        item.classList.remove('active');
+            // ===== FAQ ACCORDION =====
+            document.querySelectorAll('.faq-question').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var item = btn.parentElement;
+                    var answer = item.querySelector('.faq-answer');
+                    var inner = item.querySelector('.faq-answer-inner');
+                    var isActive = item.classList.contains('active');
+
+                    // Close all
+                    document.querySelectorAll('.faq-item').forEach(function(fi) {
+                        fi.classList.remove('active');
+                        fi.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        fi.querySelector('.faq-answer').style.maxHeight = '0';
                     });
 
-                    // Toggle current item
+                    // Open clicked if wasn't active
                     if (!isActive) {
-                        faqItem.classList.add('active');
+                        item.classList.add('active');
+                        btn.setAttribute('aria-expanded', 'true');
+                        answer.style.maxHeight = inner.scrollHeight + 'px';
                     }
                 });
             });
+
+            // ===== SCROLL REVEAL (IntersectionObserver) =====
+            var revealElements = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                var revealObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(function(el) {
+                    revealObserver.observe(el);
+                });
+            } else {
+                // Fallback: show everything
+                revealElements.forEach(function(el) {
+                    el.classList.add('visible');
+                });
+            }
+
+            // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    var target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
         })();
     </script>
 </body>
