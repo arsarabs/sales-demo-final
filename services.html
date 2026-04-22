@@ -438,5 +438,6 @@ mobileNav.addEventListener('click',(e)=>{if(e.target.tagName==='A'){mobileNav.cl
 const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+<script src="/assets/chat-widget.js"></script>
 </body>
 </html>

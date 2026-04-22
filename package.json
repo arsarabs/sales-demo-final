@@ -1,4 +1,7 @@
 {
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
   "devDependencies": {
     "shadcn": "^4.4.0"
   }
