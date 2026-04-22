@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Roofing Services — Aurora, CO | Peak Edge Roofing</title>
+<meta name="description" content="Roof replacement, repair, storm damage claims, and gutters in Aurora, Denver, Lakewood, Centennial, Parker, and Englewood. GAF certified. Free inspections." />
+<link rel="canonical" href="https://peakedgeroofing.com/services.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --navy-900:#0B1524;--navy-800:#0F1C2E;--navy-700:#16293f;--navy-600:#1f3852;
+  --ivory:#F4EFE6;--ivory-2:#EBE4D6;--paper:#FBF8F2;
+  --copper:#B8521C;--copper-2:#9A4214;--copper-tint:#E8C7A8;
+  --slate-700:#334155;--slate-500:#6B7280;--slate-300:#CBD1D8;
+  --rule:#D9D0BD;
+  --display:"Bitter",Georgia,serif;--body:"Figtree",-apple-system,sans-serif;--mono:"JetBrains Mono",monospace;
+  --container:1240px;
+}
+*{box-sizing:border-box;}html,body{margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ivory);color:var(--navy-800);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}button{font:inherit;cursor:pointer;}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(1px 1px at 23% 17%,rgba(0,0,0,.035) 50%,transparent 51%),radial-gradient(1px 1px at 71% 42%,rgba(0,0,0,.03) 50%,transparent 51%);background-size:180px 180px,220px 220px;pointer-events:none;z-index:0;mix-blend-mode:multiply;opacity:.6;}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.display{font-family:var(--display);font-weight:800;letter-spacing:-0.02em;line-height:.98;}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;font-size:12px;letter-spacing:.14em;color:var(--copper);display:inline-flex;align-items:center;gap:10px;}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--copper);display:inline-block;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--ivory) 92%,transparent);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid transparent;transition:border-color .2s;}
+.nav.scrolled{border-bottom-color:var(--rule);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;letter-spacing:.02em;font-size:18px;}
+.brand-peak{width:34px;height:34px;display:grid;place-items:center;background:var(--navy-800);color:var(--ivory);border-radius:2px;}
+.brand-peak svg{width:20px;height:20px;}
+.brand-text{display:flex;flex-direction:column;line-height:1;}
+.brand-text .t1{font-size:16px;letter-spacing:.06em;}
+.brand-text .t2{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.2em;color:var(--slate-500);margin-top:3px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;font-weight:500;position:relative;padding:6px 0;color:var(--navy-800);}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-cta{display:flex;align-items:center;gap:10px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;font-weight:600;font-size:14px;border-radius:2px;border:1px solid transparent;transition:transform .15s,background .2s,color .2s,border-color .2s;white-space:nowrap;cursor:pointer;}
+.btn-primary{background:var(--copper);color:var(--paper);box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 -2px 0 rgba(0,0,0,.15);}
+.btn-primary:hover{background:var(--copper-2);transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:var(--navy-800);border-color:var(--navy-800);}
+.btn-ghost:hover{background:var(--navy-800);color:var(--ivory);}
+.btn-dark{background:var(--navy-800);color:var(--paper);}
+.btn-dark:hover{background:var(--navy-700);transform:translateY(-1px);}
+.btn .arr{transition:transform .2s;}
+.btn:hover .arr{transform:translateX(3px);}
+.hamburger{display:none;background:transparent;border:0;padding:8px;}
+.hamburger svg{width:22px;height:22px;}
+.mobile-nav{display:none;position:absolute;top:68px;left:0;right:0;z-index:39;background:var(--ivory);border-bottom:1px solid var(--rule);padding:18px 24px 24px;flex-direction:column;}
+.mobile-nav a{display:block;font-size:16px;font-weight:500;padding:12px 0;border-bottom:1px solid var(--rule);color:var(--navy-800);}
+.mobile-nav a:last-child{border-bottom:0;}
+.mobile-nav.open{display:flex;}
+@media(max-width:880px){.nav-links{display:none;}.nav-cta .btn-ghost{display:none;}.hamburger{display:inline-flex;}}
+
+/* PAGE HEADER */
+.page-header{background:var(--navy-800);color:var(--ivory);padding:72px 0 56px;position:relative;overflow:hidden;}
+.page-header::after{content:"";position:absolute;right:-120px;bottom:-80px;width:400px;height:400px;background:var(--copper);border-radius:50%;opacity:.06;}
+.page-header h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,6vw,80px);line-height:.95;letter-spacing:-0.025em;margin:16px 0 20px;max-width:18ch;}
+.page-header h1 em{font-style:italic;font-weight:600;color:var(--copper-tint);}
+.page-header p{font-size:18px;color:var(--slate-300);max-width:52ch;margin:0;}
+
+/* SECTIONS */
+section{padding:96px 0;position:relative;}
+@media(max-width:880px){section{padding:64px 0;}}
+
+/* SERVICE BLOCKS */
+.svc-block{padding:80px 0;border-bottom:1px solid var(--rule);}
+.svc-block:last-child{border-bottom:0;}
+.svc-block-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.svc-block-inner.flip{direction:rtl;}
+.svc-block-inner.flip>*{direction:ltr;}
+.svc-block-photo{position:relative;background:var(--navy-800);}
+.svc-block-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+.svc-block-photo .photo-tag{position:absolute;left:0;bottom:0;background:var(--navy-800);color:var(--ivory);padding:8px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;}
+.svc-block-copy .label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);margin-bottom:12px;}
+.svc-block-copy h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,3.8vw,50px);line-height:1.04;letter-spacing:-0.02em;margin:0 0 18px;}
+.svc-block-copy h2 em{font-style:italic;font-weight:500;color:var(--copper);}
+.svc-block-copy p{font-size:17px;color:var(--slate-700);margin:0 0 16px;max-width:52ch;}
+.svc-includes{margin:24px 0;padding:20px 24px;background:var(--paper);border:1px solid var(--rule);}
+.svc-includes h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--copper);margin:0 0 12px;}
+.svc-includes ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;}
+.svc-includes li{font-size:14px;color:var(--slate-700);display:flex;align-items:center;gap:8px;}
+.svc-includes li::before{content:"";width:5px;height:5px;background:var(--copper);border-radius:50%;flex:0 0 auto;}
+@media(max-width:880px){.svc-block-inner,.svc-block-inner.flip{grid-template-columns:1fr;direction:ltr;gap:28px;}.svc-includes ul{grid-template-columns:1fr;}}
+
+/* INSPECTION CTA */
+.inspection-cta{background:var(--navy-800);color:var(--ivory);padding:72px 0;}
+.inspection-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;}
+.inspection-inner h2{font-family:var(--display);font-weight:800;font-size:clamp(32px,4vw,52px);line-height:1;letter-spacing:-0.025em;margin:0 0 12px;}
+.inspection-inner h2 em{font-style:italic;color:var(--copper-tint);}
+.inspection-inner p{margin:0;color:var(--slate-300);font-size:17px;}
+.inspection-ctas{display:flex;flex-direction:column;gap:12px;align-items:flex-end;flex:0 0 auto;}
+@media(max-width:780px){.inspection-inner{grid-template-columns:1fr;}.inspection-ctas{align-items:flex-start;flex-direction:row;flex-wrap:wrap;}}
+
+/* STICKY CTA */
+.sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy-800);color:var(--ivory);padding:10px 12px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -10px 30px rgba(0,0,0,.25);gap:8px;}
+.sticky-cta a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px;font-weight:700;font-size:14px;border-radius:2px;}
+.sticky-cta .call{background:var(--ivory);color:var(--navy-800);}
+.sticky-cta .quote{background:var(--copper);color:var(--paper);}
+@media(max-width:700px){.sticky-cta{display:flex;}body{padding-bottom:68px;}}
+
+/* FOOTER */
+.foot{background:var(--navy-900);color:var(--slate-300);padding:48px 0 32px;font-size:14px;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);}
+.foot h4{color:var(--ivory);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin:0 0 14px;}
+.foot a:hover{color:var(--copper-tint);}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.foot .tagline{font-family:var(--display);font-style:italic;color:var(--ivory);font-size:18px;margin:12px 0 0;max-width:28ch;}
+.foot-bot{padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-500);}
+@media(max-width:780px){.foot-grid{grid-template-columns:1fr 1fr;}.foot-bot{flex-direction:column;gap:8px;align-items:flex-start;}}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+</style>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Roofing Services — Aurora, CO | Peak Edge Roofing" />
+<meta property="og:description" content="Roof replacement, storm damage claims, repairs, and gutters in Aurora, Denver, Lakewood, Centennial, Parker, and Englewood. GAF certified. Free inspections." />
+<meta property="og:url" content="https://peakedgeroofing.com/services.html" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://peakedgeroofing.com/assets/house-hero.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:alt" content="New architectural shingle roof installed by Peak Edge Roofing, Aurora CO" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "RoofingContractor"],
+  "@id": "https://peakedgeroofing.com/#business",
+  "name": "Peak Edge Roofing",
+  "description": "Aurora's trusted roofing contractor. Roof replacement, storm damage insurance claims, repairs, and gutters serving the Denver metro since 2014. GAF certified. Owner Danny Kowalski on every job.",
+  "url": "https://peakedgeroofing.com",
+  "telephone": "+17204418833",
+  "email": "danny@peakedgeroofing.com",
+  "foundingDate": "2014",
+  "founder": {
+    "@type": "Person",
+    "name": "Danny Kowalski",
+    "jobTitle": "Owner & Master Roofer"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Aurora",
+    "addressRegion": "CO",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Aurora"},
+    {"@type": "City", "name": "Denver"},
+    {"@type": "City", "name": "Lakewood"},
+    {"@type": "City", "name": "Centennial"},
+    {"@type": "City", "name": "Parker"},
+    {"@type": "City", "name": "Englewood"}
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "07:00",
+    "closes": "19:00"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.3",
+    "reviewCount": "54",
+    "bestRating": "5"
+  },
+  "image": "https://peakedgeroofing.com/assets/house-hero.webp",
+  "priceRange": "$$",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Roofing Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roof Replacement"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Storm Damage & Insurance Claims"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Roof Repair & Leak Fix"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gutters & Downspouts"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Free Roof Inspection"}}
+    ]
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-peak" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M2 19 L9 8 L13 13 L17 6 L22 19 Z"/></svg></span>
+      <span class="brand-text"><span class="t1">PEAK EDGE</span><span class="t2">Roofing · Est. 2014</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="index.html#gallery">Work</a>
+      <a href="contact.html">Contact</a>
+      <a href="storm-damage.html" style="color:var(--copper);font-weight:600;">Storm Damage</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+17204418833">(720) 441-8833</a>
+      <a class="btn btn-primary" href="contact.html">Free Inspection <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="menuBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="services.html">Services</a><a href="about.html">About Danny</a>
+    <a href="storm-damage.html">Storm Damage</a>
+    <a href="contact.html" style="color:var(--copper);font-weight:600;">Free Inspection →</a>
+    <a href="tel:+17204418833" style="color:var(--copper);font-weight:600;">(720) 441-8833</a>
+  </nav>
+</header>
+
+<main>
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--copper-tint);">What we do</span>
+    <h1>Roof work done <em>right.</em></h1>
+    <p>Five services, one crew, one standard: Danny wouldn't put it on his own house unless it was done properly. That applies to every job, big or small.</p>
+  </div>
+</div>
+
+<!-- SERVICE: STORM -->
+<div style="background:var(--paper);border-bottom:1px solid var(--rule);" id="storm">
+  <div class="wrap">
+    <div class="svc-block">
+      <div class="svc-block-inner reveal">
+        <div class="svc-block-photo">
+          <img src="assets/crew-sunset.webp" alt="Peak Edge roofing crew working at sunset" loading="lazy"/>
+          <div class="photo-tag">Storm &amp; Insurance Claims</div>
+        </div>
+        <div class="svc-block-copy">
+          <div class="label">A · Storm &amp; Insurance</div>
+          <h2>Storm Damage &amp; Insurance Claims</h2>
+          <p>Colorado gets hit. Aurora, Centennial, Parker — hail season runs May through August and the Front Range sees some of the worst in the country. If your neighborhood got a storm, odds are your roof took hits you can't see from the ground.</p>
+          <p>We document everything, meet your adjuster on the roof, and fight for a full replacement — not a cosmetic patch. Most homeowners with legitimate damage pay only their deductible.</p>
+          <div class="svc-includes">
+            <h4>What's included</h4>
+            <ul>
+              <li>Free damage inspection</li>
+              <li>Full photo documentation</li>
+              <li>Adjuster meeting on the roof</li>
+              <li>Insurance paperwork support</li>
+              <li>Supplement assistance if needed</li>
+              <li>Full replacement if approved</li>
+            </ul>
+          </div>
+          <a class="btn btn-primary" href="storm-damage.html">Full storm damage guide <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE: REPLACEMENT -->
+<div style="background:var(--ivory);" id="replacement">
+  <div class="wrap">
+    <div class="svc-block">
+      <div class="svc-block-inner flip reveal">
+        <div class="svc-block-photo">
+          <img src="assets/house-hero.webp" alt="Large home with new charcoal architectural shingle roof by Peak Edge Roofing" loading="lazy"/>
+          <div class="photo-tag">Full Replacement · Denver Metro</div>
+        </div>
+        <div class="svc-block-copy">
+          <div class="label">B · Replacements</div>
+          <h2>Full Roof Replacement</h2>
+          <p>When it's time for a tear-off, we do it right the first time. New architectural shingles over synthetic underlayment and ice & water shield at all the right locations — valleys, eaves, penetrations.</p>
+          <p>We work with you on shingle selection (color, profile, manufacturer), explain what's going under the shingles and why, and keep a clean site throughout the job.</p>
+          <div class="svc-includes">
+            <h4>What's included</h4>
+            <ul>
+              <li>Full tear-off &amp; disposal</li>
+              <li>Synthetic underlayment</li>
+              <li>Ice &amp; water shield</li>
+              <li>Architectural shingles (your choice)</li>
+              <li>New drip edge &amp; flashing</li>
+              <li>Ridge cap &amp; ventilation check</li>
+              <li>25–50 year shingle warranty</li>
+              <li>Workmanship warranty</li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost" href="contact.html">Schedule a quote <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE: REPAIR -->
+<div style="background:var(--paper);" id="repair">
+  <div class="wrap">
+    <div class="svc-block">
+      <div class="svc-block-inner reveal">
+        <div class="svc-block-photo">
+          <img src="assets/crew-onsite.webp" alt="Peak Edge crew member working on roof repair and flashing" loading="lazy"/>
+          <div class="photo-tag">Repair &amp; Leak Fix</div>
+        </div>
+        <div class="svc-block-copy">
+          <div class="label">C · Repairs</div>
+          <h2>Roof Repair &amp; Leak Fix</h2>
+          <p>Small repairs get the same attention as a full replacement here. Danny has seen too many "patch" jobs that masked the real problem and caused $15,000 in interior damage a year later.</p>
+          <p>We find the actual source — not just the symptom — fix it properly, and tell you honestly if a repair makes sense or if the roof is past the point where patching is the right call.</p>
+          <div class="svc-includes">
+            <h4>Common repairs we handle</h4>
+            <ul>
+              <li>Flashing repair &amp; replacement</li>
+              <li>Missing or blown-off shingles</li>
+              <li>Valley leaks</li>
+              <li>Pipe boot replacement</li>
+              <li>Ridge cap repair</li>
+              <li>Popped nails &amp; lifted shingles</li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost" href="contact.html">Book same-week repair <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE: GUTTERS -->
+<div style="background:var(--ivory);" id="gutters">
+  <div class="wrap">
+    <div class="svc-block">
+      <div class="svc-block-inner flip reveal">
+        <div class="svc-block-photo">
+          <img src="assets/house-1.jpg" alt="Home with new roof and seamless aluminum gutters installed by Peak Edge" loading="lazy"/>
+          <div class="photo-tag">Gutters &amp; Downspouts</div>
+        </div>
+        <div class="svc-block-copy">
+          <div class="label">D · Gutters</div>
+          <h2>Gutters &amp; Downspouts</h2>
+          <p>A good roof is half the job. Gutters that don't drain properly push water back under the drip edge and into the fascia — which defeats the whole point of a new roof.</p>
+          <p>We install seamless aluminum gutters fabricated on-site in your color choice, pitched correctly so they drain without pooling, with downspouts positioned to move water away from your foundation.</p>
+          <div class="svc-includes">
+            <h4>Options &amp; add-ons</h4>
+            <ul>
+              <li>Seamless aluminum (standard)</li>
+              <li>Copper (premium)</li>
+              <li>Leaf guards &amp; screens</li>
+              <li>Downspout extensions</li>
+              <li>Color matching to fascia</li>
+              <li>Custom fabricated on-site</li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost" href="contact.html">Get a gutter quote <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FREE INSPECTION -->
+<div style="background:var(--paper);border-top:1px solid var(--rule);" id="inspection">
+  <div class="wrap" style="padding-top:80px;padding-bottom:80px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;" class="reveal">
+      <div>
+        <span class="eyebrow">E · Always free</span>
+        <h2 style="font-family:var(--display);font-weight:700;font-size:clamp(36px,4.5vw,58px);line-height:1.02;letter-spacing:-0.02em;margin:16px 0 20px;">Free, no-pressure inspection.</h2>
+        <p style="color:var(--slate-700);font-size:17px;max-width:50ch;margin:0 0 16px;">Danny comes out, climbs the roof, takes the photos, and walks you through exactly what he sees. Not a sales pitch — a straight report. If nothing needs doing, he'll say so.</p>
+        <p style="color:var(--slate-700);font-size:17px;max-width:50ch;margin:0 0 28px;">Typically 30–45 minutes. Booked within 48 hours. No cost, no follow-up pressure.</p>
+        <a class="btn btn-primary" href="contact.html">Schedule your inspection <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div style="background:var(--navy-800);padding:36px;color:var(--ivory);">
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper-tint);margin-bottom:16px;">What we check</div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--slate-300);border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper-tint)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Shingle condition &amp; granule loss
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--slate-300);border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper-tint)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Flashing at all penetrations
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--slate-300);border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper-tint)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Valleys, hips, and ridge line
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--slate-300);border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper-tint)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Gutters, fascia &amp; soffit
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--slate-300);border-bottom:1px solid rgba(255,255,255,.06);padding-bottom:12px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper-tint)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Attic ventilation
+          </li>
+          <li style="display:flex;align-items:center;gap:12px;font-size:15px;color:var(--slate-300);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--copper-tint)" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Hail impact markers (if applicable)
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="color:var(--ivory);"><span class="brand-peak" style="background:var(--copper);color:var(--paper);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M2 19 L9 8 L13 13 L17 6 L22 19 Z"/></svg></span><span class="brand-text"><span class="t1" style="color:var(--ivory);">PEAK EDGE</span><span class="t2" style="color:var(--slate-300);">Roofing · Est. 2014</span></span></div>
+        <p class="tagline">"The roof goes on once. Make it count."</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#replacement">Roof Replacement</a></li><li><a href="#repair">Roof Repair</a></li><li><a href="storm-damage.html">Storm &amp; Insurance</a></li><li><a href="#gutters">Gutters</a></li><li><a href="contact.html">Free Inspection</a></li></ul></div>
+      <div><h4>Service Area</h4><ul><li>Aurora, CO</li><li>Denver, CO</li><li>Lakewood, CO</li><li>Centennial, CO</li><li>Parker &amp; Englewood</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+17204418833">(720) 441-8833</a></li><li><a href="mailto:danny@peakedgeroofing.com">danny@peakedgeroofing.com</a></li><li>Mon–Sat · 7am–7pm</li><li style="color:var(--copper-tint);">24/7 storm line</li></ul></div>
+    </div>
+    <div class="foot-bot"><span>© 2026 Peak Edge Roofing LLC · Licensed &amp; Insured · Aurora, CO</span><a href="index.html" style="color:inherit;">peakedgeroofing.com</a></div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a class="call" href="tel:+17204418833"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call Danny</a><a class="quote" href="contact.html">Free Inspection <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10),{passive:true});
+const menuBtn=document.getElementById('menuBtn');const mobileNav=document.getElementById('mobileNav');
+menuBtn.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);});
+mobileNav.addEventListener('click',(e)=>{if(e.target.tagName==='A'){mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

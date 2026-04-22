@@ -1,0 +1,40 @@
+# Secrets & credentials
+.env
+credentials.json
+token.json
+
+# Claude Code internal
+.claude/
+CLAUDE.md
+.mcp.json
+
+# Pipeline (not for public repo)
+execution/
+directives/
+requirements.txt
+
+# Temp files
+.tmp/
+
+# Dependencies
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Other projects in this folder
+LaunchedOps/
+awesome-design-md/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+

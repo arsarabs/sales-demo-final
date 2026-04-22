@@ -1,0 +1,1522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Peak Edge Roofing — Aurora, CO</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<style>
+/* ---------- Tokens ---------- */
+:root {
+  --navy-900: #0B1524;
+  --navy-800: #0F1C2E;
+  --navy-700: #16293f;
+  --navy-600: #1f3852;
+  --ivory:    #F4EFE6;
+  --ivory-2:  #EBE4D6;
+  --paper:    #FBF8F2;
+  --copper:   #B8521C;
+  --copper-2: #9A4214;
+  --copper-tint: #E8C7A8;
+  --slate-700: #334155;
+  --slate-500: #6B7280;
+  --slate-300: #CBD1D8;
+  --rule:     #D9D0BD;
+  --ok:       #2f7a3f;
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+
+  --s-1: 8px;  --s-2: 12px; --s-3: 16px; --s-4: 24px;
+  --s-5: 32px; --s-6: 48px; --s-7: 72px; --s-8: 104px;
+
+  --display: "Bitter", Georgia, "Times New Roman", serif;
+  --body: "Figtree", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --container: 1240px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ivory);
+  color: var(--navy-800);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+/* paper grain texture via layered gradients */
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(1px 1px at 23% 17%, rgba(0,0,0,.035) 50%, transparent 51%),
+    radial-gradient(1px 1px at 71% 42%, rgba(0,0,0,.03) 50%, transparent 51%),
+    radial-gradient(1px 1px at 43% 78%, rgba(0,0,0,.025) 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 88%, rgba(0,0,0,.03) 50%, transparent 51%);
+  background-size: 180px 180px, 220px 220px, 260px 260px, 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+  opacity: .6;
+}
+
+.wrap { max-width: var(--container); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ---------- Type ---------- */
+.display {
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+.eyebrow {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--copper);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 28px; height: 1px; background: var(--copper);
+  display: inline-block;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 40;
+  background: color-mix(in srgb, var(--ivory) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, background .2s ease;
+}
+.nav.scrolled { border-bottom-color: var(--rule); }
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.brand {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 18px;
+}
+.brand-peak {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  background: var(--navy-800);
+  color: var(--ivory);
+  border-radius: 2px;
+}
+.brand-peak svg { width: 20px; height: 20px; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-text .t1 { font-size: 16px; letter-spacing: .06em; }
+.brand-text .t2 { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .2em; color: var(--slate-500); margin-top: 3px; text-transform: uppercase; }
+
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  font-size: 14px; font-weight: 500;
+  position: relative;
+  padding: 6px 0;
+  color: var(--navy-800);
+}
+.nav-links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--copper);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .25s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-cta { display: flex; align-items: center; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 12px 18px;
+  font-weight: 600; font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--copper); color: var(--paper);
+  box-shadow: 0 1px 0 rgba(0,0,0,.2), inset 0 -2px 0 rgba(0,0,0,.15);
+}
+.btn-primary:hover { background: var(--copper-2); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--navy-800); border-color: var(--navy-800); }
+.btn-ghost:hover { background: var(--navy-800); color: var(--ivory); }
+.btn-dark { background: var(--navy-800); color: var(--paper); }
+.btn-dark:hover { background: var(--navy-700); transform: translateY(-1px); }
+.btn .arr { transition: transform .2s ease; }
+.btn:hover .arr { transform: translateX(3px); }
+
+.hamburger { display: none; background: transparent; border: 0; padding: 8px; }
+.hamburger svg { width: 22px; height: 22px; }
+
+@media (max-width: 880px) {
+  .nav-links { display: none; }
+  .nav-cta .btn-ghost { display: none; }
+  .hamburger { display: inline-flex; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  padding: 56px 0 0;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: end;
+}
+.hero-meta {
+  display: flex; gap: 18px; align-items: center;
+  font-family: var(--mono); font-size: 12px; color: var(--slate-500);
+  text-transform: uppercase; letter-spacing: .14em;
+  margin-bottom: 28px;
+}
+.hero-meta .dot { width: 4px; height: 4px; background: var(--copper); border-radius: 50%; }
+
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(48px, 7.2vw, 108px);
+  line-height: 0.94;
+  letter-spacing: -0.025em;
+  margin: 0 0 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--copper);
+}
+.hero h1 .word { display: inline-block; overflow: hidden; vertical-align: baseline; padding-bottom: 0.06em; margin-bottom: -0.06em; }
+.hero h1 .word > span {
+  display: inline-block;
+  transform: translateY(0);
+  opacity: 1;
+}
+.hero h1.animate .word > span {
+  transform: translateY(110%);
+  opacity: 0;
+  animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.hero h1.animate .word:nth-child(1) > span { animation-delay: .10s; }
+.hero h1.animate .word:nth-child(2) > span { animation-delay: .20s; }
+.hero h1.animate .word:nth-child(3) > span { animation-delay: .30s; }
+.hero h1.animate .word:nth-child(4) > span { animation-delay: .40s; }
+.hero h1.animate .word:nth-child(5) > span { animation-delay: .50s; }
+.hero h1.animate .word:nth-child(6) > span { animation-delay: .60s; }
+
+@keyframes rise {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero h1.animate .word > span { animation: none; transform: none; opacity: 1; }
+  .hero-sub, .hero-ctas { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .hero-image-wrap { animation: none; clip-path: none; }
+  .hero-image-wrap img { animation: none; transform: none; }
+  .peaks-draw path { animation: none; stroke-dashoffset: 0; }
+}
+
+.hero-sub {
+  font-size: 19px;
+  color: var(--slate-700);
+  max-width: 46ch;
+  margin: 0 0 32px;
+  opacity: 0; transform: translateY(12px);
+  animation: fadeUp .7s ease .8s forwards;
+}
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+.hero-ctas {
+  display: flex; gap: 12px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp .7s ease .95s forwards;
+}
+.phone-inline {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--display); font-weight: 700; font-size: 20px;
+  padding: 10px 14px;
+  border-left: 2px solid var(--copper);
+  margin-left: 6px;
+}
+.phone-inline small {
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--slate-500);
+}
+
+.hero-image-wrap {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--navy-800);
+  border: 1px solid var(--navy-800);
+  overflow: hidden;
+  clip-path: inset(0 0 100% 0);
+  animation: reveal 1.1s cubic-bezier(.7,0,.3,1) .25s forwards;
+}
+@keyframes reveal { to { clip-path: inset(0 0 0 0); } }
+.hero-image-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.1);
+  animation: zoomOut 2.4s cubic-bezier(.2,.7,.2,1) .35s forwards;
+}
+@keyframes zoomOut { to { transform: scale(1.0); } }
+
+.hero-image-tag {
+  position: absolute; left: 16px; bottom: 16px;
+  background: var(--paper);
+  color: var(--navy-800);
+  padding: 8px 12px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  display: flex; gap: 10px; align-items: center;
+}
+.hero-image-tag b { color: var(--copper); }
+
+/* hero marginalia (numbered index right rail) */
+.hero-index {
+  position: absolute; right: 24px; top: 120px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--mono);
+  font-size: 11px; letter-spacing: .3em; color: var(--slate-500);
+  display: none;
+}
+@media (min-width: 1400px) { .hero-index { display: block; } }
+
+/* peaks silhouette band */
+.peaks {
+  margin-top: 56px;
+  height: 110px;
+  background:
+    linear-gradient(to bottom, transparent 0, transparent 50%, var(--navy-800) 50%) no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.peaks svg {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: 0; height: 110px; width: min(1600px, 140vw);
+  color: var(--navy-800);
+}
+.peaks-draw path { stroke-dasharray: 2600; stroke-dashoffset: 2600; animation: drawPeaks 2s ease .2s forwards; }
+@keyframes drawPeaks { to { stroke-dashoffset: 0; } }
+
+@media (max-width: 880px) {
+  .hero { padding-top: 32px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-image-wrap { aspect-ratio: 4/3; }
+  .peaks { margin-top: 40px; height: 80px; }
+  .peaks svg { height: 80px; }
+}
+
+/* ---------- Trust bar ---------- */
+.trust {
+  background: var(--navy-800);
+  color: var(--ivory);
+  position: relative;
+}
+.trust-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.trust-cell {
+  padding: 36px 28px;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.trust-cell:last-child { border-right: 0; }
+.trust-cell .label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--copper-tint); opacity: .8;
+  margin-bottom: 8px;
+}
+.trust-cell .value {
+  font-family: var(--display); font-weight: 700; font-size: 34px;
+  line-height: 1;
+  display: flex; align-items: baseline; gap: 8px;
+  letter-spacing: -0.01em;
+}
+.trust-cell .value small { font-family: var(--body); font-size: 13px; font-weight: 500; color: var(--slate-300); letter-spacing: 0; }
+.stars {
+  display: inline-flex; gap: 2px; margin-left: 6px;
+}
+.stars svg { width: 16px; height: 16px; color: #E9A94A; }
+
+@media (max-width: 880px) {
+  .trust-inner { grid-template-columns: repeat(2, 1fr); }
+  .trust-cell { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .trust-cell:nth-child(2n) { border-right: 0; }
+  .trust-cell:nth-last-child(-n+2) { border-bottom: 0; }
+  .trust-cell .value { font-size: 26px; }
+}
+
+/* ---------- Section scaffolding ---------- */
+section { padding: 96px 0; position: relative; }
+@media (max-width: 880px) { section { padding: 64px 0; } }
+
+.section-head {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+.section-num {
+  font-family: var(--mono);
+  font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--copper);
+  border-top: 1px solid var(--copper);
+  padding-top: 10px;
+}
+.section-title {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(34px, 4.2vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 22ch;
+}
+.section-title em { font-style: italic; font-weight: 500; color: var(--copper); }
+
+@media (max-width: 700px) {
+  .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
+  .section-num { max-width: 160px; }
+}
+
+/* ---------- Services ---------- */
+.services {
+  background: var(--paper);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+.svc {
+  grid-column: span 4;
+  background: var(--ivory);
+  border: 1px solid var(--rule);
+  padding: 28px 24px 24px;
+  position: relative;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  min-height: 280px;
+  display: flex; flex-direction: column;
+}
+.svc:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 30px -20px rgba(11,21,36,.35);
+  border-color: var(--navy-800);
+}
+.svc-featured {
+  grid-column: span 6;
+  background: var(--navy-800);
+  color: var(--ivory);
+  border-color: var(--navy-800);
+}
+.svc-featured:hover { border-color: var(--copper); }
+.svc-n {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--copper);
+  margin-bottom: 20px;
+}
+.svc h3 {
+  font-family: var(--display); font-weight: 700;
+  font-size: 28px; line-height: 1.05; margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.svc-featured h3 { font-size: 34px; }
+.svc p {
+  margin: 0 0 auto;
+  color: var(--slate-700);
+  font-size: 15px;
+  max-width: 34ch;
+}
+.svc-featured p { color: var(--slate-300); }
+.svc-foot {
+  margin-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+}
+.svc-featured .svc-foot { border-top-color: rgba(255,255,255,.12); }
+.svc-foot .chev {
+  width: 28px; height: 28px;
+  border: 1px solid currentColor;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  transition: background .2s, color .2s, transform .2s;
+}
+.svc:hover .chev { background: var(--copper); color: var(--paper); border-color: var(--copper); transform: rotate(-45deg); }
+.svc-featured:hover .chev { background: var(--copper); color: var(--paper); border-color: var(--copper); }
+
+.svc-shape {
+  position: absolute; top: 0; right: 0;
+  width: 74px; height: 74px;
+  opacity: .08;
+  overflow: hidden;
+}
+.svc-featured .svc-shape { opacity: .18; }
+.svc-shape svg { width: 100%; height: 100%; }
+
+@media (max-width: 980px) { .svc, .svc-featured { grid-column: span 6; } }
+@media (max-width: 640px) { .svc, .svc-featured { grid-column: span 12; min-height: 0; } .svc-featured h3 { font-size: 28px; } }
+
+/* ---------- About ---------- */
+.about {
+  background: var(--ivory);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 72px;
+  align-items: start;
+}
+.about-photos {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--navy-800);
+}
+.about-photos .ph {
+  position: absolute; overflow: hidden; background: var(--ivory-2); border: 1px solid var(--navy-800);
+}
+.about-photos .ph img { width: 100%; height: 100%; object-fit: cover; }
+.about-photos .ph.main { inset: 0 32px 64px 0; }
+.about-photos .ph.sec { right: 0; bottom: 0; width: 62%; height: 54%; }
+
+.about-copy h2 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.04; letter-spacing: -0.02em; margin: 16px 0 20px;
+  max-width: 18ch;
+}
+.about-copy h2 em { font-style: italic; font-weight: 500; color: var(--copper); }
+.about-copy p { font-size: 17px; color: var(--slate-700); max-width: 54ch; margin: 0 0 16px; }
+.pullquote {
+  margin: 32px 0 28px;
+  padding: 20px 24px;
+  border-left: 3px solid var(--copper);
+  background: var(--paper);
+  font-family: var(--display); font-style: italic; font-weight: 500;
+  font-size: 22px; line-height: 1.35;
+  color: var(--navy-800);
+}
+.sig {
+  display: flex; align-items: center; gap: 16px;
+  margin-top: 28px;
+  padding-top: 20px; border-top: 1px solid var(--rule);
+}
+.sig-name { font-family: var(--display); font-weight: 700; font-size: 18px; }
+.sig-role { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-500); }
+
+.credentials {
+  margin-top: 36px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.cred {
+  padding: 14px 14px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--navy-800);
+  display: flex; align-items: center; gap: 10px;
+  line-height: 1.2;
+}
+.cred svg { width: 14px; height: 14px; color: var(--copper); flex: 0 0 auto; }
+
+@media (max-width: 880px) {
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-photos { aspect-ratio: 4/3; max-width: 520px; }
+  .credentials { grid-template-columns: 1fr 1fr; }
+}
+
+/* ---------- Gallery ---------- */
+.gallery {
+  background: var(--navy-900);
+  color: var(--ivory);
+  border-top: 1px solid var(--navy-700);
+}
+.gallery .section-num { color: var(--copper); border-color: var(--copper); }
+.gallery .section-title { color: var(--ivory); }
+.gallery .section-title em { color: var(--copper-tint); }
+.gallery-head-extra {
+  grid-column: 2;
+  margin-top: 18px;
+  color: var(--slate-300);
+  max-width: 56ch;
+  font-size: 16px;
+}
+@media (max-width: 700px) { .gallery-head-extra { grid-column: 1; margin-top: 0; } }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 140px;
+  gap: 14px;
+}
+.gitem {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-700);
+  border: 1px solid rgba(255,255,255,.06);
+}
+.gitem img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.gitem:hover img { transform: scale(1.05); }
+.gitem::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(11,21,36,0) 40%, rgba(11,21,36,.7) 100%);
+  opacity: .85;
+  pointer-events: none;
+}
+.gcap {
+  position: absolute; left: 14px; right: 14px; bottom: 12px;
+  display: flex; justify-content: space-between; align-items: end;
+  color: var(--ivory); z-index: 1;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+}
+.gcap b { font-family: var(--display); font-style: italic; font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--copper-tint); }
+
+.g1 { grid-column: span 7; grid-row: span 3; }
+.g2 { grid-column: span 5; grid-row: span 2; }
+.g3 { grid-column: span 5; grid-row: span 2; }
+.g4 { grid-column: span 4; grid-row: span 2; }
+.g5 { grid-column: span 4; grid-row: span 2; }
+.g6 { grid-column: span 4; grid-row: span 2; }
+
+@media (max-width: 880px) {
+  .gallery-grid { grid-auto-rows: 120px; gap: 10px; }
+  .g1 { grid-column: span 12; grid-row: span 2; }
+  .g2 { grid-column: span 6; grid-row: span 2; }
+  .g3 { grid-column: span 6; grid-row: span 2; }
+  .g4, .g5, .g6 { grid-column: span 6; grid-row: span 2; }
+  .g6 { grid-column: span 12; }
+}
+
+/* ---------- Contact ---------- */
+.contact {
+  background: var(--ivory);
+  border-top: 1px solid var(--rule);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-left h2 {
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 0.98; letter-spacing: -0.02em; margin: 12px 0 20px;
+  max-width: 14ch;
+}
+.contact-left h2 em { font-style: italic; font-weight: 500; color: var(--copper); }
+
+.callcard {
+  background: var(--navy-800);
+  color: var(--ivory);
+  padding: 28px 28px;
+  margin-top: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.callcard::before {
+  content: "";
+  position: absolute; top: 0; right: 0; width: 140px; height: 140px;
+  background: var(--copper);
+  transform: translate(40%, -40%) rotate(45deg);
+  opacity: .9;
+}
+.callcard .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--copper-tint); }
+.callcard .num {
+  font-family: var(--display); font-weight: 800; font-size: 40px; letter-spacing: -0.01em;
+  margin-top: 6px; display: block;
+  transition: color .2s ease;
+}
+.callcard a:hover .num { color: var(--copper-tint); }
+.callcard .hrs { margin-top: 16px; font-size: 14px; color: var(--slate-300); }
+.callcard .hrs b { color: var(--ivory); }
+
+.contact-info { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ci {
+  border: 1px solid var(--rule);
+  padding: 14px 14px;
+  background: var(--paper);
+}
+.ci .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--slate-500); }
+.ci .val { margin-top: 4px; font-weight: 600; font-size: 15px; color: var(--navy-800); }
+
+/* form */
+.form {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 28px 28px;
+}
+.form-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--rule);
+}
+.form-head h3 { margin: 0; font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -0.01em; }
+.form-head .pill {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+  background: var(--copper); color: var(--paper); padding: 4px 8px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+.field label {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--slate-500);
+}
+.field label .req { color: var(--copper); }
+.input, .select, .textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border: 1px solid var(--rule);
+  background: var(--ivory);
+  font: inherit; color: var(--navy-800);
+  border-radius: 2px;
+  transition: border-color .2s, background .2s;
+  font-size: 15px;
+}
+.input:focus, .select:focus, .textarea:focus {
+  outline: none; border-color: var(--navy-800); background: var(--paper);
+}
+.field.err .input, .field.err .select, .field.err .textarea { border-color: var(--copper); }
+.field .hint { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--copper); text-transform: uppercase; }
+.textarea { resize: vertical; min-height: 100px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  background: var(--ivory);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase;
+  border-radius: 2px;
+  transition: all .15s ease;
+  user-select: none;
+}
+.chip:hover { border-color: var(--navy-800); }
+.chip.active { background: var(--navy-800); color: var(--ivory); border-color: var(--navy-800); }
+
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--copper); color: var(--paper);
+  font-weight: 700; font-size: 15px; letter-spacing: .02em;
+  border: 0; border-radius: 2px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  transition: background .2s ease, transform .15s ease;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,.15);
+}
+.form-submit:hover { background: var(--copper-2); }
+.form-submit:active { transform: translateY(1px); }
+.form-submit[disabled] { opacity: .6; cursor: not-allowed; }
+
+.form-success {
+  padding: 24px;
+  text-align: center;
+  border: 1px dashed var(--copper);
+  background: var(--ivory);
+}
+.form-success .big { font-family: var(--display); font-weight: 700; font-size: 26px; }
+.form-success p { color: var(--slate-700); margin: 8px 0 0; }
+
+@media (max-width: 880px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-info { grid-template-columns: 1fr; }
+}
+
+/* ---------- Footer ---------- */
+.foot {
+  background: var(--navy-900);
+  color: var(--slate-300);
+  padding: 48px 0 32px;
+  font-size: 14px;
+}
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.foot h4 { color: var(--ivory); font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; margin: 0 0 14px; }
+.foot a:hover { color: var(--copper-tint); }
+.foot ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.foot .tagline { font-family: var(--display); font-style: italic; color: var(--ivory); font-size: 18px; margin: 12px 0 0; max-width: 28ch; }
+.foot-bot {
+  padding-top: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-500);
+}
+@media (max-width: 780px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-bot { flex-direction: column; gap: 8px; align-items: flex-start; } }
+
+/* ---------- Sticky mobile CTA ---------- */
+.sticky-cta {
+  display: none;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+  background: var(--navy-800); color: var(--ivory);
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  box-shadow: 0 -10px 30px rgba(0,0,0,.25);
+  gap: 8px;
+}
+.sticky-cta a {
+  flex: 1;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px;
+  font-weight: 700; font-size: 14px;
+  border-radius: 2px;
+}
+.sticky-cta .call { background: var(--ivory); color: var(--navy-800); }
+.sticky-cta .quote { background: var(--copper); color: var(--paper); }
+@media (max-width: 700px) { .sticky-cta { display: flex; } body { padding-bottom: 68px; } }
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ---------- Tweaks Panel ---------- */
+.tweaks {
+  position: fixed; right: 20px; bottom: 20px; z-index: 80;
+  width: 280px;
+  background: var(--paper); border: 1px solid var(--navy-800);
+  padding: 16px;
+  font-size: 13px;
+  box-shadow: 0 18px 50px -20px rgba(11,21,36,.5);
+  display: none;
+}
+.tweaks.show { display: block; }
+.tweaks h5 { margin: 0 0 12px; font-family: var(--mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--navy-800); display: flex; justify-content: space-between; align-items: center; }
+.tweaks h5 button { background: transparent; border: 0; color: var(--slate-500); font-family: var(--mono); font-size: 11px; cursor: pointer; }
+.tweak-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--rule); }
+.tweak-row:last-child { border-bottom: 0; }
+.swatches { display: flex; gap: 6px; }
+.swatch { width: 22px; height: 22px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; }
+.swatch.on { border-color: var(--navy-800); }
+.toggle { background: var(--ivory); border: 1px solid var(--rule); padding: 6px 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+.toggle.on { background: var(--navy-800); color: var(--ivory); border-color: var(--navy-800); }
+
+/* print friendly base */
+@media print { .nav, .sticky-cta, .tweaks { display: none !important; } }
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand" aria-label="Peak Edge Roofing home">
+      <span class="brand-peak" aria-hidden="true">
+        <!-- simple peak glyph -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M2 19 L9 8 L13 13 L17 6 L22 19 Z" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="t1">PEAK EDGE</span>
+        <span class="t2">Roofing · Est. 2014</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+17204418833">(720) 441-8833</a>
+      <a class="btn btn-primary" href="#contact">Free Inspection
+        <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <button class="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span>Aurora · Denver · Lakewood</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Licensed &amp; Insured</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>Est. 2014</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="display">
+          <span class="word"><span>Aurora's</span></span>
+          <span class="word"><span>trusted</span></span>
+          <span class="word"><span>roofer.</span></span><br/>
+          <span class="word"><span>Done</span></span>
+          <span class="word"><span><em>right</em></span></span>
+          <span class="word"><span>— once.</span></span>
+        </h1>
+
+        <p class="hero-sub">
+          Hail-damaged shingles, emergency leaks, or a full tear-off — Danny and the
+          Peak Edge crew show up when they say they will, and leave a roof that outlasts the weather.
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contact">
+            Get a Free Inspection
+            <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="phone-inline" href="tel:+17204418833">
+            <span>
+              <small>24/7 storm line</small><br/>
+              (720) 441-8833
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="assets/house-5.webp" alt="Peak Edge Roofing crew-completed home with slate shingles in the Denver foothills" />
+        <div class="hero-image-tag">
+          <b>●</b> Replacement · Englewood, CO · Mar 2026
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-index" aria-hidden="true">
+      FILE N°001 · AURORA-CO
+    </div>
+  </div>
+
+  <!-- Peaks silhouette divider -->
+  <div class="peaks" aria-hidden="true">
+    <svg viewBox="0 0 1600 110" preserveAspectRatio="none">
+      <!-- draw outline for animation -->
+      <g class="peaks-draw" fill="currentColor" stroke="currentColor" stroke-width="1.5">
+        <path d="M0 110 L0 68 L120 42 L220 70 L340 28 L430 62 L540 30 L640 66 L770 18 L900 58 L1020 38 L1140 70 L1260 34 L1380 62 L1500 40 L1600 68 L1600 110 Z"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<!-- ================= TRUST BAR ================= -->
+<section class="trust" style="padding:0;">
+  <div class="trust-inner">
+    <div class="trust-cell">
+      <div class="label">Google Rating</div>
+      <div class="value">
+        4.3
+        <span class="stars" aria-label="4.3 out of 5 stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.8L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.8L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.8L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.8L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" opacity=".45"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.8L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        </span>
+        <small>/ 54 reviews</small>
+      </div>
+    </div>
+    <div class="trust-cell">
+      <div class="label">In Business</div>
+      <div class="value">12 <small>years · local</small></div>
+    </div>
+    <div class="trust-cell">
+      <div class="label">Roofs Completed</div>
+      <div class="value">1,200+ <small>across the Front Range</small></div>
+    </div>
+    <div class="trust-cell">
+      <div class="label">Service Area</div>
+      <div class="value" style="font-size:18px; line-height:1.3;">Aurora · Denver · Lakewood<br/><span style="color:var(--slate-300); font-weight:500;">Centennial · Parker · Englewood</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num">01 / What we do</div>
+      <h2 class="section-title">Roof work, straight through — <em>from storm call to final nail.</em></h2>
+    </header>
+
+    <div class="svc-grid">
+      <!-- featured: storm damage -->
+      <article class="svc svc-featured reveal">
+        <div class="svc-shape" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 90 L40 40 L55 60 L70 30 L90 90 Z" fill="currentColor"/></svg>
+        </div>
+        <div class="svc-n">A · Storm &amp; Insurance</div>
+        <h3>Storm Damage &amp; Insurance Claims</h3>
+        <p>Hail season hits the Front Range hard. We document damage, meet your adjuster on the roof, and handle the paperwork so your claim actually goes through.</p>
+        <div class="svc-foot">
+          <span>Free adjuster meeting</span>
+          <span class="chev">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-shape" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#0F1C2E" stroke-width="2"><path d="M10 90 L50 30 L90 90 Z" fill="#0F1C2E"/></svg>
+        </div>
+        <div class="svc-n">B · Replacements</div>
+        <h3>Full Roof Replacement</h3>
+        <p>Tear-off to new. Architectural shingles, synthetic underlayment, ice &amp; water shield. Clean job site, every day.</p>
+        <div class="svc-foot">
+          <span>25–50 yr warranty</span>
+          <span class="chev">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-shape" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" stroke="#0F1C2E" stroke-width="2"><path d="M0 70 L30 40 L50 55 L75 25 L100 55 L100 100 L0 100 Z" fill="#0F1C2E"/></svg>
+        </div>
+        <div class="svc-n">C · Repairs</div>
+        <h3>Roof Repair &amp; Leak Fix</h3>
+        <p>Flashing, shingles, popped nails, valley leaks. Small jobs get the same attention as a full replacement.</p>
+        <div class="svc-foot">
+          <span>Same-week scheduling</span>
+          <span class="chev">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc-shape" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><rect x="10" y="40" width="80" height="20" fill="#0F1C2E"/><rect x="10" y="70" width="80" height="12" fill="#0F1C2E"/></svg>
+        </div>
+        <div class="svc-n">D · Gutters</div>
+        <h3>Gutters &amp; Downspouts</h3>
+        <p>Seamless aluminum, proper pitch, guards if you want them. We keep water away from your foundation, not just off the roof.</p>
+        <div class="svc-foot">
+          <span>Custom fabricated</span>
+          <span class="chev">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </article>
+
+      <article class="svc reveal" style="grid-column: span 8;">
+        <div class="svc-shape" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="35" fill="none" stroke="#0F1C2E" stroke-width="3"/><path d="M50 30 L50 50 L65 60" stroke="#0F1C2E" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <div class="svc-n">E · Always free</div>
+        <h3>Free, no-pressure roof inspection.</h3>
+        <p style="max-width: 48ch;">Danny comes out personally, climbs the roof, takes the photos, and walks you through what he actually sees — not a pitch. If nothing needs doing, he'll tell you that too.</p>
+        <div class="svc-foot">
+          <span>Typically 30–45 min · Booked within 48 hrs</span>
+          <span class="chev">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photos reveal">
+        <div class="ph main"><img src="assets/crew-onsite.jpg" alt="Peak Edge Roofing crew onsite, finishing a custom-home roof" /></div>
+        <div class="ph sec"><img src="assets/nailgun.webp" alt="Close-up of a roofer nailing down architectural shingles" /></div>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">02 / Who's on your roof</span>
+        <h2>Owner on the job. <em>Every</em> job.</h2>
+        <p>
+          Peak Edge is Danny Kowalski's shop. He started it in 2014 after a decade on other crews
+          — and a front-row seat to every shortcut the industry takes. The rule here is simple:
+          if he wouldn't put it on his own mother's house, it's not going on yours.
+        </p>
+        <p>
+          Danny is on every roof before the quote, during the install, and after the cleanup.
+          No subcontractor carousel. No estimator who vanishes after signing. Just a small crew
+          that does the work themselves and stands behind it.
+        </p>
+
+        <blockquote class="pullquote">
+          "I'd rather turn down a job than do it the wrong way.
+          That's why we still have homeowners from 2015 calling us back for their neighbors."
+        </blockquote>
+
+        <div class="sig">
+          <div>
+            <div class="sig-name">Danny Kowalski</div>
+            <div class="sig-role">Owner · Master Roofer</div>
+          </div>
+        </div>
+
+        <div class="credentials">
+          <div class="cred">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L3 6 v6 c0 5 4 9 9 10 5-1 9-5 9-10 V6 Z"/></svg>
+            Licensed &amp; Insured
+          </div>
+          <div class="cred">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+            GAF Certified
+          </div>
+          <div class="cred">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12"/></svg>
+            Local crew · Aurora
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <header class="section-head">
+      <div class="section-num">03 / Selected work</div>
+      <h2 class="section-title">Recent roofs. <em>No stock photos.</em></h2>
+    </header>
+    <p class="gallery-head-extra reveal">
+      Every roof on this page was installed or repaired by the Peak Edge crew between 2024 and 2026. Click any shot to see the full job file — materials, timeline, and what the homeowner said when we handed it back.
+    </p>
+
+    <div class="gallery-grid" style="margin-top:40px;">
+      <figure class="gitem g1 reveal">
+        <img src="assets/house-4.webp" alt="Custom two-story home with new architectural shingle roof" />
+        <figcaption class="gcap"><span>01 · Full Replacement</span><b>Centennial</b></figcaption>
+      </figure>
+      <figure class="gitem g2 reveal">
+        <img src="assets/house-1.jpg" alt="Ranch home with new charcoal asphalt shingles" />
+        <figcaption class="gcap"><span>02 · Replacement</span><b>Lakewood</b></figcaption>
+      </figure>
+      <figure class="gitem g3 reveal">
+        <img src="assets/house-3.webp" alt="Hip-roof home with new weathered-wood shingles" />
+        <figcaption class="gcap"><span>03 · Hail Claim</span><b>Parker</b></figcaption>
+      </figure>
+      <figure class="gitem g4 reveal">
+        <img src="assets/house-2.jpg" alt="Family home with new composition shingle roof" />
+        <figcaption class="gcap"><span>04 · Replacement</span><b>Denver</b></figcaption>
+      </figure>
+      <figure class="gitem g5 reveal">
+        <img src="assets/crew-onsite.jpg" alt="Peak Edge roofer installing shingles over fresh underlayment" />
+        <figcaption class="gcap"><span>05 · On the job</span><b>Aurora</b></figcaption>
+      </figure>
+      <figure class="gitem g6 reveal">
+        <img src="assets/nailgun.webp" alt="Close-up of shingles being installed" />
+        <figcaption class="gcap"><span>06 · Detail</span><b>Shingle install</b></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="eyebrow">04 / Start here</span>
+        <h2>Let's get <em>on your roof</em> this week.</h2>
+        <p style="color:var(--slate-700); max-width: 42ch; font-size: 17px;">
+          Free inspection, no pressure, no "limited-time" nonsense. Tell us what's going on
+          and we'll call you back inside one business day — usually same-day.
+        </p>
+
+        <div class="callcard">
+          <a href="tel:+17204418833" style="display:block;">
+            <span class="lbl">Call Danny direct</span>
+            <span class="num">(720) 441-8833</span>
+          </a>
+          <div class="hrs">
+            <b>Mon–Sat · 7am – 7pm</b><br/>
+            Storm line: 24/7 during hail season
+          </div>
+        </div>
+
+        <div class="contact-info">
+          <div class="ci">
+            <div class="lbl">Email</div>
+            <div class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2440454a4a5d645441454f41404341564b4b424d4a430a474b49">[email&#160;protected]</a></div>
+          </div>
+          <div class="ci">
+            <div class="lbl">Coverage</div>
+            <div class="val">Aurora · Denver · Lakewood · Centennial · Parker · Englewood</div>
+          </div>
+        </div>
+      </div>
+
+      <form class="form" id="quoteForm" novalidate>
+        <div class="form-head">
+          <h3>Request a free inspection</h3>
+          <span class="pill">No cost</span>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">Full name <span class="req">*</span></label>
+            <input class="input" id="f-name" name="name" type="text" placeholder="Jane Homeowner" required />
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone <span class="req">*</span></label>
+            <input class="input" id="f-phone" name="phone" type="tel" placeholder="(720) 555-0123" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input class="input" id="f-email" name="email" type="email" placeholder="jane@email.com" />
+          </div>
+          <div class="field">
+            <label for="f-city">Nearest city <span class="req">*</span></label>
+            <select class="select" id="f-city" name="city" required>
+              <option value="">Choose one</option>
+              <option>Aurora</option>
+              <option>Denver</option>
+              <option>Lakewood</option>
+              <option>Centennial</option>
+              <option>Parker</option>
+              <option>Englewood</option>
+              <option>Other Front Range</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>What do you need? <span class="req">*</span></label>
+          <div class="chips" id="svcChips">
+            <div class="chip" data-svc="Inspection">Free Inspection</div>
+            <div class="chip" data-svc="Storm">Storm / Hail Damage</div>
+            <div class="chip" data-svc="Replacement">Full Replacement</div>
+            <div class="chip" data-svc="Repair">Repair / Leak</div>
+            <div class="chip" data-svc="Gutters">Gutters</div>
+            <div class="chip" data-svc="Other">Not sure yet</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-msg">Anything else? <span style="color:var(--slate-500);">optional</span></label>
+          <textarea class="textarea" id="f-msg" name="message" placeholder="E.g. water spot on the ceiling, lost shingles in the April 14 storm, two-story, age of roof…"></textarea>
+        </div>
+
+        <button class="form-submit" type="submit" id="submitBtn">
+          <span>Send request</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <p style="font-family:var(--mono); font-size:10px; letter-spacing:.12em; color:var(--slate-500); text-transform:uppercase; margin: 14px 0 0; text-align:center;">
+          We reply within 1 business day · No spam, no robo-calls
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="color:var(--ivory);">
+          <span class="brand-peak" style="background:var(--copper); color:var(--paper);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M2 19 L9 8 L13 13 L17 6 L22 19 Z" /></svg>
+          </span>
+          <span class="brand-text">
+            <span class="t1" style="color:var(--ivory);">PEAK EDGE</span>
+            <span class="t2" style="color:var(--slate-300);">Roofing · Est. 2014</span>
+          </span>
+        </div>
+        <p class="tagline">"The roof goes on once. Make it count."</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Replacement</a></li>
+          <li><a href="#services">Repair</a></li>
+          <li><a href="#services">Storm &amp; Insurance</a></li>
+          <li><a href="#services">Gutters</a></li>
+          <li><a href="#services">Free Inspection</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Area</h4>
+        <ul>
+          <li>Aurora, CO</li>
+          <li>Denver, CO</li>
+          <li>Lakewood, CO</li>
+          <li>Centennial, CO</li>
+          <li>Parker &amp; Englewood</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17204418833">(720) 441-8833</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#dbbfbab5b5a29babbebab0bebfbcbea9b4b4bdb2b5bcf5b8b4b6"><span class="__cf_email__" data-cfemail="bedadfd0d0c7fecedbdfd5dbdad9dbccd1d1d8d7d0d990ddd1d3">[email&#160;protected]</span></a></li>
+          <li>Mon–Sat · 7a–7p</li>
+          <li style="color:var(--copper-tint);">24/7 storm line</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Peak Edge Roofing LLC · Licensed &amp; Insured · CO</span>
+      <span>Site: File N°001</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta" aria-hidden="false">
+  <a class="call" href="tel:+17204418833">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+    Call Danny
+  </a>
+  <a class="quote" href="#contact">
+    Free Inspection
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+<!-- Tweaks Panel -->
+<div class="tweaks" id="tweaks">
+  <h5>TWEAKS <button onclick="document.getElementById('tweaks').classList.remove('show'); notifyEditMode(false);">hide</button></h5>
+  <div class="tweak-row">
+    <span>Accent</span>
+    <div class="swatches" id="accentSwatches">
+      <button class="swatch on" data-c="#B8521C" style="background:#B8521C"></button>
+      <button class="swatch" data-c="#0F7259" style="background:#0F7259"></button>
+      <button class="swatch" data-c="#C4361F" style="background:#C4361F"></button>
+      <button class="swatch" data-c="#7A5B2F" style="background:#7A5B2F"></button>
+    </div>
+  </div>
+  <div class="tweak-row">
+    <span>Background</span>
+    <div>
+      <button class="toggle on" data-bg="ivory">Ivory</button>
+      <button class="toggle" data-bg="paper">Paper</button>
+      <button class="toggle" data-bg="slate">Slate</button>
+    </div>
+  </div>
+  <div class="tweak-row">
+    <span>Display font</span>
+    <div>
+      <button class="toggle on" data-ff="Bitter">Bitter</button>
+      <button class="toggle" data-ff="Fraunces">Fraunces</button>
+    </div>
+  </div>
+</div>
+
+<!-- Tokens (editmode block) -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#B8521C",
+  "background": "ivory",
+  "displayFont": "Bitter"
+}/*EDITMODE-END*/;
+</script>
+
+<script>
+/* ---------- Hero reveal animation ---------- */
+(function() {
+  const h1 = document.querySelector('.hero h1');
+  if (!h1) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => h1.classList.add('animate'));
+  });
+})();
+
+/* ---------- Nav scroll state ---------- */
+const nav = document.getElementById('nav');
+const onScroll = () => {
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ---------- Mobile menu (simple drop) ---------- */
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  if (!links) return;
+  if (links.style.display === 'flex') { links.style.display = ''; return; }
+  links.style.display = 'flex';
+  links.style.position = 'absolute';
+  links.style.top = '68px';
+  links.style.left = '0'; links.style.right = '0';
+  links.style.flexDirection = 'column';
+  links.style.background = 'var(--ivory)';
+  links.style.padding = '18px 24px';
+  links.style.borderBottom = '1px solid var(--rule)';
+  links.style.gap = '14px';
+  links.addEventListener('click', (e) => { if (e.target.tagName === 'A') { links.style.display = ''; } }, { once: true });
+}
+
+/* ---------- Scroll reveal ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ---------- Service chips ---------- */
+const chipWrap = document.getElementById('svcChips');
+let selectedSvcs = new Set();
+chipWrap.addEventListener('click', (e) => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  const v = chip.dataset.svc;
+  if (selectedSvcs.has(v)) { selectedSvcs.delete(v); chip.classList.remove('active'); }
+  else { selectedSvcs.add(v); chip.classList.add('active'); }
+});
+
+/* ---------- Form submit (validation + fake send) ---------- */
+const form = document.getElementById('quoteForm');
+const btn = document.getElementById('submitBtn');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  let ok = true;
+  ['f-name', 'f-phone', 'f-city'].forEach(id => {
+    const el = document.getElementById(id);
+    const field = el.closest('.field');
+    field.classList.remove('err');
+    if (!el.value.trim()) { field.classList.add('err'); ok = false; }
+  });
+  if (selectedSvcs.size === 0) {
+    chipWrap.parentElement.classList.add('err');
+    ok = false;
+    // Add an inline hint
+    if (!chipWrap.parentElement.querySelector('.hint')) {
+      const hint = document.createElement('span');
+      hint.className = 'hint';
+      hint.textContent = 'Pick at least one';
+      chipWrap.parentElement.appendChild(hint);
+    }
+  } else {
+    chipWrap.parentElement.classList.remove('err');
+    const hint = chipWrap.parentElement.querySelector('.hint');
+    if (hint) hint.remove();
+  }
+  if (!ok) return;
+
+  btn.disabled = true;
+  btn.innerHTML = '<span>Sending…</span>';
+  setTimeout(() => {
+    const card = document.createElement('div');
+    card.className = 'form-success';
+    card.innerHTML = `
+      <div class="big">Thanks — we've got it.</div>
+      <p>Danny will call you at <b>${document.getElementById('f-phone').value}</b> within one business day. If it's urgent, call the storm line directly.</p>
+      <p style="margin-top:12px;"><a href="tel:+17204418833" style="color:var(--copper); font-weight:700;">(720) 441-8833 →</a></p>
+    `;
+    form.replaceWith(card);
+  }, 900);
+});
+
+/* ---------- Tweaks (edit mode) ---------- */
+let editModeAvailable = false;
+let currentTweaks = { ...TWEAK_DEFAULTS };
+
+function applyTweaks(t) {
+  document.documentElement.style.setProperty('--copper', t.accent);
+  // Derive a darker variant
+  document.documentElement.style.setProperty('--copper-2', shade(t.accent, -14));
+  const bgMap = { ivory: '#F4EFE6', paper: '#FBF8F2', slate: '#E3DFD4' };
+  document.body.style.background = bgMap[t.background] || bgMap.ivory;
+  // Font
+  const fam = t.displayFont === 'Fraunces' ? '"Fraunces"' : '"Bitter"';
+  document.documentElement.style.setProperty('--display', `${fam}, Georgia, serif`);
+  if (t.displayFont === 'Fraunces' && !document.getElementById('fraunces-font')) {
+    const l = document.createElement('link'); l.id = 'fraunces-font'; l.rel = 'stylesheet';
+    l.href = 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500&display=swap';
+    document.head.appendChild(l);
+  }
+  // Update swatch/toggle UI
+  document.querySelectorAll('#accentSwatches .swatch').forEach(s => s.classList.toggle('on', s.dataset.c === t.accent));
+  document.querySelectorAll('.toggle[data-bg]').forEach(s => s.classList.toggle('on', s.dataset.bg === t.background));
+  document.querySelectorAll('.toggle[data-ff]').forEach(s => s.classList.toggle('on', s.dataset.ff === t.displayFont));
+}
+
+function shade(hex, pct) {
+  const f = parseInt(hex.slice(1), 16);
+  const t = pct < 0 ? 0 : 255, p = Math.abs(pct) / 100;
+  const R = f >> 16, G = (f >> 8) & 0xff, B = f & 0xff;
+  const to = (c) => Math.round((t - c) * p) + c;
+  return '#' + (0x1000000 + (to(R) << 16) + (to(G) << 8) + to(B)).toString(16).slice(1);
+}
+
+applyTweaks(currentTweaks);
+
+function persist(edits) {
+  currentTweaks = { ...currentTweaks, ...edits };
+  applyTweaks(currentTweaks);
+  try {
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
+  } catch (e) {}
+}
+
+document.querySelectorAll('#accentSwatches .swatch').forEach(s => {
+  s.addEventListener('click', () => persist({ accent: s.dataset.c }));
+});
+document.querySelectorAll('.toggle[data-bg]').forEach(s => {
+  s.addEventListener('click', () => persist({ background: s.dataset.bg }));
+});
+document.querySelectorAll('.toggle[data-ff]').forEach(s => {
+  s.addEventListener('click', () => persist({ displayFont: s.dataset.ff }));
+});
+
+function notifyEditMode(on) {
+  document.getElementById('tweaks').classList.toggle('show', on);
+}
+
+window.addEventListener('message', (e) => {
+  const d = e && e.data;
+  if (!d || !d.type) return;
+  if (d.type === '__activate_edit_mode') notifyEditMode(true);
+  if (d.type === '__deactivate_edit_mode') notifyEditMode(false);
+});
+try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+</script>
+</body>
+</html>

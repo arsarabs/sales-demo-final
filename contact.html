@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Contact — Free Roof Inspection | Peak Edge Roofing, Aurora CO</title>
+<meta name="description" content="Schedule a free, no-pressure roof inspection with Danny Kowalski. Serving Aurora, Denver, Lakewood, Centennial, Parker, and Englewood. (720) 441-8833." />
+<link rel="canonical" href="https://peakedgeroofing.com/contact.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --navy-900:#0B1524;--navy-800:#0F1C2E;--navy-700:#16293f;
+  --ivory:#F4EFE6;--ivory-2:#EBE4D6;--paper:#FBF8F2;
+  --copper:#B8521C;--copper-2:#9A4214;--copper-tint:#E8C7A8;
+  --slate-700:#334155;--slate-500:#6B7280;--slate-300:#CBD1D8;
+  --rule:#D9D0BD;
+  --display:"Bitter",Georgia,serif;--body:"Figtree",-apple-system,sans-serif;--mono:"JetBrains Mono",monospace;
+  --container:1240px;
+}
+*{box-sizing:border-box;}html,body{margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ivory);color:var(--navy-800);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}button{font:inherit;cursor:pointer;}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(1px 1px at 23% 17%,rgba(0,0,0,.035) 50%,transparent 51%),radial-gradient(1px 1px at 71% 42%,rgba(0,0,0,.03) 50%,transparent 51%);background-size:180px 180px,220px 220px;pointer-events:none;z-index:0;mix-blend-mode:multiply;opacity:.6;}
+.wrap{max-width:var(--container);margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;font-size:12px;letter-spacing:.14em;color:var(--copper);display:inline-flex;align-items:center;gap:10px;}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--copper);display:inline-block;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--ivory) 92%,transparent);backdrop-filter:saturate(140%) blur(8px);-webkit-backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid transparent;transition:border-color .2s;}
+.nav.scrolled{border-bottom-color:var(--rule);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:800;letter-spacing:.02em;font-size:18px;}
+.brand-peak{width:34px;height:34px;display:grid;place-items:center;background:var(--navy-800);color:var(--ivory);border-radius:2px;}
+.brand-peak svg{width:20px;height:20px;}
+.brand-text{display:flex;flex-direction:column;line-height:1;}
+.brand-text .t1{font-size:16px;letter-spacing:.06em;}
+.brand-text .t2{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.2em;color:var(--slate-500);margin-top:3px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14px;font-weight:500;position:relative;padding:6px 0;color:var(--navy-800);}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform .25s;}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-cta{display:flex;align-items:center;gap:10px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;font-weight:600;font-size:14px;border-radius:2px;border:1px solid transparent;transition:transform .15s,background .2s,color .2s,border-color .2s;white-space:nowrap;cursor:pointer;}
+.btn-primary{background:var(--copper);color:var(--paper);box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 -2px 0 rgba(0,0,0,.15);}
+.btn-primary:hover{background:var(--copper-2);transform:translateY(-1px);}
+.btn-ghost{background:transparent;color:var(--navy-800);border-color:var(--navy-800);}
+.btn-ghost:hover{background:var(--navy-800);color:var(--ivory);}
+.btn .arr{transition:transform .2s;}
+.btn:hover .arr{transform:translateX(3px);}
+.hamburger{display:none;background:transparent;border:0;padding:8px;}
+.hamburger svg{width:22px;height:22px;}
+.mobile-nav{display:none;position:absolute;top:68px;left:0;right:0;z-index:39;background:var(--ivory);border-bottom:1px solid var(--rule);padding:18px 24px 24px;flex-direction:column;}
+.mobile-nav a{display:block;font-size:16px;font-weight:500;padding:12px 0;border-bottom:1px solid var(--rule);color:var(--navy-800);}
+.mobile-nav a:last-child{border-bottom:0;}
+.mobile-nav.open{display:flex;}
+@media(max-width:880px){.nav-links{display:none;}.nav-cta .btn-ghost{display:none;}.hamburger{display:inline-flex;}}
+
+/* PAGE HEADER */
+.page-header{background:var(--navy-800);color:var(--ivory);padding:72px 0 56px;}
+.page-header h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,6vw,76px);line-height:.95;letter-spacing:-0.025em;margin:16px 0 20px;}
+.page-header h1 em{font-style:italic;font-weight:600;color:var(--copper-tint);}
+.page-header p{font-size:18px;color:var(--slate-300);max-width:50ch;margin:0;}
+
+/* CONTACT LAYOUT */
+.contact-body{padding:80px 0;}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start;}
+@media(max-width:880px){.contact-grid{grid-template-columns:1fr;gap:40px;}.contact-body{padding:56px 0;}}
+
+/* LEFT SIDE */
+.callcard{background:var(--navy-800);color:var(--ivory);padding:32px;position:relative;overflow:hidden;margin-bottom:20px;}
+.callcard::before{content:"";position:absolute;top:0;right:0;width:140px;height:140px;background:var(--copper);transform:translate(40%,-40%) rotate(45deg);opacity:.9;}
+.callcard .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper-tint);}
+.callcard .num{font-family:var(--display);font-weight:800;font-size:44px;letter-spacing:-0.01em;margin-top:6px;display:block;transition:color .2s;}
+.callcard a:hover .num{color:var(--copper-tint);}
+.callcard .hrs{margin-top:16px;font-size:15px;color:var(--slate-300);}
+.callcard .hrs b{color:var(--ivory);}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+@media(max-width:600px){.info-grid{grid-template-columns:1fr;}}
+.info-card{border:1px solid var(--rule);padding:16px;background:var(--paper);}
+.info-card .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate-500);}
+.info-card .val{margin-top:6px;font-weight:600;font-size:15px;color:var(--navy-800);}
+.info-card .val a{color:var(--copper);}
+.info-card .val a:hover{text-decoration:underline;}
+
+.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);margin-top:20px;}
+.trust-item{background:var(--paper);padding:16px 14px;text-align:center;}
+.trust-item .num{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-0.01em;color:var(--navy-800);}
+.trust-item .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-500);margin-top:2px;}
+
+/* FORM */
+.form-wrap{background:var(--paper);border:1px solid var(--rule);}
+.form-top{padding:24px 28px 18px;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;}
+.form-top h2{margin:0;font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-0.01em;}
+.form-top .pill{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;background:var(--copper);color:var(--paper);padding:4px 10px;}
+.form-body{padding:24px 28px;}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.field label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-500);}
+.field label .req{color:var(--copper);}
+.input,.select,.textarea{width:100%;padding:12px;border:1px solid var(--rule);background:var(--ivory);font:inherit;color:var(--navy-800);border-radius:2px;transition:border-color .2s,background .2s;font-size:15px;}
+.input:focus,.select:focus,.textarea:focus{outline:none;border-color:var(--navy-800);background:var(--paper);}
+.field.err .input,.field.err .select,.field.err .textarea{border-color:var(--copper);}
+.field .hint{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--copper);text-transform:uppercase;}
+.textarea{resize:vertical;min-height:100px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.form-row{grid-template-columns:1fr;}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;}
+.chip{padding:10px 12px;border:1px solid var(--rule);background:var(--ivory);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;transition:all .15s;user-select:none;cursor:pointer;}
+.chip:hover{border-color:var(--navy-800);}
+.chip.active{background:var(--navy-800);color:var(--ivory);border-color:var(--navy-800);}
+.form-submit{width:100%;padding:16px;background:var(--copper);color:var(--paper);font-weight:700;font-size:16px;letter-spacing:.01em;border:0;border-radius:2px;display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .15s;box-shadow:inset 0 -2px 0 rgba(0,0,0,.15);cursor:pointer;margin-top:4px;}
+.form-submit:hover{background:var(--copper-2);}
+.form-submit:active{transform:translateY(1px);}
+.form-submit[disabled]{opacity:.6;cursor:not-allowed;}
+.form-note{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--slate-500);text-transform:uppercase;margin:14px 0 0;text-align:center;}
+.form-success{padding:40px 28px;text-align:center;}
+.form-success .big{font-family:var(--display);font-weight:700;font-size:32px;letter-spacing:-0.01em;}
+.form-success p{color:var(--slate-700);margin:8px 0 0;font-size:17px;}
+.form-success .callout{margin-top:24px;padding:20px;background:var(--ivory);border:1px solid var(--rule);}
+
+/* SERVICE AREA MAP PLACEHOLDER */
+.area-list{background:var(--navy-800);color:var(--ivory);padding:64px 0;}
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);}
+.area-item{background:var(--navy-800);padding:28px 24px;}
+.area-item h3{font-family:var(--display);font-weight:700;font-size:22px;margin:0 0 6px;letter-spacing:-0.01em;}
+.area-item p{font-size:14px;color:var(--slate-300);margin:0;font-family:var(--mono);letter-spacing:.04em;}
+@media(max-width:780px){.area-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.area-grid{grid-template-columns:1fr;}}
+
+/* FOOTER */
+.foot{background:var(--navy-900);color:var(--slate-300);padding:48px 0 32px;font-size:14px;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);}
+.foot h4{color:var(--ivory);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin:0 0 14px;}
+.foot a:hover{color:var(--copper-tint);}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.foot .tagline{font-family:var(--display);font-style:italic;color:var(--ivory);font-size:18px;margin:12px 0 0;max-width:28ch;}
+.foot-bot{padding-top:20px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-500);}
+@media(max-width:780px){.foot-grid{grid-template-columns:1fr 1fr;}.foot-bot{flex-direction:column;gap:8px;align-items:flex-start;}}
+
+.sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy-800);color:var(--ivory);padding:10px 12px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -10px 30px rgba(0,0,0,.25);gap:8px;}
+.sticky-cta a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px;font-weight:700;font-size:14px;border-radius:2px;}
+.sticky-cta .call{background:var(--ivory);color:var(--navy-800);}
+.sticky-cta .quote{background:var(--copper);color:var(--paper);}
+@media(max-width:700px){.sticky-cta{display:flex;}body{padding-bottom:68px;}}
+</style>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="apple-touch-icon" href="assets/favicon.svg" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Contact — Free Roof Inspection | Peak Edge Roofing, Aurora CO" />
+<meta property="og:description" content="Schedule a free, no-pressure roof inspection with Danny Kowalski. Serving Aurora, Denver, Lakewood, Centennial, Parker, and Englewood. (720) 441-8833." />
+<meta property="og:url" content="https://peakedgeroofing.com/contact.html" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://peakedgeroofing.com/assets/house-hero.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:alt" content="Peak Edge Roofing — free roof inspections in Aurora, Denver metro, CO" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "RoofingContractor"],
+  "@id": "https://peakedgeroofing.com/#business",
+  "name": "Peak Edge Roofing",
+  "description": "Aurora's trusted roofing contractor. Roof replacement, storm damage insurance claims, repairs, and gutters serving the Denver metro since 2014. GAF certified. Owner Danny Kowalski on every job.",
+  "url": "https://peakedgeroofing.com",
+  "telephone": "+17204418833",
+  "email": "danny@peakedgeroofing.com",
+  "foundingDate": "2014",
+  "founder": {"@type": "Person", "name": "Danny Kowalski", "jobTitle": "Owner & Master Roofer"},
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Aurora",
+    "addressRegion": "CO",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Aurora"},
+    {"@type": "City", "name": "Denver"},
+    {"@type": "City", "name": "Lakewood"},
+    {"@type": "City", "name": "Centennial"},
+    {"@type": "City", "name": "Parker"},
+    {"@type": "City", "name": "Englewood"}
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "07:00",
+    "closes": "19:00"
+  }],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.3",
+    "reviewCount": "54",
+    "bestRating": "5"
+  },
+  "image": "https://peakedgeroofing.com/assets/house-hero.webp",
+  "priceRange": "$$"
+}
+</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="brand-peak" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"><path d="M2 19 L9 8 L13 13 L17 6 L22 19 Z"/></svg></span><span class="brand-text"><span class="t1">PEAK EDGE</span><span class="t2">Roofing · Est. 2014</span></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="index.html#gallery">Work</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="storm-damage.html" style="color:var(--copper);font-weight:600;">Storm Damage</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="tel:+17204418833">(720) 441-8833</a>
+      <a class="btn btn-primary" href="#form">Free Inspection <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="menuBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="services.html">Services</a><a href="about.html">About Danny</a>
+    <a href="storm-damage.html">Storm Damage</a>
+    <a href="#form" style="color:var(--copper);font-weight:600;">Free Inspection ↓</a>
+    <a href="tel:+17204418833" style="color:var(--copper);font-weight:600;">(720) 441-8833</a>
+  </nav>
+</header>
+
+<main>
+<div class="page-header">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--copper-tint);">Start here</span>
+    <h1>Let's get on <em>your roof.</em></h1>
+    <p>Free inspection, straight talk, no pressure. Tell us what's going on and Danny will call you back — usually same-day.</p>
+  </div>
+</div>
+
+<div class="contact-body">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- LEFT -->
+      <div>
+        <div class="callcard">
+          <a href="tel:+17204418833" style="display:block;">
+            <span class="lbl">Call Danny direct</span>
+            <span class="num">(720) 441-8833</span>
+          </a>
+          <div class="hrs">
+            <b>Mon–Sat · 7am – 7pm</b><br/>
+            Storm line open 24/7 during hail season (May–Aug)
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="lbl">Email</div>
+            <div class="val"><a href="mailto:danny@peakedgeroofing.com">danny@<br/>peakedgeroofing.com</a></div>
+          </div>
+          <div class="info-card">
+            <div class="lbl">Response time</div>
+            <div class="val">Within 1 business day — usually same-day</div>
+          </div>
+          <div class="info-card">
+            <div class="lbl">Inspection timing</div>
+            <div class="val">Booked within 48 hrs · 30–45 min</div>
+          </div>
+          <div class="info-card">
+            <div class="lbl">Cost</div>
+            <div class="val" style="color:var(--copper);font-weight:700;">Free. No strings.</div>
+          </div>
+        </div>
+
+        <div class="trust-strip">
+          <a href="https://www.google.com/maps/place/Peak+Edge+Roofing/@39.7282,-104.8319,15z/data=!4m6!3m5!1s0x876c63b8e2fa7e9d:0x5b8a1c2e3d4f5a6b!8m2!3d39.7282!4d-104.8319!16s%2Fg%2F11c5q8k9d2" target="_blank" rel="noopener" class="trust-item" style="text-decoration:none;color:inherit;display:block;">
+            <div class="num">4.3★</div>
+            <div class="lbl">54 Google reviews ↗</div>
+          </a>
+          <div class="trust-item">
+            <div class="num">11</div>
+            <div class="lbl">Years in Colorado</div>
+          </div>
+          <div class="trust-item">
+            <div class="num">1,200+</div>
+            <div class="lbl">Roofs completed</div>
+          </div>
+        </div>
+
+        <div style="margin-top:28px;padding:20px 0;border-top:1px solid var(--rule);">
+          <div style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate-500);margin-bottom:10px;">What to expect</div>
+          <p style="color:var(--slate-700);font-size:15px;margin:0 0 8px;">We call you back within one business day to confirm the inspection time. Danny shows up on time, climbs the roof, walks you through exactly what he finds.</p>
+          <p style="color:var(--slate-700);font-size:15px;margin:0;">If work is needed, we'll give you a written quote before we leave. No follow-up pressure, no "limited-time" nonsense. If nothing's needed, Danny tells you that too.</p>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="form-wrap" id="form">
+        <div class="form-top">
+          <h2>Request a free inspection</h2>
+          <span class="pill">No cost</span>
+        </div>
+        <div class="form-body">
+          <form name="quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" id="contactForm" novalidate>
+            <input type="hidden" name="form-name" value="quote" />
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="services" id="f-services" />
+
+            <div class="form-row">
+              <div class="field">
+                <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-name" name="name" type="text" placeholder="Jane Homeowner" required autocomplete="name"/>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input class="input" id="f-phone" name="phone" type="tel" placeholder="(720) 555-0123" required autocomplete="tel"/>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input class="input" id="f-email" name="email" type="email" placeholder="jane@email.com" autocomplete="email"/>
+              </div>
+              <div class="field">
+                <label for="f-city">Nearest city <span class="req" aria-hidden="true">*</span></label>
+                <select class="select" id="f-city" name="city" required>
+                  <option value="">Choose one</option>
+                  <option>Aurora</option>
+                  <option>Denver</option>
+                  <option>Lakewood</option>
+                  <option>Centennial</option>
+                  <option>Parker</option>
+                  <option>Englewood</option>
+                  <option>Other Front Range</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" id="chipsField">
+              <label>What do you need? <span class="req" aria-hidden="true">*</span></label>
+              <div class="chips" id="svcChips" role="group" aria-label="Select services">
+                <button type="button" class="chip" data-svc="Free Inspection">Free Inspection</button>
+                <button type="button" class="chip" data-svc="Storm / Hail Damage">Storm / Hail Damage</button>
+                <button type="button" class="chip" data-svc="Full Replacement">Full Replacement</button>
+                <button type="button" class="chip" data-svc="Repair / Leak">Repair / Leak</button>
+                <button type="button" class="chip" data-svc="Gutters">Gutters</button>
+                <button type="button" class="chip" data-svc="Not sure yet">Not sure yet</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-msg">Anything else? <span style="color:var(--slate-500);">optional</span></label>
+              <textarea class="textarea" id="f-msg" name="message" placeholder="E.g. water spot on the ceiling, missing shingles after the May 15 storm, two-story, roof is 12 years old…"></textarea>
+            </div>
+
+            <button class="form-submit" type="submit" id="submitBtn">
+              <span>Send request</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+            <p class="form-note">We reply within 1 business day · No spam, no robo-calls</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE AREA -->
+<div class="area-list">
+  <div class="wrap">
+    <span style="font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper-tint);border-top:1px solid var(--copper);padding-top:10px;display:inline-block;margin-bottom:32px;">Service area</span>
+    <div class="area-grid">
+      <div class="area-item">
+        <h3>Aurora, CO</h3>
+        <p>Home base · priority scheduling</p>
+      </div>
+      <div class="area-item">
+        <h3>Denver, CO</h3>
+        <p>All Denver metro neighborhoods</p>
+      </div>
+      <div class="area-item">
+        <h3>Lakewood, CO</h3>
+        <p>West metro area</p>
+      </div>
+      <div class="area-item">
+        <h3>Centennial, CO</h3>
+        <p>South metro</p>
+      </div>
+      <div class="area-item">
+        <h3>Parker, CO</h3>
+        <p>Southeast metro</p>
+      </div>
+      <div class="area-item">
+        <h3>Englewood, CO</h3>
+        <p>South Denver area</p>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="brand" style="color:var(--ivory);"><span class="brand-peak" style="background:var(--copper);color:var(--paper);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M2 19 L9 8 L13 13 L17 6 L22 19 Z"/></svg></span><span class="brand-text"><span class="t1" style="color:var(--ivory);">PEAK EDGE</span><span class="t2" style="color:var(--slate-300);">Roofing · Est. 2014</span></span></div><p class="tagline">"The roof goes on once. Make it count."</p></div>
+      <div><h4>Services</h4><ul><li><a href="services.html#replacement">Roof Replacement</a></li><li><a href="services.html#repair">Roof Repair</a></li><li><a href="storm-damage.html">Storm &amp; Insurance</a></li><li><a href="services.html#gutters">Gutters</a></li><li><a href="contact.html">Free Inspection</a></li></ul></div>
+      <div><h4>Service Area</h4><ul><li>Aurora, CO</li><li>Denver, CO</li><li>Lakewood, CO</li><li>Centennial, CO</li><li>Parker &amp; Englewood</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+17204418833">(720) 441-8833</a></li><li><a href="mailto:danny@peakedgeroofing.com">danny@peakedgeroofing.com</a></li><li>Mon–Sat · 7am–7pm</li><li style="color:var(--copper-tint);">24/7 storm line</li></ul></div>
+    </div>
+    <div class="foot-bot"><span>© 2026 Peak Edge Roofing LLC · Licensed &amp; Insured · Aurora, CO</span><a href="index.html" style="color:inherit;">peakedgeroofing.com</a></div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a class="call" href="tel:+17204418833"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.4c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call Danny</a><a class="quote" href="#form">Free Inspection <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a></div>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10),{passive:true});
+const menuBtn=document.getElementById('menuBtn');const mobileNav=document.getElementById('mobileNav');
+menuBtn.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);});
+mobileNav.addEventListener('click',(e)=>{if(e.target.tagName==='A'){mobileNav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}});
+
+const chipWrap=document.getElementById('svcChips');
+const servicesInput=document.getElementById('f-services');
+let selectedSvcs=new Set();
+chipWrap.addEventListener('click',(e)=>{
+  const chip=e.target.closest('.chip');
+  if(!chip)return;
+  const v=chip.dataset.svc;
+  if(selectedSvcs.has(v)){selectedSvcs.delete(v);chip.classList.remove('active');chip.setAttribute('aria-pressed','false');}
+  else{selectedSvcs.add(v);chip.classList.add('active');chip.setAttribute('aria-pressed','true');}
+  servicesInput.value=[...selectedSvcs].join(', ');
+});
+
+const form=document.getElementById('contactForm');
+const btn=document.getElementById('submitBtn');
+form.addEventListener('submit',(e)=>{
+  let ok=true;
+  ['f-name','f-phone','f-city'].forEach(id=>{
+    const el=document.getElementById(id);
+    const field=el.closest('.field');
+    field.classList.remove('err');
+    if(!el.value.trim()){field.classList.add('err');ok=false;}
+  });
+  const chipsField=document.getElementById('chipsField');
+  chipsField.classList.remove('err');
+  const existingHint=chipsField.querySelector('.hint');
+  if(existingHint)existingHint.remove();
+  if(selectedSvcs.size===0){
+    chipsField.classList.add('err');
+    const hint=document.createElement('span');
+    hint.className='hint';hint.setAttribute('role','alert');hint.textContent='Pick at least one';
+    chipsField.appendChild(hint);
+    ok=false;
+  }
+  if(!ok){e.preventDefault();document.querySelector('.field.err .input,.field.err .select')?.focus();return;}
+  btn.disabled=true;
+  btn.innerHTML='<span>Sending…</span>';
+});
+</script>
+</body>
+</html>
