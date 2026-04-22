@@ -1,10 +1,12 @@
 (function () {
   var ENDPOINT = '/.netlify/functions/chat';
   var GREETING = "Hey! I'm Danny's assistant at Peak Edge Roofing. Are you dealing with storm damage, need a replacement, or want a repair quote?";
+  var STORAGE_KEY = 'pec_chat';
 
   var messages = [];
   var isOpen = false;
   var isTyping = false;
+  var isDone = false;
 
   // --- Styles ---
   var style = document.createElement('style');
@@ -17,8 +19,11 @@
     '#pec-window.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}',
     '#pec-header{background:#0F1C2E;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}',
     '#pec-avatar{width:36px;height:36px;background:#B5601E;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;font-family:sans-serif}',
+    '#pec-info{flex:1}',
     '#pec-info .pec-name{font-weight:600;font-size:14px;font-family:sans-serif}',
     '#pec-info .pec-status{font-size:11px;opacity:.7;margin-top:2px;font-family:sans-serif}',
+    '#pec-close{background:none;border:none;color:#fff;cursor:pointer;padding:4px;opacity:.7;display:flex;align-items:center;justify-content:center;transition:opacity .15s;flex-shrink:0}',
+    '#pec-close:hover{opacity:1}',
     '#pec-msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f8f7f5}',
     '.pec-msg{max-width:82%;padding:10px 13px;font-size:14px;line-height:1.5;word-break:break-word;font-family:sans-serif}',
     '.pec-msg.bot{background:#fff;color:#0F1C2E;align-self:flex-start;border:1px solid #e5e2db;border-radius:2px 12px 12px 12px}',
@@ -34,9 +39,27 @@
     '#pec-send{background:#B5601E;color:#fff;border:none;border-radius:8px;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;flex-shrink:0}',
     '#pec-send:hover{background:#9e5219}',
     '#pec-send:disabled{opacity:.5;cursor:not-allowed}',
+    '#pec-done{padding:14px 16px;background:#f0fdf4;border-top:1px solid #bbf7d0;text-align:center;font-size:13px;color:#166534;font-family:sans-serif;flex-shrink:0}',
+    '#pec-done strong{display:block;margin-bottom:2px;font-size:14px}',
     '@media(max-width:400px){#pec-window{right:12px;left:12px;width:auto;bottom:84px}#pec-bubble{right:16px;bottom:16px}}'
   ].join('');
   document.head.appendChild(style);
+
+  // --- Restore session ---
+  try {
+    var saved = sessionStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      var state = JSON.parse(saved);
+      messages = state.messages || [];
+      isDone = state.isDone || false;
+    }
+  } catch (e) {}
+
+  function saveSession() {
+    try {
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ messages: messages, isDone: isDone }));
+    } catch (e) {}
+  }
 
   // --- HTML ---
   var bubble = document.createElement('div');
@@ -51,6 +74,9 @@
     '<div id="pec-header">' +
       '<div id="pec-avatar">PE</div>' +
       '<div id="pec-info"><div class="pec-name">Peak Edge Roofing</div><div class="pec-status">Usually replies in under a minute</div></div>' +
+      '<button id="pec-close" aria-label="Close chat">' +
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>' +
+      '</button>' +
     '</div>' +
     '<div id="pec-msgs"></div>' +
     '<div id="pec-input-wrap">' +
@@ -58,6 +84,9 @@
       '<button id="pec-send">' +
         '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>' +
       '</button>' +
+    '</div>' +
+    '<div id="pec-done" style="display:none">' +
+      '<strong>You\'re all set!</strong>Danny will call you within the hour.' +
     '</div>';
 
   document.body.appendChild(bubble);
@@ -67,6 +96,9 @@
   var input = document.getElementById('pec-input');
   var sendBtn = document.getElementById('pec-send');
   var notif = document.getElementById('pec-notif');
+  var closeBtn = document.getElementById('pec-close');
+  var inputWrap = document.getElementById('pec-input-wrap');
+  var doneEl = document.getElementById('pec-done');
 
   function addMessage(text, role) {
     var el = document.createElement('div');
@@ -89,15 +121,31 @@
     if (el) el.remove();
   }
 
+  function setDone() {
+    isDone = true;
+    inputWrap.style.display = 'none';
+    doneEl.style.display = 'block';
+    saveSession();
+  }
+
   function setInputEnabled(enabled) {
     input.disabled = !enabled;
     sendBtn.disabled = !enabled;
     if (enabled) input.focus();
   }
 
+  // Restore previous messages if any
+  function renderSavedMessages() {
+    messages.forEach(function (m) {
+      if (m.role === 'user') addMessage(m.content, 'user');
+      else if (m.role === 'assistant') addMessage(m.content, 'bot');
+    });
+    if (isDone) setDone();
+  }
+
   async function sendMessage(text) {
     text = text.trim();
-    if (!text || isTyping) return;
+    if (!text || isTyping || isDone) return;
 
     addMessage(text, 'user');
     messages.push({ role: 'user', content: text });
@@ -105,6 +153,7 @@
     setInputEnabled(false);
     isTyping = true;
     showTyping();
+    saveSession();
 
     try {
       var res = await fetch(ENDPOINT, {
@@ -119,10 +168,12 @@
       if (data.text) {
         addMessage(data.text, 'bot');
         messages.push({ role: 'assistant', content: data.text });
+        saveSession();
       }
 
-      // Keep input disabled if lead captured — conversation is done
-      if (!data.leadCaptured) {
+      if (data.leadCaptured) {
+        setDone();
+      } else {
         setInputEnabled(true);
       }
 
@@ -147,11 +198,13 @@
           hideTyping();
           addMessage(GREETING, 'bot');
           messages.push({ role: 'assistant', content: GREETING });
-          input.focus();
+          saveSession();
+          if (!isDone) input.focus();
         }, 900);
       }, 150);
     } else {
-      input.focus();
+      renderSavedMessages();
+      if (!isDone) input.focus();
     }
   }
 
@@ -162,6 +215,11 @@
 
   bubble.addEventListener('click', function () {
     if (isOpen) closeChat(); else openChat();
+  });
+
+  closeBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    closeChat();
   });
 
   sendBtn.addEventListener('click', function () { sendMessage(input.value); });
